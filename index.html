@@ -95,20 +95,38 @@
 <p>burp抓包修改文件上传路径  在.asp后缀的文件夹中 文件被默认为asp类型执行</p>
 <p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192630.png" alt="QQ截图20191202192630"></p>
 <p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192639.png" alt="QQ截图20191202192639"></p>
-<p>菜刀链接</p>
+<p>蚁剑链接</p>
 <p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192555.png" alt="QQ截图20191202192555"></p>
 <h1 id="phpMyAdmin后台文件包含分析溯源"><a href="#phpMyAdmin后台文件包含分析溯源" class="headerlink" title="phpMyAdmin后台文件包含分析溯源"></a>phpMyAdmin后台文件包含分析溯源</h1><p>密码弱口令root登录</p>
 <p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206215606.png" alt="QQ截图20191206215606"></p>
 <p>sql注入一句话</p>
 <p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206215818.png" alt="QQ截图20191206215818"></p>
-<p>菜刀链接  根目录找到key文件</p>
+<p>蚁剑链接  根目录找到key文件</p>
 <p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206220106.png" alt="QQ截图20191206220106"></p>
 <p>得到key:mozhe6e0dc3709254b6732421f373dce</p>
+<h1 id="SQL注入漏洞测试-布尔盲注"><a href="#SQL注入漏洞测试-布尔盲注" class="headerlink" title="SQL注入漏洞测试(布尔盲注)"></a>SQL注入漏洞测试(布尔盲注)</h1><p>打开靶场,找到停机维护通知页面</p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212136.png" alt="QQ截图20191210212136"></p>
+<p>用sqlmap爆当前库</p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212056.png" alt="QQ截图20191210212056"></p>
+<p>获取到数据库名stormgroup</p>
+<p>然后爆表段</p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212751.png" alt="QQ截图20191210212751"></p>
+<p>获取到表member和notice</p>
+<p>然后爆字段 得到 name password 和status</p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213301.png" alt="QQ截图20191210213301"></p>
+<p>然后分别猜解name和password</p>
+<p>得到name为mozhe password需要md5解码</p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213913.png" alt="QQ截图20191210213913"></p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213750.png" alt="QQ截图20191210213750"></p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210214158.png" alt="QQ截图20191210214158"></p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213734.png" alt="QQ截图20191210213734"></p>
+<p>第一个没办法登录 用第二个密码才登录成功,得到key</p>
+<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210214029.png" alt="QQ截图20191210214029"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/" data-id="ck3u7yuce0004a0uraa3h7h60" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/" data-id="ck3zx164f0004ckurcba7fzir" class="article-share-link">Share</a>
       
       
     </footer>
@@ -158,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/05/write-up/" data-id="ck3u7yuch0005a0ur58c7g12e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/05/write-up/" data-id="ck3zx164i0005ckuret4x1ur3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/05/ceshi/" data-id="ck3u7yuca0003a0ur1yqkcl6b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/05/ceshi/" data-id="ck3zx16410001ckur20fj7hnd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/04/456/" data-id="ck3u7yubu0000a0urao2l35sb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/04/456/" data-id="ck3zx163u0000ckurgg9a0jm9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/04/123/" data-id="ck3u7yuc40002a0urdvdi2dop" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/04/123/" data-id="ck3zx164e0003ckurcxqrbhu2" class="article-share-link">Share</a>
       
       
     </footer>
