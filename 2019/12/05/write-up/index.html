@@ -1,235 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends includes/layout.pug
 
-  
-  <title>write up | lingxin16</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.签到2.圣堂刺客下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}  3.奥利安娜的QQ号直接百度! 4.多喝水图片下载下来 拖入文本 得到  QUdDVEYlN0JwMWVhczNfZHIxbmtfbTByZV93YXQzciU3RA&#x3D;&#x3D;放进base64解码得AGCTF%7Bp1eas3_dr1nk_m0re_wat3r%7D%7B和%7D换成{ }">
-<meta name="keywords" content="ctf">
-<meta property="og:type" content="article">
-<meta property="og:title" content="write up">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;index.html">
-<meta property="og:site_name" content="lingxin16">
-<meta property="og:description" content="1.签到2.圣堂刺客下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}  3.奥利安娜的QQ号直接百度! 4.多喝水图片下载下来 拖入文本 得到  QUdDVEYlN0JwMWVhczNfZHIxbmtfbTByZV93YXQzciU3RA&#x3D;&#x3D;放进base64解码得AGCTF%7Bp1eas3_dr1nk_m0re_wat3r%7D%7B和%7D换成{ }">
-<meta property="og:locale" content="zh">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122192540517.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122193129505.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122193920451.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122194200468.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122204627566.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122194834546.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122204437442.png">
-<meta property="og:updated_time" content="2019-12-05T13:21:15.131Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122192540517.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="lingxin16" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+block top_img
+  - var top_img =  page.top_img || page.cover || theme.post_meta.top_img || theme.default_top_img
+  - var bg_img = top_img !== true ? `background-image: url(${top_img})` : ''
+  div#top-container(style=bg_img)
+    #post-info
+      #post-title
+          .posttitle= page.title || _p('no_title')
+      #post-meta
+        if (theme.post_meta.date_type)
+          if (theme.post_meta.date_type === 'both')
+            time.post-meta__date
+              i.fa.fa-calendar(aria-hidden="true")
+              =' '+_p('post.created')+' '+date(page.date, config.date_format)
+              span.post-meta__separator |
+              i.fa.fa-history(aria-hidden="true")
+              =' '+_p('post.updated')+' '+date(page.updated, config.date_format)
+          else
+            - var date_type = theme.post_meta.date_type === 'updated' ? 'updated' : 'date'
+            time.post-meta__date #[i.fa.fa-calendar(aria-hidden="true")] #[=date(page[date_type], config.date_format)]
+                  
+        if (theme.post_meta.categories && page.categories.data.length > 0)
+          if (theme.post_meta.date_type)
+            span.post-meta__separator.mobile_hidden |
+          span.mobile_hidden
+            each item, index in page.categories.data
+              i.fa.fa-inbox.post-meta__icon(aria-hidden="true")
+              a(href=url_for(item.path)).post-meta__categories #[=item.name]
+              if (index < page.categories.data.length - 1)
+                i.fa.fa-angle-right(aria-hidden="true")
+        .post-meta-wordcount
+          if (theme.wordcount && theme.wordcount.enable)
+            i.fa.fa-file-word-o.post-meta__icon(aria-hidden="true")
+            span= _p('post.wordcount') + ': '
+            span.word-count= wordcount(page.content)
+            span.post-meta__separator |
+            i.fa.fa-clock-o.post-meta__icon(aria-hidden="true")
+            span= _p('post.min2read', min2read(page.content, {cn: 350, en: 160}))
+          if (theme.wordcount && theme.wordcount.enable && theme.busuanzi.page_pv)
+            span.post-meta__separator |
+          if theme.busuanzi.page_pv
+            i.fa.fa-eye.post-meta__icon(aria-hidden="true")        
+            span= _p('post.page_pv') + ': '
+            span#busuanzi_value_page_pv
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">lingxin16</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">ctf</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+
+block content
+  article#post(class="")
+    #post-content.article-container!= page.content
+  if (theme.post_copyright && theme.post_copyright.enable && page.copyright != false)
+    .post-copyright
+      .post-copyright__author
+        span.post-copyright-meta= _p('post.copyright.author') + ": "
+        span.post-copyright-info
+          a(href=`mailto:${config.email}`) #[=config.author]
+      .post-copyright__type
+        span.post-copyright-meta= _p('post.copyright.link') + ": "
+        span.post-copyright-info
+          a(href=url_for(page.permalink)) #[=page.permalink]
+      .post-copyright__notice
+        span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
+        span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
+  
+  .tag_share
+    if (theme.post_meta.tags)
+      .post-meta__tag-list
+        each item, index in page.tags.data
+          a(href=url_for(item.path)).post-meta__tags #[=item.name]    
+    include includes/share/index.pug
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-write-up" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/05/write-up/" class="article-date">
-  <time datetime="2019-12-05T13:11:14.000Z" itemprop="datePublished">2019-12-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  if theme.reward.enable
+    include includes/reward.pug
+  include includes/pagination.pug
   
-    <h1 class="article-title" itemprop="name">
-      write up
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h2><h2 id="2-圣堂刺客"><a href="#2-圣堂刺客" class="headerlink" title="2.圣堂刺客"></a>2.圣堂刺客</h2><p>下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}</p>
-<p><img src="/2019/12/05/write-up/20191122192540517.jpg" alt="20191122192540517"></p>
-<h2 id="3-奥利安娜的QQ号"><a href="#3-奥利安娜的QQ号" class="headerlink" title="3.奥利安娜的QQ号"></a>3.奥利安娜的QQ号</h2><p>直接百度!<img src="/2019/12/05/write-up/20191122193129505.jpg" alt="20191122193129505"></p>
-<h2 id="4-多喝水"><a href="#4-多喝水" class="headerlink" title="4.多喝水"></a>4.多喝水</h2><p>图片下载下来 拖入文本 得到</p>
-<p><img src="/2019/12/05/write-up/20191122193920451.jpg" alt="20191122193920451"></p>
-<p>QUdDVEYlN0JwMWVhczNfZHIxbmtfbTByZV93YXQzciU3RA==<br>放进base64解码得AGCTF%7Bp1eas3_dr1nk_m0re_wat3r%7D<br>%7B和%7D换成{ }</p>
-<h2 id="5-帅帅帅"><a href="#5-帅帅帅" class="headerlink" title="5.帅帅帅"></a>5.帅帅帅</h2><p>下载html文件 打开没有发现flag 查看源代码</p>
-<p><img src="/2019/12/05/write-up/20191122194200468.jpg" alt="20191122194200468"></p>
-<h2 id="6-Easy-Misc"><a href="#6-Easy-Misc" class="headerlink" title="6.Easy_Misc"></a>6.Easy_Misc</h2><p>弱口令直接用字典爆破 得到密码password<br>解压出图片 后缀改为rar 解压得到视频，提取二维码补齐定位点，</p>
-<p><img src="/2019/12/05/write-up/20191122204627566.png" alt="20191122204627566"></p>
-<p>扫码得到flag：flag{e7d478cf6b915f50ab1277f78502a2c5}将里边的字符MD5解码得到hello_ctf</p>
-<h2 id="7-玩具车"><a href="#7-玩具车" class="headerlink" title="7.玩具车"></a>7.玩具车</h2><h2 id="8-可以直接拖入记事本得到flag"><a href="#8-可以直接拖入记事本得到flag" class="headerlink" title="8.可以直接拖入记事本得到flag"></a>8.可以直接拖入记事本得到flag</h2><p><img src="/2019/12/05/write-up/20191122194834546.jpg" alt="20191122194834546"></p>
-<h2 id="9-Easy-RE"><a href="#9-Easy-RE" class="headerlink" title="9.Easy_RE"></a>9.Easy_RE</h2><p>用ida打开 f5查看代码，r键转换字符，得到flag</p>
-<p><img src="/2019/12/05/write-up/20191122204437442.png" alt="20191122204437442"></p>
-<h2 id="10-RE"><a href="#10-RE" class="headerlink" title="10.RE"></a>10.RE</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/05/write-up/" data-id="ck4150fzv0004egurdk8o4pro" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          墨者学院
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/12/05/ceshi/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">ceshi</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">墨者学院</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/05/write-up/">write up</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/05/ceshi/">ceshi</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/04/456/">456</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/04/123/">123</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 liu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+  if theme.related_post && theme.related_post.enable
+    != related_posts(page,site.posts)
+  if page.comments !== false
+    include includes/comments/index.pug
