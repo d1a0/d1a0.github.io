@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2019-12-19T16:35:32.783Z</updated>
+  <updated>2019-12-20T09:04:39.991Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>post爆破</title>
+    <title>burp爆破</title>
     <link href="http://lingxin16.github.io/2019/12/19/burp%E7%88%86%E7%A0%B4/"/>
     <id>http://lingxin16.github.io/2019/12/19/burp%E7%88%86%E7%A0%B4/</id>
     <published>2019-12-19T15:49:45.000Z</published>
-    <updated>2019-12-19T16:35:32.783Z</updated>
+    <updated>2019-12-20T09:04:39.991Z</updated>
     
-    <content type="html"><![CDATA[<p>用burpsuit对网页上的一些用户名密码之类的爆破</p><p>这里就用墨者学院文件包含那道题的那个登录页面吧…</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235640.png" alt="QQ截图20191219235640"></p><a id="more"></a><p>设置代理 先用burp抓取</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235847.png" alt="QQ截图20191219235847"></p><p>黑色圈住的就是用户名和密码的函数(应该是叫函数吧…..)  红色圈住的就是之前自己输入的账号和密码</p><p>能看到是明文密码 然后send to intruder</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000053.png" alt="QQ截图20191220000053"></p><p>这里他实现标记了要爆破的位置 不是我们要爆破的位置 我们先用上边的clear把标记清除</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000358.png" alt="QQ截图20191220000358"></p><p>然后选中要爆破的地址 这里都是admin前边那个是我输入的账号后边的是密码  然后点击add分别添加</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220002421.png" alt="QQ截图20191220000524"></p><p>在attack type那里选择cluster bomb</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000929.png" alt="QQ截图20191220000929"></p><p>转到payloads那边</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220001013.png" alt="QQ截图20191220001013"></p><p>看到payload set 右边下拉发现有1,2分别是我们刚刚添加的两个地址</p><p>下边方框右边的add是手动添加账号密码 有字典的话点load载入字典</p><p>添加完成后选择intruder→start attack</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220001248.png" alt="QQ截图20191220001248"></p><p>然后找到length里边那个长度不一样的就是我们要的账号密码</p>]]></content>
+    <content type="html"><![CDATA[<p>用burpsuit对网页上的一些用户名密码之类的爆破</p><p>这里就用墨者学院文件包含那道题的那个登录页面吧…</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235640.png" alt="QQ截图20191219235640"></p> <a id="more"></a><p>设置代理 先用burp抓取</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235847.png" alt="QQ截图20191219235847"></p><p>黑色圈住的就是用户名和密码的函数(应该是叫函数吧…..)  红色圈住的就是之前自己输入的账号和密码</p><p>能看到是明文密码 然后send to intruder</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000053.png" alt="QQ截图20191220000053"></p><p>这里他实现标记了要爆破的位置 不是我们要爆破的位置 我们先用上边的clear把标记清除</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000358.png" alt="QQ截图20191220000358"></p><p>然后选中要爆破的地址 这里都是admin前边那个是我输入的账号后边的是密码  然后点击add分别添加</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220002421.png" alt="QQ截图20191220000524"></p><p>在attack type那里选择cluster bomb</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000929.png" alt="QQ截图20191220000929"></p><p>转到payloads那边</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220001013.png" alt="QQ截图20191220001013"></p><p>看到payload set 右边下拉发现有1,2分别是我们刚刚添加的两个地址</p><p>下边方框右边的add是手动添加账号密码 有字典的话点load载入字典</p><p>添加完成后选择intruder→start attack</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220001248.png" alt="QQ截图20191220001248"></p><p>然后找到length里边那个长度不一样的就是我们要的账号密码</p>]]></content>
     
     <summary type="html">
     
