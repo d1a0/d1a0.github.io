@@ -15,23 +15,23 @@
 
 
 
-<meta name="description" content="用burpsuit对网页上的一些用户名密码之类的爆破 这里就用墨者学院文件包含那道题的那个登录页面吧…  设置代理 先用burp抓取  黑色圈住的就是用户名和密码的函数(应该是叫函数吧…..)  红色圈住的就是之前自己输入的账号和密码 能看到是明文密码 然后send to intruder  这里他实现标记了要爆破的位置 不是我们要爆破的位置 我们先用上边的clear把标记清除  然后选中要爆破的">
-<meta name="keywords" content="-burpsuit">
+<meta name="description" content="用burpsuit对网页上的一些用户名密码之类的爆破 这里就用墨者学院文件包含那道题的那个登录页面吧…">
+<meta name="keywords" content="burpsuit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="post爆破">
 <meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16">
-<meta property="og:description" content="用burpsuit对网页上的一些用户名密码之类的爆破 这里就用墨者学院文件包含那道题的那个登录页面吧…  设置代理 先用burp抓取  黑色圈住的就是用户名和密码的函数(应该是叫函数吧…..)  红色圈住的就是之前自己输入的账号和密码 能看到是明文密码 然后send to intruder  这里他实现标记了要爆破的位置 不是我们要爆破的位置 我们先用上边的clear把标记清除  然后选中要爆破的">
+<meta property="og:description" content="用burpsuit对网页上的一些用户名密码之类的爆破 这里就用墨者学院文件包含那道题的那个登录页面吧…">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191219235640.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191219235847.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191220000053.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;F:%5Cblog%5Clingxin16%5Csource_posts%5Cburp%E7%88%86%E7%A0%B4%5CQQ%E6%88%AA%E5%9B%BE20191220000358.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191220000358.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191220002421.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191220000929.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191220001013.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191220001248.png">
-<meta property="og:updated_time" content="2019-12-19T16:27:50.006Z">
+<meta property="og:updated_time" content="2019-12-19T16:35:32.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;burp%E7%88%86%E7%A0%B4&#x2F;QQ%E6%88%AA%E5%9B%BE20191219235640.png">
 
@@ -190,7 +190,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuit/" rel="tag">-burpsuit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuit/" rel="tag">burpsuit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
                     </div>
                 </section>
                 
@@ -295,7 +295,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/burpsuit/" rel="tag">-burpsuit</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/burpsuit/" rel="tag">burpsuit</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -308,13 +308,15 @@
         <p>用burpsuit对网页上的一些用户名密码之类的爆破</p>
 <p>这里就用墨者学院文件包含那道题的那个登录页面吧…</p>
 <p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235640.png" alt="QQ截图20191219235640"></p>
+<a id="more"></a>
+
 <p>设置代理 先用burp抓取</p>
 <p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235847.png" alt="QQ截图20191219235847"></p>
 <p>黑色圈住的就是用户名和密码的函数(应该是叫函数吧…..)  红色圈住的就是之前自己输入的账号和密码</p>
 <p>能看到是明文密码 然后send to intruder</p>
 <p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000053.png" alt="QQ截图20191220000053"></p>
 <p>这里他实现标记了要爆破的位置 不是我们要爆破的位置 我们先用上边的clear把标记清除</p>
-<p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/F:%5Cblog%5Clingxin16%5Csource_posts%5Cburp%E7%88%86%E7%A0%B4%5CQQ%E6%88%AA%E5%9B%BE20191220000358.png" alt="QQ截图20191220000358"></p>
+<p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000358.png" alt="QQ截图20191220000358"></p>
 <p>然后选中要爆破的地址 这里都是admin前边那个是我输入的账号后边的是密码  然后点击add分别添加</p>
 <p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220002421.png" alt="QQ截图20191220000524"></p>
 <p>在attack type那里选择cluster bomb</p>
@@ -337,7 +339,7 @@
         <p><span>本文标题:</span><a href="/2019/12/19/burp%E7%88%86%E7%A0%B4/">post爆破</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
         <p><span>发布时间:</span>2019-12-19, 23:49:45</p>
-        <p><span>最后更新:</span>2019-12-20, 00:27:50</p>
+        <p><span>最后更新:</span>2019-12-20, 00:35:32</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/12/19/burp%E7%88%86%E7%A0%B4/" title="post爆破">http://lingxin16.github.io/2019/12/19/burp%E7%88%86%E7%A0%B4/</a>
             <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2019/12/19/burp%E7%88%86%E7%A0%B4/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
