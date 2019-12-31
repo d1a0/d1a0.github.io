@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2019-12-31T17:14:23.646Z</updated>
+  <updated>2019-12-31T17:19:40.111Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -18,16 +18,29 @@
   
   <entry>
     <title>管道符漏洞</title>
-    <link href="http://lingxin16.github.io/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E-1/"/>
-    <id>http://lingxin16.github.io/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E-1/</id>
-    <published>2019-12-31T17:14:23.000Z</published>
-    <updated>2019-12-31T17:14:23.646Z</updated>
+    <link href="http://lingxin16.github.io/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/"/>
+    <id>http://lingxin16.github.io/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/</id>
+    <published>2019-12-31T16:01:18.000Z</published>
+    <updated>2019-12-31T17:19:40.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>在ping的地址后利用管道符|，||，&amp;，&amp;&amp;进行命令执行</p><p>例如127.0.0.1&amp;&amp;ls</p><p>利用<code>127.0.0.1&amp;&amp;echo &#39;一句话&#39; &gt;1.php</code>       将自己的马写到1.php中</p><p>&amp;&amp;后跟命令</p><p>比如重命名文件命令 <code>127.0.0.1&amp;&amp;mv 1.txt 1.php</code>将1.txt重命名为1.php</p><p><img src="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/QQ%E5%9B%BE%E7%89%8720200101010852.png" alt="QQ图片20200101010852"></p><p>冲鸭，2020第一天！！！</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;在ping的地址后利用管道符|，||，&amp;amp;，&amp;amp;&amp;amp;进行命令执行&lt;/p&gt;
+&lt;p&gt;例如127.0.0.1&amp;amp;&amp;amp;ls&lt;/p&gt;
+&lt;p&gt;利用&lt;code&gt;127.0.0.1&amp;amp;&amp;amp;echo &amp;#39;一句话&amp;#39; &amp;gt;1.php&lt;/
+      
     
     </summary>
     
     
+    
+      <category term="linux" scheme="http://lingxin16.github.io/tags/linux/"/>
+    
+      <category term="管道符" scheme="http://lingxin16.github.io/tags/%E7%AE%A1%E9%81%93%E7%AC%A6/"/>
     
   </entry>
   
@@ -123,32 +136,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>管道符漏洞</title>
-    <link href="http://lingxin16.github.io/2019/12/05/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/"/>
-    <id>http://lingxin16.github.io/2019/12/05/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/</id>
-    <published>2019-12-05T12:49:34.000Z</published>
-    <updated>2019-12-31T17:10:08.584Z</updated>
-    
-    <content type="html"><![CDATA[<p>在ping的地址后利用管道符|，||，&amp;，&amp;&amp;进行命令执行</p><p>例如127.0.0.1&amp;&amp;ls</p><p>利用<code>127.0.0.1&amp;&amp;echo &#39;一句话&#39; &gt;1.php</code>       将自己的马写到1.php中</p><p>&amp;&amp;后跟命令</p><p>比如重命名文件命令 <code>127.0.0.1&amp;&amp;mv 1.txt 1.php</code>将1.txt重命名为1.php</p><p><img src="/2019/12/05/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/QQ%E5%9B%BE%E7%89%8720200101010852.png" alt="QQ图片20200101010852"></p><p>冲鸭，2020第一天！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在ping的地址后利用管道符|，||，&amp;amp;，&amp;amp;&amp;amp;进行命令执行&lt;/p&gt;
-&lt;p&gt;例如127.0.0.1&amp;amp;&amp;amp;ls&lt;/p&gt;
-&lt;p&gt;利用&lt;code&gt;127.0.0.1&amp;amp;&amp;amp;echo &amp;#39;一句话&amp;#39; &amp;gt;1.php&lt;/
-      
-    
-    </summary>
-    
-    
-    
-      <category term="-linux -管道符" scheme="http://lingxin16.github.io/tags/linux-%E7%AE%A1%E9%81%93%E7%AC%A6/"/>
     
   </entry>
   
