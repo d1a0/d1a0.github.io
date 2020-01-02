@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2019-12-31T17:24:15.165Z</updated>
+  <updated>2020-01-02T10:11:25.455Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创建单页</title>
+    <link href="http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/"/>
+    <id>http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/</id>
+    <published>2020-01-02T10:03:53.000Z</published>
+    <updated>2020-01-02T10:11:25.455Z</updated>
+    
+    <content type="html"><![CDATA[<p>先用<code>hexo new page ceshi</code>建立一个ceshi的单页</p><p>通过在文件头中加入<code>layout:false</code>跳过主题渲染</p><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/QQ%E6%88%AA%E5%9B%BE20200102180630.png" alt="QQ截图20200102180630"></p><p>然后将html代码插入到<code>`和`</code>中，就可以了。</p><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/%E6%86%A8%E6%86%A8%E8%84%B8%E7%BA%A2.jpg" alt="憨憨脸红"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;先用&lt;code&gt;hexo new page ceshi&lt;/code&gt;建立一个ceshi的单页&lt;/p&gt;
+&lt;p&gt;通过在文件头中加入&lt;code&gt;layout:false&lt;/code&gt;跳过主题渲染&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/01/02/%E5%88%9B%E5%
+      
+    
+    </summary>
+    
+    
+    
+      <category term="hexo" scheme="http://lingxin16.github.io/tags/hexo/"/>
+    
+      <category term="单页" scheme="http://lingxin16.github.io/tags/%E5%8D%95%E9%A1%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>管道符漏洞</title>
