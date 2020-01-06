@@ -544,6 +544,10 @@ a {
   #container .copyright .copy-path {
     display: none;
   }
+  #container #comments {
+    margin: 0.625rem 10px !important;
+    padding: 1rem !important;
+  }
   #container .tags a {
     line-height: 45px;
   }
