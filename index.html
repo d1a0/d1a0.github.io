@@ -299,42 +299,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>首先看题![QQ截图20200129160301](/[护网杯 2018]easy_tornado/QQ截图20200129160301.png)</p>
-<p>里边的内容分别是</p>
-<p>![QQ截图20200129160448](/[护网杯 2018]easy_tornado/QQ截图20200129160448.png)![QQ截图20200129160441](/[护网杯 2018]easy_tornado/QQ截图20200129160441.png)![QQ截图20200129160434](/[护网杯 2018]easy_tornado/QQ截图20200129160434.png)</p>
-<p>我们可以直接得出flag所在的文件夹是/fllllllllllllag</p>
-<p>分析这三个的url</p>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d</a></p>
-</blockquote>
-<p>我们可以得出这样的结论，flag所在文件的url应该是<a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=</a><strong><strong><strong>**</strong></strong></strong></p>
-<p>至于这个<strong><strong><strong>**</strong></strong></strong>应该就是md5(cookie_secret+md5(filename))</p>
-<p>filename我们已经知道是fllllllllllllag，那么我们接下来只需要找到cookie_secret</p>
-<p>利用burp抓包我们并没有找到cookie，只能上百度了……（那咋办嘛）</p>
-<p>通过百度得知在error页面存在SSTI模板注入（又是一个看不懂的东西……）</p>
-<p>![憨憨落泪](/[护网杯 2018]easy_tornado/憨憨落泪.jpg)</p>
-<p>附上关于SSTI模板注入的博客：<a href="https://blog.csdn.net/zz_Caleb/article/details/96480967" target="_blank" rel="noopener">SSTI完全学习</a></p>
-<p>注入方式大概就是error?msg=0</p>
-<p>……？？？？？？至于注入啥玩意儿，大佬说的是用handler.settings对象(这又是啥玩意儿，咱也不知道，咱也不敢问)</p>
-<p>那么传递error?msg=</p>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=</a></p>
-</blockquote>
-<p>得到这个回显![QQ截图20200129162705](/[护网杯 2018]easy_tornado/QQ截图20200129162705.png)</p>
-<p>‘cookie_secret’: ‘66015e24-a274-4abf-bd65-6776ae208dc4’}</p>
-<p>接下来构造</p>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1</a></p>
-</blockquote>
-<p>访问得到![QQ截图20200129163253](/[护网杯 2018]easy_tornado/QQ截图20200129163253.png)</p>
-<p>我太难了….![1](/[护网杯 2018]easy_tornado/1.jpg)</p>
-
+              <p>首先看题![QQ截图20200129160301](/[护网杯 2018]easy_tornado/QQ截图20200129160301.png)</p>
+          
       
     </div>
     
@@ -347,6 +313,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/" rel="tag">模板注入</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF%202018%5Deasy_tornado/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
