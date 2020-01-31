@@ -38,7 +38,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201010909.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201011655.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201011949.png">
-<meta property="og:updated_time" content="2020-01-31T17:47:36.219Z">
+<meta property="og:updated_time" content="2020-01-31T17:50:18.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201004038.png">
 
@@ -320,7 +320,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="web1-Cosmos-的博客"><a href="#web1-Cosmos-的博客" class="headerlink" title="web1-Cosmos 的博客"></a>web1-Cosmos 的博客</h2><p>打开网站<img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004038.png" alt="QQ截图20200201004038"></p>
+        <h2 id="web1-Cosmos-的博客"><a href="#web1-Cosmos-的博客" class="headerlink" title="web1-Cosmos 的博客"></a>web1-Cosmos 的博客</h2><p>打开网站</p>
+<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004038.png" alt="QQ截图20200201004038"></p>
 <a id="more"></a>
 
 <p>发现提及到博客、github、版本管理工具，可以联想到git泄露（hexo博客能是白搭建的吗！！！）</p>
@@ -337,15 +338,19 @@
 <p>根据提示解码</p>
 <h2 id="web2-接头霸王"><a href="#web2-接头霸王" class="headerlink" title="web2-接头霸王"></a>web2-接头霸王</h2><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004847.png" alt="QQ截图20200201004847">根据提示利用burpsuit修改HTTP请求头 如图</p>
 <p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005415.png" alt="QQ截图20200201005415"></p>
-<p>得到flag<img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005327.png" alt="QQ截图20200201005327"></p>
+<p>得到flag</p>
+<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005327.png" alt="QQ截图20200201005327"></p>
 <h2 id="web3-Code-World"><a href="#web3-Code-World" class="headerlink" title="web3-Code World"></a>web3-Code World</h2><p>打开之后发现报错403 Forbidden</p>
 <p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005544.png" alt="QQ截图20200201005544"></p>
-<p>查看源代码发现<img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005552.png" alt="QQ截图20200201005552"></p>
+<p>查看源代码发现</p>
+<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005552.png" alt="QQ截图20200201005552"></p>
 <p>很显然是被人刻意改动了，然后跳转到了/new.php</p>
-<p>我们用burpsuit抓包发现其实报错是405 Not Allowed<img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005935.png" alt="QQ截图20200201005935"></p>
+<p>我们用burpsuit抓包发现其实报错是405 Not Allowed</p>
+<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005935.png" alt="QQ截图20200201005935"></p>
 <p>百度一下405 Not Allowed这个报错</p>
 <p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010056.png" alt="QQ截图20200201010056"></p>
-<p>就是两种请求方式之间出错  然后我们修改请求方式即可正常打开<img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010301.png" alt="QQ截图20200201010301"></p>
+<p>就是两种请求方式之间出错  然后我们修改请求方式即可正常打开</p>
+<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010301.png" alt="QQ截图20200201010301"></p>
 <p>根据提示利用url传参?a=4+6</p>
 <p>这里+需要url编码%2b    即?a=4%2b6</p>
 <p>然后利用POST请求得到flag</p>
@@ -356,7 +361,8 @@
 <p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011655.png" alt="QQ截图20200201011655"></p>
 <p>然后我们在网络状态中发现了submit这个文件</p>
 <p>查看之后发现是把分数数据发送给后台然后判断，我们直接抓包编辑重发</p>
-<p>得到flag<img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011949.png" alt="QQ截图20200201011949"></p>
+<p>得到flag</p>
+<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011949.png" alt="QQ截图20200201011949"></p>
 
       
     </div>
@@ -368,7 +374,7 @@
         <p><span>本文标题:</span><a href="/2020/02/01/Hgame-Week1-web/">Hgame-Week1-web</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
         <p><span>发布时间:</span>2020-02-01, 00:35:15</p>
-        <p><span>最后更新:</span>2020-02-01, 01:47:36</p>
+        <p><span>最后更新:</span>2020-02-01, 01:50:18</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/02/01/Hgame-Week1-web/" title="Hgame-Week1-web">http://lingxin16.github.io/2020/02/01/Hgame-Week1-web/</a>
             <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/02/01/Hgame-Week1-web/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
