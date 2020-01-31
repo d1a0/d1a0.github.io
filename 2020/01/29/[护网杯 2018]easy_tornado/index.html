@@ -15,14 +15,15 @@
 
 
 
-<meta name="description" content="myctf">
-<meta name="keywords" content="ctf">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lingxin16">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;tags&#x2F;sql%E6%B3%A8%E5%85%A5&#x2F;index.html">
+<meta name="description" content="首先看题![QQ截图20200129160301](&#x2F;[护网杯 2018]easy_tornado&#x2F;QQ截图20200129160301.png) 里边的内容分别是 ![QQ截图20200129160448](&#x2F;[护网杯 2018]easy_tornado&#x2F;QQ截图20200129160448.png)![QQ截图20200129160441](&#x2F;[护网杯 2018]easy_tornado&#x2F;QQ">
+<meta name="keywords" content="模板注入,ctf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[护网杯 2018]easy_tornado">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;[%E6%8A%A4%E7%BD%91%E6%9D%AF%202018]easy_tornado&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16">
-<meta property="og:description" content="myctf">
+<meta property="og:description" content="首先看题![QQ截图20200129160301](&#x2F;[护网杯 2018]easy_tornado&#x2F;QQ截图20200129160301.png) 里边的内容分别是 ![QQ截图20200129160448](&#x2F;[护网杯 2018]easy_tornado&#x2F;QQ截图20200129160448.png)![QQ截图20200129160441](&#x2F;[护网杯 2018]easy_tornado&#x2F;QQ">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-31T16:38:46.727Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -55,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: sql注入 | lingxin16</title>
+<title>[护网杯 2018]easy_tornado | lingxin16</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +66,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -184,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuit/" rel="tag">burpsuit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buuctf/" rel="tag">buuctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E6%B3%A8%E5%85%A5/" rel="tag">sql注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E9%A1%B5/" rel="tag">单页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5/" rel="tag">堆叠注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E9%81%93%E7%AC%A6/" rel="tag">管道符</a></li></ul>
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuit/" rel="tag">burpsuit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E9%A1%B5/" rel="tag">单页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/" rel="tag">模板注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E9%81%93%E7%AC%A6/" rel="tag">管道符</a></li></ul>
                     </div>
                 </section>
                 
@@ -263,56 +264,198 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-[护网杯 2018]easy_tornado" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2020/01/12/%E3%80%90%E5%BC%BA%E7%BD%91%E6%9D%AF%E3%80%91%E9%9A%8F%E4%BE%BF%E6%B3%A8/" class="archive-article-date">
-      <time datetime="2020-01-12T07:06:22.000Z" itemprop="datePublished">01-12</time>
+    <div class="article-meta">
+      <a href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF%202018%5Deasy_tornado/" class="article-date">
+      <time datetime="2020-01-29T08:01:10.000Z" itemprop="datePublished">2020-01-29</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/12/%E3%80%90%E5%BC%BA%E7%BD%91%E6%9D%AF%E3%80%91%E9%9A%8F%E4%BE%BF%E6%B3%A8/">【强网杯】随便注</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [护网杯 2018]easy_tornado
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/buuctf/" rel="tag">buuctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql%E6%B3%A8%E5%85%A5/" rel="tag">sql注入</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5/" rel="tag">堆叠注入</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/" rel="tag">模板注入</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>首先看题![QQ截图20200129160301](/[护网杯 2018]easy_tornado/QQ截图20200129160301.png)</p>
+<p>里边的内容分别是</p>
+<p>![QQ截图20200129160448](/[护网杯 2018]easy_tornado/QQ截图20200129160448.png)![QQ截图20200129160441](/[护网杯 2018]easy_tornado/QQ截图20200129160441.png)![QQ截图20200129160434](/[护网杯 2018]easy_tornado/QQ截图20200129160434.png)</p>
+<p>我们可以直接得出flag所在的文件夹是/fllllllllllllag</p>
+<p>分析这三个的url</p>
+<blockquote>
+<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d</a></p>
+</blockquote>
+<p>我们可以得出这样的结论，flag所在文件的url应该是<a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=</a><strong><strong><strong>**</strong></strong></strong></p>
+<p>至于这个<strong><strong><strong>**</strong></strong></strong>应该就是md5(cookie_secret+md5(filename))</p>
+<p>filename我们已经知道是fllllllllllllag，那么我们接下来只需要找到cookie_secret</p>
+<p>利用burp抓包我们并没有找到cookie，只能上百度了……（那咋办嘛）</p>
+<p>通过百度得知在error页面存在SSTI模板注入（又是一个看不懂的东西……）</p>
+<p>![憨憨落泪](/[护网杯 2018]easy_tornado/憨憨落泪.jpg)</p>
+<p>附上关于SSTI模板注入的博客：<a href="https://blog.csdn.net/zz_Caleb/article/details/96480967" target="_blank" rel="noopener">SSTI完全学习</a></p>
+<p>注入方式大概就是error?msg=0</p>
+<p>……？？？？？？至于注入啥玩意儿，大佬说的是用handler.settings对象(这又是啥玩意儿，咱也不知道，咱也不敢问)</p>
+<p>那么传递error?msg=</p>
+<blockquote>
+<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=</a></p>
+</blockquote>
+<p>得到这个回显![QQ截图20200129162705](/[护网杯 2018]easy_tornado/QQ截图20200129162705.png)</p>
+<p>‘cookie_secret’: ‘66015e24-a274-4abf-bd65-6776ae208dc4’}</p>
+<p>接下来构造</p>
+<blockquote>
+<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1</a></p>
+</blockquote>
+<p>访问得到![QQ截图20200129163253](/[护网杯 2018]easy_tornado/QQ截图20200129163253.png)</p>
+<p>我太难了….![1](/[护网杯 2018]easy_tornado/1.jpg)</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF%202018%5Deasy_tornado/">[护网杯 2018]easy_tornado</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
+        <p><span>发布时间:</span>2020-01-29, 16:01:10</p>
+        <p><span>最后更新:</span>2020-02-01, 00:38:46</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF%202018%5Deasy_tornado/" title="[护网杯 2018]easy_tornado">http://lingxin16.github.io/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF%202018]easy_tornado/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF%202018]easy_tornado/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">
+                    创建单页
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"[护网杯 2018]easy_tornado　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/" title="下一篇: 创建单页">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF%202018%5Deasy_tornado/">[护网杯 2018]easy_tornado</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">创建单页</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/">管道符漏洞</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/burp%E7%88%86%E7%A0%B4/">burp爆破</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">墨者学院</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/write-up/">write up</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/ceshi/">ceshi</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
