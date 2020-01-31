@@ -26,9 +26,9 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%E6%9F%A5%E5%BA%93.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%E6%9F%A5%E8%A1%A8.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;words%E8%A1%A8.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%5C%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8%5C%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;flag.png">
-<meta property="og:updated_time" content="2020-01-31T17:40:14.759Z">
+<meta property="og:updated_time" content="2020-01-31T17:46:47.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%E6%9F%A5%E5%BA%93.png">
 
@@ -330,7 +330,7 @@
 <p>这里的1919810931114514要用反引号`括起 （数字串为表名的表操作时要加反引号）</p>
 <p><img src="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/words%E8%A1%A8.png" alt="words表"></p>
 <p>在第一张表中发现了flag字段 但是只有words表有回显，然后看了一下大佬的绕过规则</p>
-<p>这里通过修改表名<img src="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/%5C%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8%5C%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D.png" alt="修改表名"></p>
+<p>这里通过修改表名<img src="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D.png" alt="修改表名"></p>
 <p><code>1&#39;;rename tables &#39;words&#39; to &#39;words1&#39;;rename tables &#39;1919810931114514&#39; to &#39;words&#39;; alter table &#39;words&#39; change &#39;flag&#39; &#39;id&#39; varchar(100);#</code></p>
 <p>然后用1’ or 1=1#得到flag</p>
 <p><img src="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/flag.png" alt="flag"></p>
@@ -352,7 +352,7 @@
         <p><span>本文标题:</span><a href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/">强网杯-随便注</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
         <p><span>发布时间:</span>2020-01-12, 15:06:22</p>
-        <p><span>最后更新:</span>2020-02-01, 01:40:14</p>
+        <p><span>最后更新:</span>2020-02-01, 01:46:47</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/" title="强网杯-随便注">http://lingxin16.github.io/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/</a>
             <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
