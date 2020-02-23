@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-01-31T17:50:18.804Z</updated>
+  <updated>2020-02-15T11:02:26.297Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ctfshow红包题-web</title>
+    <link href="http://lingxin16.github.io/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/"/>
+    <id>http://lingxin16.github.io/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/</id>
+    <published>2020-02-15T10:44:32.000Z</published>
+    <updated>2020-02-15T11:02:26.297Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214135958.png" alt="QQ截图20200214135958"></p><p>直接看源代码</p><a id="more"></a><p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214140007.png" alt="QQ截图20200214140007"></p><p>发现hint：?cmd=</p><p>可以推测大概是构造payload</p><p>接下来访问url/?cmd</p><p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214140024.png" alt="QQ截图20200214140024"></p><p>通过观察发现过滤了不少符号，键盘上能用的没几个了……害</p><p>根据大佬给的提示，我们用仅存的几个符号构造payload</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?cmd&#x3D;?&gt;&lt;?&#x3D;&#96;&#x2F;???&#x2F;?p &#x2F;???????? p.ppp&#96;;?&gt;</span></pre></td></tr></table></figure><p>功能相当于是</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?cmd&#x3D;?&gt;&lt;?&#x3D;&#96;&#x2F;bin&#x2F;cp &#x2F;flag.txt p.ppp&#96;;?&gt;</span></pre></td></tr></table></figure><p>用cp命令，将flag.txt复制到p.ppp</p><p>接下来访问url/p.ppp，下载下来得到flag</p><p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214140151.png" alt="QQ截图20200214140151"></p><p>关于构造的payload可以解释下?&gt;是关闭php标签 &lt;?=是使用php短标签来返回结果`是执行命令</p><p>而出题人给出的payload是</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?cmd&#x3D;?&gt;&lt;?&#x3D;&#96;&#x2F;??p&#x2F;p?p??????&#96;;?&gt;</span></pre></td></tr></table></figure><p>是匹配到/tmp/phpXXXXXX文件，匹配到之后执行</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214135958.png&quot; alt=&quot;QQ截图20200214135958&quot;&gt;&lt;/p&gt;
+&lt;p&gt;直接看源代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="web" scheme="http://lingxin16.github.io/tags/web/"/>
+    
+      <category term="通配符" scheme="http://lingxin16.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>Hgame-Week1-web</title>
@@ -34,11 +58,11 @@
     
     
     
+      <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
+    
       <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
     
       <category term="git泄露" scheme="http://lingxin16.github.io/tags/git%E6%B3%84%E9%9C%B2/"/>
-    
-      <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
     
   </entry>
   
