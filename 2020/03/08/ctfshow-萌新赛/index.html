@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="liu" />
+
+
+
+<meta name="description" content="萌新赛web_签到题源码：">
+<meta name="keywords" content="ctfshow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctfshow-萌新赛">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;index.html">
+<meta property="og:site_name" content="lingxin16">
+<meta property="og:description" content="萌新赛web_签到题源码：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308132725.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308133544.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308133922.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308134323.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;flag.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308155004.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308155220.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308155637.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308155735.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308135432.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308135730.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;sudoku.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308140057.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308140749.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308141027.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308141229.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308160159.jpg">
+<meta property="og:updated_time" content="2020-03-08T08:05:02.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;08&#x2F;ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B&#x2F;QQ%E6%88%AA%E5%9B%BE20200308132725.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="lingxin16" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>ctfshow-萌新赛 | lingxin16</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">liu</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">ctf</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:2823399539@qq.com" target="_blank" rel="noopener" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="/" title="GitHub"></a>
+                            
+                                <a class="fa CSDN" href="https://blog.csdn.net/weixin_45916695" target="_blank" rel="noopener" title="CSDN"></a>
+                            
+                                <a class="fa Coding" href="http://ymk2k5.coding-pages.com" target="_blank" rel="noopener" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuit/" rel="tag">burpsuit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buuctf/" rel="tag">buuctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctfshow/" rel="tag">ctfshow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git%E6%B3%84%E9%9C%B2/" rel="tag">git泄露</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/misc/" rel="tag">misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E6%B3%A8%E5%85%A5/" rel="tag">sql注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E9%A1%B5/" rel="tag">单页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5/" rel="tag">堆叠注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/" rel="tag">模板注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E9%81%93%E7%AC%A6/" rel="tag">管道符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/" rel="tag">通配符</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/" target="_blank" rel="noopener">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/" target="_blank" rel="noopener">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">干啥啥不行,吃饭第一名.</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">liu</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">liu</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">ctf</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:2823399539@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="/" title="GitHub"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="https://blog.csdn.net/weixin_45916695" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="http://ymk2k5.coding-pages.com" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-ctfshow-萌新赛" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/" class="article-date">
+      <time datetime="2020-03-08T05:16:08.000Z" itemprop="datePublished">2020-03-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ctfshow-萌新赛
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctfshow/" rel="tag">ctfshow</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="萌新赛web-签到题"><a href="#萌新赛web-签到题" class="headerlink" title="萌新赛web_签到题"></a>萌新赛web_签到题</h2><p>源码：</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308132725.jpg" alt="QQ截图20200308132725"></p>
+<a id="more"></a>
+
+<p>这道题的预期解是命令执行</p>
+<p>构造payload</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?url&#x3D;;ls;</span></pre></td></tr></table></figure>
+
+
+
+
+
+<p>发现flag index.php两个目录</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308133544.jpg" alt="QQ截图20200308133544"></p>
+<p>再构造payload</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?url&#x3D;;cat flag;</span></pre></td></tr></table></figure>
+
+<p>得到flag</p>
+<p>然后我做的时候是直接访问/flag 下载flag文件得到flag</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308133922.jpg" alt="QQ截图20200308133922"></p>
+<p>不愧是我(萌新)</p>
+<h2 id="萌新赛密码学-签到题"><a href="#萌新赛密码学-签到题" class="headerlink" title="萌新赛密码学_签到题"></a>萌新赛密码学_签到题</h2><p>Ao(mgHX^E)AN2PSBOu3qI0o</p>
+<p>直接base85解码得到flag</p>
+<h2 id="萌新赛密码学-抱我"><a href="#萌新赛密码学-抱我" class="headerlink" title="萌新赛密码学_抱我"></a>萌新赛密码学_抱我</h2><p>下载flag.py</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308134323.jpg" alt="QQ截图20200308134323"></p>
+<p>完全不懂的py脚本，就交给呆头鹅林师傅了</p>
+<p>![O674PQOTST2X`E9)F~STUZ3](/ctfshow-萌新赛/1.jpg)</p>
+<p>最后林师傅解出来的随机数列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">d f l 3 3 &#123; 6 &#123; 6 g</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">3 a f a 6 &#123; 3 &#125; a g</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#123; &#125; a a g d f &#125; 6 f</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">3 6 d &#123; d f l &#123; 6 a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">6 g a f d d f g &#125; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">3 f &#125; &#125; 6 l a &#123; 3 &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">f d f 3 &#125; g l a &#125; 6</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125; l g 6 g 6 d f l f</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#123; d f g d 3 f d f g</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#123; g 6 a &#125; a 3 &#123; 6 &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">f a &#123; &#125; f &#125; f &#125; &#125; &#125;</span></pre></td></tr></table></figure>
+
+<p>结合群主的爱好，盲猜flag{36d}！！！</p>
+<h2 id="萌新赛杂项-qrcode"><a href="#萌新赛杂项-qrcode" class="headerlink" title="萌新赛杂项_qrcode"></a>萌新赛杂项_qrcode</h2><p>题目下载下来打开是一段二进制，结合题目qrcode应该是二进制和二维码之间的转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">1111111011100111101111111100000101011101000100000110111010010010010010111011011101010000110001011101101110101110110110101110110000010011011001010000011111111010101010101111111000000000011100110000000010000011010010111100110111010010110101100001001101100110100100111101111111111111100000000001101101110100101110100101101001011011011001000100100111111100111111111110110010000000010000011110111100110110010111111010110111111000100000000011101111000110101111111010101100101011011100000100011001110001011110111010010111101111101001011101000011101000110111101110100101000110000111010000010000100100100011101111111010110010101011111</span></pre></td></tr></table></figure>
+
+<p>直接上脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">from PIL import Image</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">MAX &#x3D; 25</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">pic &#x3D; Image.new(&quot;RGB&quot;,(MAX, MAX))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">str &#x3D; &quot;得到的二进制数字&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">i&#x3D;0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">for y in range (0,MAX):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    for x in range (0,MAX):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        if(str[i] &#x3D;&#x3D; &#39;1&#39;):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            pic.putpixel([x,y],(0, 0, 0))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        else:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            pic.putpixel([x,y],(255,255,255))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        i &#x3D; i+1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">pic.show()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">pic.save(&quot;flag.png&quot;)</span></pre></td></tr></table></figure>
+
+<p>得到二维码，扫描得flag</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/flag.png" alt="flag"></p>
+<h2 id="萌新赛杂项-签到"><a href="#萌新赛杂项-签到" class="headerlink" title="萌新赛杂项_签到"></a>萌新赛杂项_签到</h2><p>查看源代码</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308155004.jpg" alt="QQ截图20200308155004"></p>
+<p>发现第十行代码意外的长</p>
+<p>把下面下载下来用notepad打开 查看第十行</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308155220.jpg" alt="QQ截图20200308155220"></p>
+<p>把tab替换成1，空格替换成0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">00101101001011100010111000101110001011100010000000101101001011100010111000101110001011100010000000101101001011100010111000101110001011100010000000101101001011100010110100101110001000000010110100101110001011100010111000101110001000000010111000101101001011010010110100101101001000000010110100101110001011100010111000101110001000000010110100101101001011100010111000101110001000000010110100101101001011100010111000101110001000000010110100101110001011100010111000100000001011100010111000101110001011100010110100100000001011010010111000101110001000000010110100101110001011100010111000101110001000000010111000101110001011100010111000101110001000000010110100101110001011100010111000101110001000000010111000100000001011010010111000101110001011100010111000100000001011010010110100101110001011100010111000100000001011100010111000101110001011100010110100100000001011010010111000101110001000000010110100101110001011100010111000101110001000000010111000101110001011100010111000101110001000000010110100101110001011100010111000101110001000000010111000100000001011010010111000101110001011100010111000100000001011010010110100101110001011100010111000100000001011100010111000101110001011100010110100100000001011100010111000101110001011100010110100100000001011010010111000101110001011100010111000100000001011100010110100101101001011010010110100100000001011010010110100101110001011100010111000100000001011010010111000101110</span></pre></td></tr></table></figure>
+
+<p>转换字符串</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308155637.jpg" alt="QQ截图20200308155637"></p>
+<p>得到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">-.... -.... -.... -.-. -.... .---- -.... --... --... -... ....- -.. -.... ..... -.... . -.... --... ....- -.. -.... ..... -.... . -.... --... ....- ....- -.... .---- --... -..</span></pre></td></tr></table></figure>
+
+<p>摩斯解码处理</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308155735.jpg" alt="QQ截图20200308155735"></p>
+<p>得到十六进制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">666c61677b4d656e674d656e6744617d</span></pre></td></tr></table></figure>
+
+<p>最后转换ASCII码得到flag{MengMengDa}</p>
+<h2 id="萌新赛杂项-劝退警告"><a href="#萌新赛杂项-劝退警告" class="headerlink" title="萌新赛杂项_劝退警告"></a>萌新赛杂项_劝退警告</h2><p>下载下来是一张gif，直接改后缀.zip解压发现压缩包</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308135432.jpg" alt="QQ截图20200308135432"></p>
+<p>压缩包中两个文件flag2.zip和sudoku.png</p>
+<p>右边的注释说明密码需要我们解数独 但是sudoku.png也显示是加密的</p>
+<p>这里我用Ziperello来爆破发现导入压缩包的时候显示只有一个文件是加密的</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308135730.jpg" alt="QQ截图20200308135730"></p>
+<p>那么这个sudoku.png就可能是伪加密，通过修改二进制解压出sudoku.png</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/sudoku.png" alt="sudoku"></p>
+<p>然后在线解数独，通过注释说明的方法得到flag2.zip的密码得到flag2.zip</p>
+<p>结果flag2.zip还有密码，而且不是伪加密，只有注释:这道题很难，你现在离开还来得及。</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308140057.jpg" alt="QQ截图20200308140057"></p>
+<p>我可能会离开吗！必不可能啊。通过与群里的几位师傅商量，我们最终觉得这应该是明文爆破，但是怎么构造明文可就难倒大家了。</p>
+<p>也不难发现，这个说明.txt大小只有1kb 48字节，我们通过把注释写到txt中惊奇的发现也是48字节！！！（有的师傅是36字节，原因是txt的编码方式不同，更改编码方式就行）</p>
+<p>直接开始爆破，在爆破的过程中一半我们不用等爆破完直接停止就能得到恢复后的文件</p>
+<p>，但是这个不能立即停止…..足足爆破了两个小时也没停</p>
+<p>最后发现是停止的时间问题（明文爆破分两个阶段，第一个阶段我们就能得到恢复后的文件，第二阶段是寻找密码的过程。我们只需要解压后的文件，不需要密码，所以在第一阶段结束后就可以停止了，时间长的话就没有办法立即停止了。。。orz）</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308140749.jpg" alt="QQ截图20200308140749"></p>
+<p>得到的这个flag.zip就很好爆破了，这里我是根据注释，写出了字典爆破，大家也可以用掩码爆破，得到open your eye.jpg根据文件名，猜到用silenteye来提取隐藏信息</p>
+<p>得到flag.txt</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308141027.jpg" alt="QQ截图20200308141027"></p>
+<p>不难发现是16进制 直接扔到winhex</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308141229.jpg" alt="QQ截图20200308141229"></p>
+<p>猜测是pyc文件   关于pyc文件是py文件运行时产生的，我们可以通过反编译得到py文件，反编译的话有在线反编译的</p>
+<p>得到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">(lambda __print, __g, __y, __operator: [ [ [ [ [ [ (check(0), None)[1] for __g[&#39;check&#39;], check.__name__ in [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> (</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  lambda x: (lambda __l: [ [ (lambda __sentinel, __after, __items: __y(lambda __this: lambda : (lambda __i: [ [ (lambda __sentinel, __after, __items: __y(lambda __this: lambda : (lambda __i: [ [ __this() for __l[&#39;n&#39;] in [__operator.iadd(__l[&#39;n&#39;], decode(arr[int(__l[&#39;i&#39;])] + decode(arr[11] + chr(61) * 2) * 2))] ][0] for __l[&#39;i&#39;] in [__i] ][0] if __i is not __sentinel else __after())(next(__items, __sentinel)))())([], lambda : [ __this() for __l[&#39;v&#39;] in [__operator.iadd(__l[&#39;v&#39;], chr(int(__l[&#39;n&#39;])))] ][0], iter(__l[&#39;c&#39;])) for __l[&#39;n&#39;] in [&#39;&#39;] ][0] for __l[&#39;c&#39;] in [__i] ][0] if __i is not __sentinel else __after())(next(__items, __sentinel)))())([], lambda : (lambda __after: (__print(__l[&#39;v&#39;]), __after())[1] if __l[&#39;x&#39;] &#x3D;&#x3D; 1 else __after())(lambda : None), iter(flag.split(decode(arr[10] + decode(arr[11] + chr(61) * 2) * 2))))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   for __l[&#39;v&#39;] in [&#39;&#39;] ][0]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">   for __l[&#39;x&#39;] in [x] ][0])(&#123;&#125;), &#39;check&#39;)]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">          ][0]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"> for __g[&#39;decode&#39;], decode.__name__ in [(lambda s: (lambda __l: [ base64.b64decode(__l[&#39;s&#39;].encode()).decode() for __l[&#39;s&#39;] in [s] ][0])(&#123;&#125;), &#39;decode&#39;)] ][0]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"> for __g[&#39;encode&#39;], encode.__name__ in [(lambda s: (lambda __l: [ base64.b64encode(__l[&#39;s&#39;].encode()).decode() for __l[&#39;s&#39;] in [s] ][0])(&#123;&#125;), &#39;encode&#39;)] ][0]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"> for __g[&#39;flag&#39;] in [&#39;136-139-78-132-162-89-49-117-70-161-49-118-70-02-01-01-70-137-01-160&#39;] ][0]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> for __g[&#39;arr&#39;] in [[&#39;NQ&#39;, &#39;MQ&#39;, &#39;Mw&#39;, &#39;MA&#39;, &#39;NA&#39;, &#39;Ng&#39;, &#39;Mg&#39;, &#39;OQ&#39;, &#39;Nw&#39;, &#39;OA&#39;, &#39;LQ&#39;, &#39;PQ&#39;]] ][0]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"> for __g[&#39;base64&#39;] in [__import__(&#39;base64&#39;, __g, __g)] ][0])(__import__(&#39;__builtin__&#39;, level&#x3D;0).__dict__[&#39;print&#39;], globals(), lambda f: (lambda x: x(x))(lambda y: f(lambda : y(y)())), __import__(&#39;operator&#39;, level&#x3D;0))</span></pre></td></tr></table></figure>
+
+<p>通过hint改check(0)为check(1)运行得到flag</p>
+<h2 id="萌新赛杂项-萌新福利"><a href="#萌新赛杂项-萌新福利" class="headerlink" title="萌新赛杂项_萌新福利"></a>萌新赛杂项_萌新福利</h2><p>解压得到show.bin文件</p>
+<p>根据提示求反</p>
+<p><img src="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/QQ%E6%88%AA%E5%9B%BE20200308160159.jpg" alt="QQ截图20200308160159"></p>
+<p>输出音频文件，得到flag(小姐姐声音真好听……)</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/">ctfshow-萌新赛</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
+        <p><span>发布时间:</span>2020-03-08, 13:16:08</p>
+        <p><span>最后更新:</span>2020-03-08, 16:05:02</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/" title="ctfshow-萌新赛">http://lingxin16.github.io/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/">
+                    2020年新春战疫—网络安全公益赛-套娃
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#萌新赛web-签到题"><span class="toc-number">1.</span> <span class="toc-text">萌新赛web_签到题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#萌新赛密码学-签到题"><span class="toc-number">2.</span> <span class="toc-text">萌新赛密码学_签到题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#萌新赛密码学-抱我"><span class="toc-number">3.</span> <span class="toc-text">萌新赛密码学_抱我</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#萌新赛杂项-qrcode"><span class="toc-number">4.</span> <span class="toc-text">萌新赛杂项_qrcode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#萌新赛杂项-签到"><span class="toc-number">5.</span> <span class="toc-text">萌新赛杂项_签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#萌新赛杂项-劝退警告"><span class="toc-number">6.</span> <span class="toc-text">萌新赛杂项_劝退警告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#萌新赛杂项-萌新福利"><span class="toc-number">7.</span> <span class="toc-text">萌新赛杂项_萌新福利</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"ctfshow-萌新赛　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/" title="下一篇: 2020年新春战疫—网络安全公益赛-套娃">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/">ctfshow-萌新赛</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/">2020年新春战疫—网络安全公益赛-套娃</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/">ctfshow游戏题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/">ctfshow红包题-web</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/01/Hgame-Week1-web/">Hgame-Week1-web</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/">护网杯2018-easy_tornado</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/">强网杯-随便注</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">创建单页</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/">管道符漏洞</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/burp%E7%88%86%E7%A0%B4/">burp爆破</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">墨者学院</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/write-up/">write up</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/ceshi/">ceshi</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2019-2020 liu
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
