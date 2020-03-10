@@ -15,21 +15,26 @@
 
 
 
-<meta name="description" content="直接看源代码">
-<meta name="keywords" content="web,ctfshow,通配符">
+<meta name="description" content="题目 网站源码">
+<meta name="keywords" content="ctfhub,web,信息泄露">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ctfshow红包题-web">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;15&#x2F;ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web&#x2F;index.html">
+<meta property="og:title" content="ctfhub-信息泄泄露_备份文件下载">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16">
-<meta property="og:description" content="直接看源代码">
+<meta property="og:description" content="题目 网站源码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;15&#x2F;ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200214135958.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;15&#x2F;ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200214140007.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;15&#x2F;ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200214140024.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;15&#x2F;ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200214140151.png">
-<meta property="og:updated_time" content="2020-03-03T07:56:04.763Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310164900.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310165506.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310165638.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310165827.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310170243.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310170706.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310170901.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;QQ%E6%88%AA%E5%9B%BE20200310171109.jpg">
+<meta property="og:updated_time" content="2020-03-10T09:14:44.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;15&#x2F;ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200214135958.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;10&#x2F;ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD&#x2F;1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -61,7 +66,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ctfshow红包题-web | lingxin16</title>
+<title>ctfhub-信息泄泄露_备份文件下载 | lingxin16</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -269,11 +274,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-ctfshow红包题-web" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ctfhub-信息泄泄露-备份文件下载" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/" class="article-date">
-      <time datetime="2020-02-15T10:44:32.000Z" itemprop="datePublished">2020-02-15</time>
+      <a href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" class="article-date">
+      <time datetime="2020-03-10T08:47:23.000Z" itemprop="datePublished">2020-03-10</time>
 </a>
 
 
@@ -288,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ctfshow红包题-web
+      ctfhub-信息泄泄露_备份文件下载
     </h1>
   
 
@@ -299,7 +304,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctfshow/" rel="tag">ctfshow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/" rel="tag">通配符</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctfhub/" rel="tag">ctfhub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2/" rel="tag">信息泄露</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -309,30 +314,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214135958.png" alt="QQ截图20200214135958"></p>
-<p>直接看源代码</p>
-<a id="more"></a>
+        <p>题目</p>
+<h2 id="网站源码"><a href="#网站源码" class="headerlink" title="网站源码"></a>网站源码</h2><a id="more"></a>
 
-<p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214140007.png" alt="QQ截图20200214140007"></p>
-<p>发现hint：?cmd=</p>
-<p>可以推测大概是构造payload</p>
-<p>接下来访问url/?cmd</p>
-<p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214140024.png" alt="QQ截图20200214140024"></p>
-<p>通过观察发现过滤了不少符号，键盘上能用的没几个了……害</p>
-<p>根据大佬给的提示，我们用仅存的几个符号构造payload</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?cmd&#x3D;?&gt;&lt;?&#x3D;&#96;&#x2F;???&#x2F;?p &#x2F;???????? p.ppp&#96;;?&gt;</span></pre></td></tr></table></figure>
+<p>给的一些提示</p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/1.png" alt="1"></p>
+<p>在<a href="http://www.zip中找到备份文件下载" target="_blank" rel="noopener">www.zip中找到备份文件下载</a></p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310164900.jpg" alt="QQ截图20200310164900"></p>
+<p>由于在三个文件中都没有找到flag 最后访问网站的三个目录，在/flag_716325087.txt中找到flag</p>
+<h2 id="bak文件"><a href="#bak文件" class="headerlink" title="bak文件"></a>bak文件</h2><p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310165506.jpg" alt="QQ截图20200310165506"></p>
+<p>打开index.php.bak下载备份文件</p>
+<p>记事本打开得到flag</p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310165638.jpg" alt="QQ截图20200310165638"></p>
+<h2 id="vim缓存"><a href="#vim缓存" class="headerlink" title="vim缓存"></a>vim缓存</h2><p>查看页面</p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310165827.jpg" alt="QQ截图20200310165827"></p>
+<p>关于vim缓存：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">在使用vim时会创建临时缓存文件，关闭vim时缓存文件则会被删除，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">以 index.php 为例：第一次产生的交换文件名为 .index.php.swp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">再次意外退出后，将会产生名为 .index.php.swo 的交换文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">第三次产生的交换文件则为 .index.php.swn</span></pre></td></tr></table></figure>
 
-<p>功能相当于是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?cmd&#x3D;?&gt;&lt;?&#x3D;&#96;&#x2F;bin&#x2F;cp &#x2F;flag.txt p.ppp&#96;;?&gt;</span></pre></td></tr></table></figure>
+<p>访问.index.php.swp下载文件</p>
+<p>打开拖到最后 得到flag</p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310170243.jpg" alt="QQ截图20200310170243"></p>
+<h2 id="DS-Store"><a href="#DS-Store" class="headerlink" title=".DS_Store"></a>.DS_Store</h2><p>题目</p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310170706.jpg" alt="QQ截图20200310170706"></p>
+<p>访问.DS_Store下载</p>
+<p>打开发现一个txt文件(也可以使用Python-dsstore工具处理)附上下载地址：<a href="https://github.com/gehaxelt/Python-dsstore" target="_blank" rel="noopener">https://github.com/gehaxelt/Python-dsstore</a></p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310170901.jpg" alt="QQ截图20200310170901"></p>
+<p>访问这个地址(去掉空格)得到flag</p>
+<p><img src="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/QQ%E6%88%AA%E5%9B%BE20200310171109.jpg" alt="QQ截图20200310171109"></p>
+<p>关于.DS_Store</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">.DS_Store 是 Mac OS 保存文件夹的自定义属性的隐藏文件。通过.DS_Store可以知道这个目录里面所有文件的清单。</span></pre></td></tr></table></figure>
 
-<p>用cp命令，将flag.txt复制到p.ppp</p>
-<p>接下来访问url/p.ppp，下载下来得到flag</p>
-<p><img src="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/QQ%E6%88%AA%E5%9B%BE20200214140151.png" alt="QQ截图20200214140151"></p>
-<p>关于构造的payload可以解释下?&gt;是关闭php标签 &lt;?=是使用php短标签来返回结果`是执行命令</p>
-<p>而出题人给出的payload是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">?cmd&#x3D;?&gt;&lt;?&#x3D;&#96;&#x2F;??p&#x2F;p?p??????&#96;;?&gt;</span></pre></td></tr></table></figure>
-
-<p>是匹配到/tmp/phpXXXXXX文件，匹配到之后执行</p>
 
       
     </div>
@@ -341,13 +352,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/">ctfshow红包题-web</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/">ctfhub-信息泄泄露_备份文件下载</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
-        <p><span>发布时间:</span>2020-02-15, 18:44:32</p>
-        <p><span>最后更新:</span>2020-03-03, 15:56:04</p>
+        <p><span>发布时间:</span>2020-03-10, 16:47:23</p>
+        <p><span>最后更新:</span>2020-03-10, 17:14:44</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/" title="ctfshow红包题-web">http://lingxin16.github.io/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" title="ctfhub-信息泄泄露_备份文件下载">http://lingxin16.github.io/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -359,16 +370,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/">
-                    ctfshow游戏题
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/02/01/Hgame-Week1-web/">
-                    Hgame-Week1-web
+                <a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/">
+                    攻防世界-php_rce
                 </a>
             </div>
         
@@ -380,7 +385,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网站源码"><span class="toc-number">1.</span> <span class="toc-text">网站源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bak文件"><span class="toc-number">2.</span> <span class="toc-text">bak文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim缓存"><span class="toc-number">3.</span> <span class="toc-text">vim缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS-Store"><span class="toc-number">4.</span> <span class="toc-text">.DS_Store</span></a></li></ol>
         
     </div>
     <style>
@@ -416,7 +421,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"ctfshow红包题-web　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"ctfhub-信息泄泄露_备份文件下载　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,15 +441,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/" title="上一篇: ctfshow游戏题">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/02/01/Hgame-Week1-web/" title="下一篇: Hgame-Week1-web">
+            <a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/" title="下一篇: 攻防世界-php_rce">
                 <i class="fa fa-angle-right"></i>
             </a>
         

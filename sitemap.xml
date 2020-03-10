@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lingxin16.github.io/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</loc>
+    
+    <lastmod>2020-03-10T09:14:44.383Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://lingxin16.github.io/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/</loc>
     
     <lastmod>2020-03-09T08:31:11.074Z</lastmod>
