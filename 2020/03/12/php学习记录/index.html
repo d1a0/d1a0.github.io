@@ -15,40 +15,18 @@
 
 
 
-<meta name="description" content="1.zip 解压后得到下列文件">
-<meta name="keywords" content="misc">
+<meta name="description" content="常量">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020年新春战疫—网络安全公益赛-套娃">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;index.html">
+<meta property="og:title" content="php学习day1">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16">
-<meta property="og:description" content="1.zip 解压后得到下列文件">
+<meta property="og:description" content="常量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556671-780069-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556693-353542-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582557252-699162-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556724-854471-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556739-668302-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556752-15476-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556764-249372-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556774-688544-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582557176-568780-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556800-808334-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582557291-574981-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556819-887870-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582557311-560572-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582557327-475780-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556862-403350-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556873-841246-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556882-170934-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556890-119730-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556901-253914-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556910-414802-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556920-783498-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556939-954073-image.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556989-822273-image.png">
-<meta property="og:updated_time" content="2020-03-03T08:45:20.977Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95&#x2F;QQ%E6%88%AA%E5%9B%BE20200312160116.jpg">
+<meta property="og:updated_time" content="2020-03-12T11:32:51.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;03&#x2F;2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83&#x2F;1582556671-780069-image.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95&#x2F;QQ%E6%88%AA%E5%9B%BE20200312160116.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -80,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>2020年新春战疫—网络安全公益赛-套娃 | lingxin16</title>
+<title>php学习day1 | lingxin16</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -288,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-2020年新春战疫—网络安全公益赛-套娃" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-php学习记录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/" class="article-date">
-      <time datetime="2020-03-03T08:25:29.000Z" itemprop="datePublished">2020-03-03</time>
+      <a href="/2020/03/12/php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date">
+      <time datetime="2020-03-12T07:15:35.000Z" itemprop="datePublished">2020-03-12</time>
 </a>
 
 
@@ -307,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2020年新春战疫—网络安全公益赛-套娃
+      php学习day1
     </h1>
   
 
@@ -318,7 +296,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/misc/" rel="tag">misc</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,72 +306,43 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1.zip 解压后得到下列文件</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556671-780069-image.png" alt="1582556671-780069-image"></p>
-<a id="more"></a>
+        <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">对Brainfuck在下面网站进行解密，得到 dcaf03aa88d038686c5e8067a7a45ff8</span></pre></td></tr></table></figure>
+<h3 id="常量定义："><a href="#常量定义：" class="headerlink" title="常量定义："></a>常量定义：</h3><p>常量在定义时必须赋值</p>
+<p>define(‘常量名’,常量值)；</p>
+<p>const 常量名 = 常量值;//(php5.3之后)</p>
+<p>常量名命名规则:</p>
+<p>1.常量的名字组成由字母、数字和下划线组成，不能以数字开头</p>
+<p>2.常量的名字通常是以大写字母为主(为了与变量区别)</p>
+<p>3.常量的名字可以使用一些特殊符号(如-_-(只能使用define))</p>
+<p>特殊名字的常量在访问时需要用echo constant(‘常量名’);</p>
+<h3 id="系统常量"><a href="#系统常量" class="headerlink" title="系统常量"></a>系统常量</h3><p>系统常量:系统定义，用户可以直接调用。</p>
+<p>常见系统常量:</p>
+<p>PHP_VERSION：PHP版本号</p>
+<p>PHP_INT_SIZE：整形大小</p>
+<p>PHP_INT_MAX：整形能表示的最大值</p>
+<h3 id="特殊常量"><a href="#特殊常量" class="headerlink" title="特殊常量"></a>特殊常量</h3><p>由双下划线开始+常量名+双下划线结束(系统魔术常量)</p>
+<p>会随着环境变化，但无法改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">__DIR__：当前被执行的脚本所在电脑的绝对路径</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">__FILE__：当前被执行的脚本所在电脑的绝对路径（带自己的文件名）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">__LINE__：当前所属的行数</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">__NAMESPACE__：当前所属的命名空间</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">__CLASS__：当前所属的类</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">__METHOD__：当前所属的方法</span></pre></td></tr></table></figure>
 
-<p><a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">https://www.splitbrain.org/services/ook</a><br>二进制编辑1.连环画.png 得到 part1:068c<br>使用上面的解密值，解压2.zip<br>2.zip 解压后得到下列文件</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556693-353542-image.png" alt="1582556693-353542-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">二进制编辑2.连环画.jpeg，得到 part2:555b</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582557252-699162-image.png" alt="1582556724-854471-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">爆破3.zip 得到压缩包密码 3302</span></pre></td></tr></table></figure>
-
-<p>3.zip 解压后得到下列文件</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556724-854471-image.png" alt="1582556724-854471-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">修改伪加密位解压4.zip</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556739-668302-image.png" alt="1582556739-668302-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">LSB隐写查看得到part3:578b</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556752-15476-image.png" alt="1582556752-15476-image"></p>
-<p>4.zip 解压后得到文件</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556764-249372-image.png" alt="1582556764-249372-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">根据提示使用明文攻击，解压5.zip</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556774-688544-image.png" alt="1582556774-688544-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">这里可以不用等全部结束，点击停止，可释放已解密部分文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">爆破4.png的高度，可获得part4:0eae</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582557176-568780-image.png" alt="1582557176-568780-image"></p>
-<p>5.zip解压后获得下面文件：</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556800-808334-image.png" alt="1582556800-808334-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">使用猪圈密码得到压缩包密码：fojiajielv</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">对5.连环画进行拼接得到part5:9d4b</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582557291-574981-image.png" alt="1582557291-574981-image"></p>
-<p>6.zip解压后得到下面文件</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556819-887870-image.png" alt="1582556819-887870-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">使用佛经解密得到压缩包密码</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582557311-560572-image.png" alt="1582557311-560572-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">对6.jpg进行binwalk，可以看到莫斯密码，对莫斯密码进行解密得到part6:e52bd67</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582557327-475780-image.png" alt="1582557327-475780-image"></p>
-<p>7.zip解压后得到文件如下：</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556862-403350-image.png" alt="1582556920-783498-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">使用identify查看帧率隐写</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556873-841246-image.png" alt="1582556873-841246-image"></p>
-<p>得到</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556882-170934-image.png" alt="1582556882-170934-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">使用二进制符号进行替换，得到part7:61562</span></pre></td></tr></table></figure>
-
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556890-119730-image.png" alt="1582556890-119730-image"></p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556901-253914-image.png" alt="1582556901-253914-image"></p>
-<p>通过银河字母表得到压缩包密码：yinhezm</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556910-414802-image.png" alt="1582556910-414802-image"></p>
-<p>8.zip解压后得到文件：</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556920-783498-image.png" alt="1582556920-783498-image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">提交32位人事：</span></pre></td></tr></table></figure>
-
-<p>part1:068c<br>part2:555b<br>part3:578b<br>part4:0eae<br>part5:9d4b<br>part6:e52bd67<br>part7:61562<br>合并得到 ：068c555b578b0eae9d4be52bd6761562<br>9.rar解压后得到</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556939-954073-image.png" alt="1582556939-954073-image"></p>
-<p>使用AltermateStreamView工具提取数据流</p>
-<p><img src="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/1582556989-822273-image.png" alt="1582556989-822273-image"></p>
-<p>拿到falg</p>
-<p>FLAG值：<br>flag{8739459c-8d4e-4a34-92ee-5d75ae56ac4f}</p>
-<p>wp来自<a href="https://wp.ctf.show/d/4-2020-2" target="_blank" rel="noopener">wp.ctf.show</a></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>数据类型：data type，在PHP中指的是存储的数据本身的类型，而不是变量的类型。PHP是一种弱类型语言，变量本身没有数据类型。</p>
+<h3 id="PHP的八种数据类型："><a href="#PHP的八种数据类型：" class="headerlink" title="PHP的八种数据类型："></a>PHP的八种数据类型：</h3><p>在PHP中将数据分为三大类八小类</p>
+<h4 id="简单-基本-数据类型：4小类"><a href="#简单-基本-数据类型：4小类" class="headerlink" title="简单(基本)数据类型：4小类"></a>简单(基本)数据类型：4小类</h4><p>整型：int/integer，系统分配4个字节存储，表示整数类型</p>
+<p>浮点型：float/double，系统分配8个字节存储，表示小数或者整型存不下的整数</p>
+<p>字符串型：string，系统根据实际长度分配，表示字符串(引号)</p>
+<p>布尔类型：bool/boolean，表示布尔类型，只有两个值：true和false</p>
+<h4 id="复合数据类型：2小类"><a href="#复合数据类型：2小类" class="headerlink" title="复合数据类型：2小类"></a>复合数据类型：2小类</h4><p>对象类型：object，存放对象(面向对象)</p>
+<p>数组类型：array，存储多个数据(一次性)</p>
+<h4 id="特殊数据类型：2小类"><a href="#特殊数据类型：2小类" class="headerlink" title="特殊数据类型：2小类"></a>特殊数据类型：2小类</h4><p>资源类型：resource，存放资源数据(PHP外部数据，如数据库、文件)</p>
+<p>空类型：NULL，只有一个值就是NULL(不能运算)</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>1.自动转换：系统根据需求自己判断、自己转换</p>
+<p>2.强制(手动)转换：认为根据需要的目标类型转换</p>
+<p>在转换过程中用的比较多的就是转布尔类型(判断)和转数值类型(算数运算)</p>
+<p><img src="/2020/03/12/php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/QQ%E6%88%AA%E5%9B%BE20200312160116.jpg" alt="QQ截图20200312160116"></p>
+<p>1.布尔true为1，false为0</p>
+<p>2.字符串转数值有自己的规则</p>
+<p>2.1以字母开头的字符串永远为0</p>
+<p>2.2以数字开头的字符串，取到碰到字符串为止(不会同时包含两个小数点)</p>
 
       
     </div>
@@ -402,13 +351,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/">2020年新春战疫—网络安全公益赛-套娃</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/12/php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">php学习day1</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">liu</a></p>
-        <p><span>发布时间:</span>2020-03-03, 16:25:29</p>
-        <p><span>最后更新:</span>2020-03-03, 16:45:20</p>
+        <p><span>发布时间:</span>2020-03-12, 15:15:35</p>
+        <p><span>最后更新:</span>2020-03-12, 19:32:51</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/" title="2020年新春战疫—网络安全公益赛-套娃">http://lingxin16.github.io/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/12/php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="php学习day1">http://lingxin16.github.io/2020/03/12/php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/12/php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/　　作者: liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -420,16 +369,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/">
-                    ctfshow-萌新赛
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/">
-                    ctfshow游戏题
+                <a href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/">
+                    ctfhub-信息泄泄露_备份文件下载
                 </a>
             </div>
         
@@ -441,7 +384,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常量"><span class="toc-number">1.</span> <span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常量定义："><span class="toc-number">1.1.</span> <span class="toc-text">常量定义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统常量"><span class="toc-number">1.2.</span> <span class="toc-text">系统常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊常量"><span class="toc-number">1.3.</span> <span class="toc-text">特殊常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-number">2.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP的八种数据类型："><span class="toc-number">2.1.</span> <span class="toc-text">PHP的八种数据类型：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单-基本-数据类型：4小类"><span class="toc-number">2.1.1.</span> <span class="toc-text">简单(基本)数据类型：4小类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复合数据类型：2小类"><span class="toc-number">2.1.2.</span> <span class="toc-text">复合数据类型：2小类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊数据类型：2小类"><span class="toc-number">2.1.3.</span> <span class="toc-text">特殊数据类型：2小类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型转换"><span class="toc-number">3.</span> <span class="toc-text">类型转换</span></a></li></ol>
         
     </div>
     <style>
@@ -477,7 +420,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"2020年新春战疫—网络安全公益赛-套娃　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"php学习day1　| lingxin16　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -497,15 +440,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/" title="上一篇: ctfshow-萌新赛">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/" title="下一篇: ctfshow游戏题">
+            <a href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" title="下一篇: ctfhub-信息泄泄露_备份文件下载">
                 <i class="fa fa-angle-right"></i>
             </a>
         
