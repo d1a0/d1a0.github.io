@@ -15,41 +15,18 @@
 
 
 
-<meta name="description" content="内部文件上传系统漏洞分析溯源上传asp一句话木马  burp抓包修改文件上传路径  在.asp后缀的文件夹中 文件被默认为asp类型执行">
-<meta name="keywords" content="ctf,writeup">
+<meta name="description" content="浮点类型浮点型：小数类型以及超过整型所能存储范围的整数 浮点型定义： 1$f&amp;#x3D;1.23;2$f&amp;#x3D;1.23e10;      &amp;#x2F;&amp;#x2F;科学计数法，其中e表示低10   1.23×10^10  浮点数不够精确 布尔类型两个值：true和false  通常用于判断 在进行某些数据判断的时候，需要特别注意类型转换 Empty()：判断数据的值是否为“空”，而不是NULL">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="墨者学院">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;index.html">
+<meta property="og:title" content="php学习day3">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;14&#x2F;php%E5%AD%A6%E4%B9%A0day3&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="内部文件上传系统漏洞分析溯源上传asp一句话木马  burp抓包修改文件上传路径  在.asp后缀的文件夹中 文件被默认为asp类型执行">
+<meta property="og:description" content="浮点类型浮点型：小数类型以及超过整型所能存储范围的整数 浮点型定义： 1$f&amp;#x3D;1.23;2$f&amp;#x3D;1.23e10;      &amp;#x2F;&amp;#x2F;科学计数法，其中e表示低10   1.23×10^10  浮点数不够精确 布尔类型两个值：true和false  通常用于判断 在进行某些数据判断的时候，需要特别注意类型转换 Empty()：判断数据的值是否为“空”，而不是NULL">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191202192741.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191202192630.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191202192639.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191202192555.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191206215606.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191206215818.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191206220106.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210212136.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210212056.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210212751.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210213301.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210213913.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210213750.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210214158.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210213734.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191210214029.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211165444.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211170335.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211170717.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211172802.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211172640.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211172721.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211172958.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191211174645.png">
-<meta property="og:updated_time" content="2019-12-14T07:56:45.707Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;14&#x2F;php%E5%AD%A6%E4%B9%A0day3&#x2F;QQ%E6%88%AA%E5%9B%BE20200314222620.jpg">
+<meta property="og:updated_time" content="2020-03-14T15:14:06.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2&#x2F;QQ%E6%88%AA%E5%9B%BE20191202192741.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;14&#x2F;php%E5%AD%A6%E4%B9%A0day3&#x2F;QQ%E6%88%AA%E5%9B%BE20200314222620.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -81,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>墨者学院 | lingxin16&#39;blog</title>
+<title>php学习day3 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -289,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-墨者学院" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-php学习day3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/" class="article-date">
-      <time datetime="2019-12-06T13:40:08.000Z" itemprop="datePublished">2019-12-06</time>
+      <a href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/" class="article-date">
+      <time datetime="2020-03-14T14:13:25.000Z" itemprop="datePublished">2020-03-14</time>
 </a>
 
 
@@ -308,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      墨者学院
+      php学习day3
     </h1>
   
 
@@ -319,7 +296,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -329,59 +306,43 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="内部文件上传系统漏洞分析溯源"><a href="#内部文件上传系统漏洞分析溯源" class="headerlink" title="内部文件上传系统漏洞分析溯源"></a>内部文件上传系统漏洞分析溯源</h1><p>上传asp一句话木马</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192741.png" alt="QQ截图20191202192741"></p>
-<p>burp抓包修改文件上传路径  在.asp后缀的文件夹中 文件被默认为asp类型执行</p>
-<a id="more"></a>
+        <h2 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h2><p>浮点型：小数类型以及超过整型所能存储范围的整数</p>
+<p>浮点型定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$f&#x3D;1.23;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$f&#x3D;1.23e10;      &#x2F;&#x2F;科学计数法，其中e表示低10   1.23×10^10</span></pre></td></tr></table></figure>
 
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192630.png" alt="QQ截图20191202192630"></p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192639.png" alt="QQ截图20191202192639"></p>
-<p>蚁剑链接</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192555.png" alt="QQ截图20191202192555"></p>
-<h1 id="phpMyAdmin后台文件包含分析溯源"><a href="#phpMyAdmin后台文件包含分析溯源" class="headerlink" title="phpMyAdmin后台文件包含分析溯源"></a>phpMyAdmin后台文件包含分析溯源</h1><p>密码弱口令root登录</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206215606.png" alt="QQ截图20191206215606"></p>
-<p>sql注入一句话</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206215818.png" alt="QQ截图20191206215818"></p>
-<p>蚁剑链接  根目录找到key文件</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206220106.png" alt="QQ截图20191206220106"></p>
-<p>得到key:mozhe6e0dc3709254b6732421f373dce</p>
-<h1 id="SQL注入漏洞测试-布尔盲注"><a href="#SQL注入漏洞测试-布尔盲注" class="headerlink" title="SQL注入漏洞测试(布尔盲注)"></a>SQL注入漏洞测试(布尔盲注)</h1><p>打开靶场,找到停机维护通知页面</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212136.png" alt="QQ截图20191210212136"></p>
-<p>用sqlmap爆当前库</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212056.png" alt="QQ截图20191210212056"></p>
-<p>获取到数据库名stormgroup</p>
-<p>然后爆表段</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212751.png" alt="QQ截图20191210212751"></p>
-<p>获取到表member和notice</p>
-<p>然后爆字段 得到 name password 和status</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213301.png" alt="QQ截图20191210213301"></p>
-<p>然后分别猜解name和password</p>
-<p>得到name为mozhe password需要md5解码</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213913.png" alt="QQ截图20191210213913"></p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213750.png" alt="QQ截图20191210213750"></p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210214158.png" alt="QQ截图20191210214158"></p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213734.png" alt="QQ截图20191210213734"></p>
-<p>第一个没办法登录 用第二个密码才登录成功,得到key</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210214029.png" alt="QQ截图20191210214029"></p>
-<h1 id="SQL手工注入漏洞测试-MySQL数据库-字符型"><a href="#SQL手工注入漏洞测试-MySQL数据库-字符型" class="headerlink" title="SQL手工注入漏洞测试(MySQL数据库-字符型)"></a>SQL手工注入漏洞测试(MySQL数据库-字符型)</h1><p>先打开靶场 找到注入页面</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211165444.png" alt="QQ截图20191211165444"></p>
-<p><a href="http://219.153.49.228:45556/new_list.php?id=tingjigonggao后加上&#39;and" target="_blank" rel="noopener">http://219.153.49.228:45556/new_list.php?id=tingjigonggao后加上&#39;and</a> 1 = 1–+ 发现页面打开正常</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211170335.png" alt="QQ截图20191211170335"></p>
-<p>判断为字符型注入 其实题目已经说明了是字符型注入…</p>
-<p>然后获取列表的字段数 后边加上’order by 1–+</p>
-<p>将1分别替换为2,3,4,5发现为5的时候显示不正常  那么字段数最大应该为4</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211170717.png" alt="QQ截图20191211170717"></p>
-<p>然后判断回显位置 将=后改为’ union select 1,2,3,4 –+  得到回显位置为2和3</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172802.png" alt="QQ截图20191211172802"></p>
-<p>然后获取数据库名  将=后改为’ union select 1,database(),3,4 –+  得到数据库名mozhe_discuz_stormgroup</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172640.png" alt="QQ截图20191211172640"></p>
-<p>接着获取表 =后为’ union select 1,group_concat(table_name),3,4 from information_schema.tables where table_schema=database() and ‘1’=’1  得到两个表notice,stormgroup_member</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172721.png" alt="QQ截图20191211172721"></p>
-<p>接着获取字段  =后为’ union select 1,group_concat(column_name),3,4 from information_schema.columns where table_name=’stormgroup_member’ and ‘1’=’1   得到四个字段</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172958.png" alt="QQ截图20191211172958"></p>
-<p>最后就是查询字段name和password的值   =后为’ union select 1,name,password,4 from stormgroup_member where’1’=’1#</p>
-<p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211174645.png" alt="QQ截图20191211174645"></p>
-<p>md5解码后登录</p>
+<p>浮点数不够精确</p>
+<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><p>两个值：true和false  通常用于判断</p>
+<p>在进行某些数据判断的时候，需要特别注意类型转换</p>
+<p>Empty()：判断数据的值是否为“空”，而不是NULL，如果为空返回true，不为空返回false</p>
+<p>lsset()：判断数据存储的变量本身是否存在，存在变量返回true，不存在返回false</p>
+<p><img src="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/QQ%E6%88%AA%E5%9B%BE20200314222620.jpg" alt="QQ截图20200314222620"></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符：operator，是一种将数据进行运算的特殊符号，在php中一共有十种运算符之多</p>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p>赋值运算：符号是“=”，表示将右边的结果(可以是变量、数据、常量和其他运算出来的结果)，保存到内存的某个位置，然后将位置的内存地址赋值给左侧的变量(常量)</p>
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>+：执行数据累加<br>-：数据相减<br>*：两个数相乘<br>/：两个数相除<br>%：取余运算，两个数(整数)相除保留余数</p>
+<p>在进行除法运算或取余运算时后边的数不能为零</p>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>比较运算：比较两个数据的大小，或者两个内容是否相同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;：左边大于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&gt;&#x3D;：左边大于等于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;：左边小于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&lt;&#x3D;：左边小于等于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;：左边与右边的相同（大小相同），返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">!&#x3D;：左边与右边的不同（大小不相同），返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;&#x3D;：全等于 左边与右边的相同（大小以及数据的类型都要相同）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">!&#x3D;&#x3D;：不全等于 左边与右边的不相同（大小或数据的类型不同）</span></pre></td></tr></table></figure>
+
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">逻辑运算：针对不同的结果进行匹配</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&amp;&amp;：逻辑与  左边的条件与右边的条件同时成立（两边结果都为true）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">||：逻辑或 左边的条件嚯右边的条件只要有一个满足即可</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">！：逻辑非 对已有条件进行取反</span></pre></td></tr></table></figure>
+
+<p>逻辑与和逻辑或又称为短路运算：如果第-一个表达式结果已经满足条件了，那么就不会运行逻辑运算符后面的表达式  在书写代码的时候，尽量将出现概率最高的(能够直接判断出结果)的表达式放到第一位</p>
+<h3 id="连接运算符"><a href="#连接运算符" class="headerlink" title="连接运算符"></a>连接运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">连接运算:是PHP中将多个字符串拼接的一种符号</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">.：将两个字符串连接到一起</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">.&#x3D;：复合运算，将左边的内容与右边的内容连接起来，然后重新赋值给左边变量</span></pre></td></tr></table></figure>
+
+<h3 id="错误抑制符"><a href="#错误抑制符" class="headerlink" title="错误抑制符"></a>错误抑制符</h3><p>在PHP中有一些错误可以提前预知，但是这些错误可能无法避免，但是又不希望报错给用户看，可以使用错误抑制符处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">@：在可能出错的表达式前面使用@符号即可</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">@(可能出错的代码);</span></pre></td></tr></table></figure>
+
+<h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><p>三目运算:有三个表达式参与的运算(简单的的分支结构缩写)。</p>
+<p>语法格式:</p>
+<p>表达式1 ? 表达式2 :  表达式3;（如果表达式1成立，那么执行表达式2，否则执行表达式3）</p>
+<h3 id="自操作运算符"><a href="#自操作运算符" class="headerlink" title="自操作运算符"></a>自操作运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">++</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">--</span></pre></td></tr></table></figure>
+
+<p>后置自操作运算符$a++</p>
+<p>前置自操作运算符++$a</p>
+<p>b=$a++   先赋值再运算</p>
+<p>b=++$a   先运算再赋值</p>
+<p>衍生符号：类似自操作</p>
+<p>+=：左边的结果与右边的结果相加，然后赋值给左边<br>-=：左边的减去右边的结果，然后赋值给左边<br>*=：乘法操作<br>/=：除法操作<br>%=：模操作</p>
+<p>注意：右边是一个整体！</p>
 
       
     </div>
@@ -390,13 +351,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">墨者学院</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/">php学习day3</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2019-12-06, 21:40:08</p>
-        <p><span>最后更新:</span>2019-12-14, 15:56:45</p>
+        <p><span>发布时间:</span>2020-03-14, 22:13:25</p>
+        <p><span>最后更新:</span>2020-03-14, 23:14:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/" title="墨者学院">http://lingxin16.github.io/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/" title="php学习day3">http://lingxin16.github.io/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -408,16 +369,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/12/19/burp%E7%88%86%E7%A0%B4/">
-                    burp爆破
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/12/05/write-up/">
-                    write up
+                <a href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/">
+                    ctfhub-信息泄露-Git泄露
                 </a>
             </div>
         
@@ -429,7 +384,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内部文件上传系统漏洞分析溯源"><span class="toc-number">1.</span> <span class="toc-text">内部文件上传系统漏洞分析溯源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#phpMyAdmin后台文件包含分析溯源"><span class="toc-number">2.</span> <span class="toc-text">phpMyAdmin后台文件包含分析溯源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL注入漏洞测试-布尔盲注"><span class="toc-number">3.</span> <span class="toc-text">SQL注入漏洞测试(布尔盲注)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL手工注入漏洞测试-MySQL数据库-字符型"><span class="toc-number">4.</span> <span class="toc-text">SQL手工注入漏洞测试(MySQL数据库-字符型)</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浮点类型"><span class="toc-number">1.</span> <span class="toc-text">浮点类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布尔类型"><span class="toc-number">2.</span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符"><span class="toc-number">3.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-number">3.1.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">3.2.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较运算符"><span class="toc-number">3.3.</span> <span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">3.4.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接运算符"><span class="toc-number">3.5.</span> <span class="toc-text">连接运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误抑制符"><span class="toc-number">3.6.</span> <span class="toc-text">错误抑制符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三目运算符"><span class="toc-number">3.7.</span> <span class="toc-text">三目运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自操作运算符"><span class="toc-number">3.8.</span> <span class="toc-text">自操作运算符</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -465,7 +420,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"墨者学院　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"php学习day3　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -485,15 +440,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/19/burp%E7%88%86%E7%A0%B4/" title="上一篇: burp爆破">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/12/05/write-up/" title="下一篇: write up">
+            <a href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/" title="下一篇: ctfhub-信息泄露-Git泄露">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>lingxin16</title>
+  <title>lingxin16&#39;blog</title>
   
   <subtitle>ctf</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-13T14:22:39.777Z</updated>
+  <updated>2020-03-14T15:14:06.836Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
-    <name>liu</name>
+    <name>奝</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>php学习day3</title>
+    <link href="http://lingxin16.github.io/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/"/>
+    <id>http://lingxin16.github.io/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/</id>
+    <published>2020-03-14T14:13:25.000Z</published>
+    <updated>2020-03-14T15:14:06.836Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h2><p>浮点型：小数类型以及超过整型所能存储范围的整数</p><p>浮点型定义：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$f&#x3D;1.23;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$f&#x3D;1.23e10;      &#x2F;&#x2F;科学计数法，其中e表示低10   1.23×10^10</span></pre></td></tr></table></figure><p>浮点数不够精确</p><h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><p>两个值：true和false  通常用于判断</p><p>在进行某些数据判断的时候，需要特别注意类型转换</p><p>Empty()：判断数据的值是否为“空”，而不是NULL，如果为空返回true，不为空返回false</p><p>lsset()：判断数据存储的变量本身是否存在，存在变量返回true，不存在返回false</p><p><img src="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/QQ%E6%88%AA%E5%9B%BE20200314222620.jpg" alt="QQ截图20200314222620"></p><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符：operator，是一种将数据进行运算的特殊符号，在php中一共有十种运算符之多</p><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p>赋值运算：符号是“=”，表示将右边的结果(可以是变量、数据、常量和其他运算出来的结果)，保存到内存的某个位置，然后将位置的内存地址赋值给左侧的变量(常量)</p><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>+：执行数据累加<br>-：数据相减<br>*：两个数相乘<br>/：两个数相除<br>%：取余运算，两个数(整数)相除保留余数</p><p>在进行除法运算或取余运算时后边的数不能为零</p><h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>比较运算：比较两个数据的大小，或者两个内容是否相同</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;：左边大于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&gt;&#x3D;：左边大于等于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;：左边小于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&lt;&#x3D;：左边小于等于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;：左边与右边的相同（大小相同），返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">!&#x3D;：左边与右边的不同（大小不相同），返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;&#x3D;：全等于 左边与右边的相同（大小以及数据的类型都要相同）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">!&#x3D;&#x3D;：不全等于 左边与右边的不相同（大小或数据的类型不同）</span></pre></td></tr></table></figure><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">逻辑运算：针对不同的结果进行匹配</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&amp;&amp;：逻辑与  左边的条件与右边的条件同时成立（两边结果都为true）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">||：逻辑或 左边的条件嚯右边的条件只要有一个满足即可</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">！：逻辑非 对已有条件进行取反</span></pre></td></tr></table></figure><p>逻辑与和逻辑或又称为短路运算：如果第-一个表达式结果已经满足条件了，那么就不会运行逻辑运算符后面的表达式  在书写代码的时候，尽量将出现概率最高的(能够直接判断出结果)的表达式放到第一位</p><h3 id="连接运算符"><a href="#连接运算符" class="headerlink" title="连接运算符"></a>连接运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">连接运算:是PHP中将多个字符串拼接的一种符号</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">.：将两个字符串连接到一起</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">.&#x3D;：复合运算，将左边的内容与右边的内容连接起来，然后重新赋值给左边变量</span></pre></td></tr></table></figure><h3 id="错误抑制符"><a href="#错误抑制符" class="headerlink" title="错误抑制符"></a>错误抑制符</h3><p>在PHP中有一些错误可以提前预知，但是这些错误可能无法避免，但是又不希望报错给用户看，可以使用错误抑制符处理</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">@：在可能出错的表达式前面使用@符号即可</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">@(可能出错的代码);</span></pre></td></tr></table></figure><h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><p>三目运算:有三个表达式参与的运算(简单的的分支结构缩写)。</p><p>语法格式:</p><p>表达式1 ? 表达式2 :  表达式3;（如果表达式1成立，那么执行表达式2，否则执行表达式3）</p><h3 id="自操作运算符"><a href="#自操作运算符" class="headerlink" title="自操作运算符"></a>自操作运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">++</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">--</span></pre></td></tr></table></figure><p>后置自操作运算符$a++</p><p>前置自操作运算符++$a</p><p>b=$a++   先赋值再运算</p><p>b=++$a   先运算再赋值</p><p>衍生符号：类似自操作</p><p>+=：左边的结果与右边的结果相加，然后赋值给左边<br>-=：左边的减去右边的结果，然后赋值给左边<br>*=：乘法操作<br>/=：除法操作<br>%=：模操作</p><p>注意：右边是一个整体！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;浮点类型&quot;&gt;&lt;a href=&quot;#浮点类型&quot; class=&quot;headerlink&quot; title=&quot;浮点类型&quot;&gt;&lt;/a&gt;浮点类型&lt;/h2&gt;&lt;p&gt;浮点型：小数类型以及超过整型所能存储范围的整数&lt;/p&gt;
+&lt;p&gt;浮点型定义：&lt;/p&gt;
+&lt;figure class=&quot;highl
+      
+    
+    </summary>
+    
+    
+    
+      <category term="php" scheme="http://lingxin16.github.io/tags/php/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ctfhub-信息泄露-Git泄露</title>
+    <link href="http://lingxin16.github.io/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/"/>
+    <id>http://lingxin16.github.io/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/</id>
+    <published>2020-03-14T07:32:37.000Z</published>
+    <updated>2020-03-14T08:14:35.572Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h2><p>启动环境</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200314153525.jpg" alt="QQ截图20200314153525"></p><p>相关说明：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">当前大量开发人员使用git进行版本控制，对站点自动部署。如果配置不当,可能会将.git文件夹直接部署到线上环境。这就引起了git泄露漏洞。</span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Log&quot;&gt;&lt;a href=&quot;#Log&quot; class=&quot;headerlink&quot; title=&quot;Log&quot;&gt;&lt;/a&gt;Log&lt;/h2&gt;&lt;p&gt;启动环境&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%
+      
+    
+    </summary>
+    
+    
+    
+      <category term="ctfhub" scheme="http://lingxin16.github.io/tags/ctfhub/"/>
+    
+      <category term="web" scheme="http://lingxin16.github.io/tags/web/"/>
+    
+      <category term="信息泄露" scheme="http://lingxin16.github.io/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2/"/>
+    
+      <category term="Git泄露" scheme="http://lingxin16.github.io/tags/Git%E6%B3%84%E9%9C%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>php学习day2</title>
@@ -171,9 +228,9 @@
     
     
     
-      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
       <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
+    
+      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
