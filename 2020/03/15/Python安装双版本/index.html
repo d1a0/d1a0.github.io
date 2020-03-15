@@ -15,15 +15,18 @@
 
 
 
-<meta name="description" content="myctf">
-<meta name="keywords" content="ctf">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lingxin16&#39;blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;tags&#x2F;buuctf&#x2F;index.html">
+<meta name="description" content="Python的环境部署一直是有问题，今天就想个办法把这个问题解决了 同时安装Python2和Python3的版本并配置环境变量">
+<meta name="keywords" content="环境部署">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python安装双版本">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;15&#x2F;Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="myctf">
+<meta property="og:description" content="Python的环境部署一直是有问题，今天就想个办法把这个问题解决了 同时安装Python2和Python3的版本并配置环境变量">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;15&#x2F;Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC&#x2F;1.png">
+<meta property="og:updated_time" content="2020-03-15T09:46:12.718Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;15&#x2F;Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC&#x2F;1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: buuctf | lingxin16&#39;blog</title>
+<title>Python安装双版本 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +68,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -265,56 +268,184 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Python安装双版本" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/" class="archive-article-date">
-      <time datetime="2020-01-12T07:06:22.000Z" itemprop="datePublished">01-12</time>
+    <div class="article-meta">
+      <a href="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/" class="article-date">
+      <time datetime="2020-03-15T09:37:56.000Z" itemprop="datePublished">2020-03-15</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/">强网杯-随便注</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python安装双版本
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/buuctf/" rel="tag">buuctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql%E6%B3%A8%E5%85%A5/" rel="tag">sql注入</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5/" rel="tag">堆叠注入</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" rel="tag">环境部署</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Python的环境部署一直是有问题，今天就想个办法把这个问题解决了</p>
+<p>同时安装Python2和Python3的版本并配置环境变量</p>
+<a id="more"></a>
+
+<p>在官网下载Python2和Python3的安装包</p>
+<p>安装Python2和Python3的时候都勾选add to path(配置环境变量)</p>
+<p>然后在Python2文件夹里把python.exe改为python2.exe</p>
+<p>同理在scripts文件夹下把pip.exe分别改为pip2.exe</p>
+<p>这个时候测试的话pip2 -V命令会报错</p>
+<p>我们在官网下载pip安装包，cmd中cd命令进入安装文件</p>
+<p>然后python2 setup.py install</p>
+<p><img src="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/1.png" alt="1"></p>
+<p>ok！</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/">Python安装双版本</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
+        <p><span>发布时间:</span>2020-03-15, 17:37:56</p>
+        <p><span>最后更新:</span>2020-03-15, 17:46:12</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/" title="Python安装双版本">http://lingxin16.github.io/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/">
+                    php学习day4
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/">
+                    php学习day3
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Python安装双版本　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/" title="上一篇: php学习day4">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/" title="下一篇: php学习day3">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/">php学习day4</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/">Python安装双版本</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/">php学习day3</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/">ctfhub-信息泄露-Git泄露</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/">php学习day2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/12/php%E5%AD%A6%E4%B9%A0day1/">php学习day1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/">ctfhub-信息泄泄露_备份文件下载</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/">攻防世界-php_rce</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/">ctfshow-萌新赛</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/">2020年新春战疫—网络安全公益赛-套娃</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/">ctfshow游戏题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/">ctfshow红包题-web</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/01/Hgame-Week1-web/">Hgame-Week1-web</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/">护网杯2018-easy_tornado</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/">强网杯-随便注</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">创建单页</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/">管道符漏洞</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/burp%E7%88%86%E7%A0%B4/">burp爆破</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">墨者学院</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/write-up/">write up</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/ceshi/">ceshi</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
