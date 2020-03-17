@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-16T13:29:01.120Z</updated>
+  <updated>2020-03-17T15:26:40.396Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码审计day1</title>
+    <link href="http://lingxin16.github.io/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/"/>
+    <id>http://lingxin16.github.io/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/</id>
+    <published>2020-03-17T13:48:33.000Z</published>
+    <updated>2020-03-17T15:26:40.396Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="魔术引号自动过滤"><a href="#魔术引号自动过滤" class="headerlink" title="魔术引号自动过滤"></a>魔术引号自动过滤</h3><p>magic_quotes_gpc= on (在PHP5.4.0中被移除)</p><p>如果是开启状态，那么将自动对用户提交的sql语句进行转义</p><p>会把所有的单引号(“’’”)双引号(““””)反斜杠(”\“)和空字符(NULL)加上反斜杠进行转义</p><p>可以使用addslashes来转义提交的请求，或者用stripslashes来删除转义</p><h3 id="远程文件"><a href="#远程文件" class="headerlink" title="远程文件"></a>远程文件</h3><h4 id="是否允许包含远程文件"><a href="#是否允许包含远程文件" class="headerlink" title="是否允许包含远程文件"></a>是否允许包含远程文件</h4><p>allow_url_include= off</p><h4 id="是否允许打开远程文件"><a href="#是否允许打开远程文件" class="headerlink" title="是否允许打开远程文件"></a>是否允许打开远程文件</h4><p>allow_url_open= on</p><h3 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h3><h4 id="HTTP头部版本信息"><a href="#HTTP头部版本信息" class="headerlink" title="HTTP头部版本信息"></a>HTTP头部版本信息</h4><p>expose_php = off</p><p>防止通过http头部泄露php的版本信息</p><h4 id="文件上传临时目录"><a href="#文件上传临时目录" class="headerlink" title="文件上传临时目录"></a>文件上传临时目录</h4><p>upload_tmp_dir=</p><p>上传文件临时保存的目录，如果不设置的话，则采用系统的临时目录</p><h4 id="用户可访问目录"><a href="#用户可访问目录" class="headerlink" title="用户可访问目录"></a>用户可访问目录</h4><p>open_basedir = </p><p>能够控制PHP脚本只能访问指定目录</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;魔术引号自动过滤&quot;&gt;&lt;a href=&quot;#魔术引号自动过滤&quot; class=&quot;headerlink&quot; title=&quot;魔术引号自动过滤&quot;&gt;&lt;/a&gt;魔术引号自动过滤&lt;/h3&gt;&lt;p&gt;magic_quotes_gpc= on (在PHP5.4.0中被移除)&lt;/p&gt;
+&lt;p&gt;如果
+      
+    
+    </summary>
+    
+    
+    
+      <category term="代码审计" scheme="http://lingxin16.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>php学习day5</title>
@@ -465,31 +490,6 @@
     
     
       <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>墨者学院</title>
-    <link href="http://lingxin16.github.io/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/"/>
-    <id>http://lingxin16.github.io/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/</id>
-    <published>2019-12-06T13:40:08.000Z</published>
-    <updated>2019-12-14T07:56:45.707Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内部文件上传系统漏洞分析溯源"><a href="#内部文件上传系统漏洞分析溯源" class="headerlink" title="内部文件上传系统漏洞分析溯源"></a>内部文件上传系统漏洞分析溯源</h1><p>上传asp一句话木马</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192741.png" alt="QQ截图20191202192741"></p><p>burp抓包修改文件上传路径  在.asp后缀的文件夹中 文件被默认为asp类型执行</p><a id="more"></a><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192630.png" alt="QQ截图20191202192630"></p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192639.png" alt="QQ截图20191202192639"></p><p>蚁剑链接</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192555.png" alt="QQ截图20191202192555"></p><h1 id="phpMyAdmin后台文件包含分析溯源"><a href="#phpMyAdmin后台文件包含分析溯源" class="headerlink" title="phpMyAdmin后台文件包含分析溯源"></a>phpMyAdmin后台文件包含分析溯源</h1><p>密码弱口令root登录</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206215606.png" alt="QQ截图20191206215606"></p><p>sql注入一句话</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206215818.png" alt="QQ截图20191206215818"></p><p>蚁剑链接  根目录找到key文件</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191206220106.png" alt="QQ截图20191206220106"></p><p>得到key:mozhe6e0dc3709254b6732421f373dce</p><h1 id="SQL注入漏洞测试-布尔盲注"><a href="#SQL注入漏洞测试-布尔盲注" class="headerlink" title="SQL注入漏洞测试(布尔盲注)"></a>SQL注入漏洞测试(布尔盲注)</h1><p>打开靶场,找到停机维护通知页面</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212136.png" alt="QQ截图20191210212136"></p><p>用sqlmap爆当前库</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212056.png" alt="QQ截图20191210212056"></p><p>获取到数据库名stormgroup</p><p>然后爆表段</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210212751.png" alt="QQ截图20191210212751"></p><p>获取到表member和notice</p><p>然后爆字段 得到 name password 和status</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213301.png" alt="QQ截图20191210213301"></p><p>然后分别猜解name和password</p><p>得到name为mozhe password需要md5解码</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213913.png" alt="QQ截图20191210213913"></p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213750.png" alt="QQ截图20191210213750"></p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210214158.png" alt="QQ截图20191210214158"></p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210213734.png" alt="QQ截图20191210213734"></p><p>第一个没办法登录 用第二个密码才登录成功,得到key</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191210214029.png" alt="QQ截图20191210214029"></p><h1 id="SQL手工注入漏洞测试-MySQL数据库-字符型"><a href="#SQL手工注入漏洞测试-MySQL数据库-字符型" class="headerlink" title="SQL手工注入漏洞测试(MySQL数据库-字符型)"></a>SQL手工注入漏洞测试(MySQL数据库-字符型)</h1><p>先打开靶场 找到注入页面</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211165444.png" alt="QQ截图20191211165444"></p><p><a href="http://219.153.49.228:45556/new_list.php?id=tingjigonggao后加上&#39;and" target="_blank" rel="noopener">http://219.153.49.228:45556/new_list.php?id=tingjigonggao后加上&#39;and</a> 1 = 1–+ 发现页面打开正常</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211170335.png" alt="QQ截图20191211170335"></p><p>判断为字符型注入 其实题目已经说明了是字符型注入…</p><p>然后获取列表的字段数 后边加上’order by 1–+</p><p>将1分别替换为2,3,4,5发现为5的时候显示不正常  那么字段数最大应该为4</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211170717.png" alt="QQ截图20191211170717"></p><p>然后判断回显位置 将=后改为’ union select 1,2,3,4 –+  得到回显位置为2和3</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172802.png" alt="QQ截图20191211172802"></p><p>然后获取数据库名  将=后改为’ union select 1,database(),3,4 –+  得到数据库名mozhe_discuz_stormgroup</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172640.png" alt="QQ截图20191211172640"></p><p>接着获取表 =后为’ union select 1,group_concat(table_name),3,4 from information_schema.tables where table_schema=database() and ‘1’=’1  得到两个表notice,stormgroup_member</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172721.png" alt="QQ截图20191211172721"></p><p>接着获取字段  =后为’ union select 1,group_concat(column_name),3,4 from information_schema.columns where table_name=’stormgroup_member’ and ‘1’=’1   得到四个字段</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211172958.png" alt="QQ截图20191211172958"></p><p>最后就是查询字段name和password的值   =后为’ union select 1,name,password,4 from stormgroup_member where’1’=’1#</p><p><img src="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191211174645.png" alt="QQ截图20191211174645"></p><p>md5解码后登录</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;内部文件上传系统漏洞分析溯源&quot;&gt;&lt;a href=&quot;#内部文件上传系统漏洞分析溯源&quot; class=&quot;headerlink&quot; title=&quot;内部文件上传系统漏洞分析溯源&quot;&gt;&lt;/a&gt;内部文件上传系统漏洞分析溯源&lt;/h1&gt;&lt;p&gt;上传asp一句话木马&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192741.png&quot; alt=&quot;QQ截图20191202192741&quot;&gt;&lt;/p&gt;
-&lt;p&gt;burp抓包修改文件上传路径  在.asp后缀的文件夹中 文件被默认为asp类型执行&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
-    
-      <category term="writeup" scheme="http://lingxin16.github.io/tags/writeup/"/>
     
   </entry>
   
