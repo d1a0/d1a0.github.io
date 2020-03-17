@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-17T15:28:54.176Z</updated>
+  <updated>2020-03-17T15:36:14.221Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -21,18 +21,13 @@
     <link href="http://lingxin16.github.io/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/"/>
     <id>http://lingxin16.github.io/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/</id>
     <published>2020-03-17T13:48:33.000Z</published>
-    <updated>2020-03-17T15:28:54.176Z</updated>
+    <updated>2020-03-17T15:36:14.221Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><h3 id="魔术引号自动过滤"><a href="#魔术引号自动过滤" class="headerlink" title="魔术引号自动过滤"></a>魔术引号自动过滤</h3><p>magic_quotes_gpc= on (在PHP5.4.0中被移除)</p><p>如果是开启状态，那么将自动对用户提交的sql语句进行转义</p><p>会把所有的单引号(“’’”)双引号(““””)反斜杠(”\“)和空字符(NULL)加上反斜杠进行转义</p><p>可以使用addslashes来转义提交的请求，或者用stripslashes来删除转义</p><h3 id="远程文件"><a href="#远程文件" class="headerlink" title="远程文件"></a>远程文件</h3><h4 id="是否允许包含远程文件"><a href="#是否允许包含远程文件" class="headerlink" title="是否允许包含远程文件"></a>是否允许包含远程文件</h4><p>allow_url_include= off</p><h4 id="是否允许打开远程文件"><a href="#是否允许打开远程文件" class="headerlink" title="是否允许打开远程文件"></a>是否允许打开远程文件</h4><p>allow_url_open= on</p><h3 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h3><h4 id="HTTP头部版本信息"><a href="#HTTP头部版本信息" class="headerlink" title="HTTP头部版本信息"></a>HTTP头部版本信息</h4><p>expose_php = off</p><p>防止通过http头部泄露php的版本信息</p><h4 id="文件上传临时目录"><a href="#文件上传临时目录" class="headerlink" title="文件上传临时目录"></a>文件上传临时目录</h4><p>upload_tmp_dir=</p><p>上传文件临时保存的目录，如果不设置的话，则采用系统的临时目录</p><h4 id="用户可访问目录"><a href="#用户可访问目录" class="headerlink" title="用户可访问目录"></a>用户可访问目录</h4><p>open_basedir = </p><p>能够控制PHP脚本只能访问指定目录</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="魔术引号自动过滤"><a href="#魔术引号自动过滤" class="headerlink" title="魔术引号自动过滤"></a>魔术引号自动过滤</h3><a id="more"></a><p>magic_quotes_gpc= on (在PHP5.4.0中被移除)</p><p>如果是开启状态，那么将自动对用户提交的sql语句进行转义</p><p>会把所有的单引号(“’’”)双引号(““””)反斜杠(”\“)和空字符(NULL)加上反斜杠进行转义</p><p>可以使用addslashes来转义提交的请求，或者用stripslashes来删除转义</p><h3 id="远程文件"><a href="#远程文件" class="headerlink" title="远程文件"></a>远程文件</h3><h4 id="是否允许包含远程文件"><a href="#是否允许包含远程文件" class="headerlink" title="是否允许包含远程文件"></a>是否允许包含远程文件</h4><p>allow_url_include= off</p><h4 id="是否允许打开远程文件"><a href="#是否允许打开远程文件" class="headerlink" title="是否允许打开远程文件"></a>是否允许打开远程文件</h4><p>allow_url_open= on</p><h3 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h3><h4 id="HTTP头部版本信息"><a href="#HTTP头部版本信息" class="headerlink" title="HTTP头部版本信息"></a>HTTP头部版本信息</h4><p>expose_php = off</p><p>防止通过http头部泄露php的版本信息</p><h4 id="文件上传临时目录"><a href="#文件上传临时目录" class="headerlink" title="文件上传临时目录"></a>文件上传临时目录</h4><p>upload_tmp_dir=</p><p>上传文件临时保存的目录，如果不设置的话，则采用系统的临时目录</p><h4 id="用户可访问目录"><a href="#用户可访问目录" class="headerlink" title="用户可访问目录"></a>用户可访问目录</h4><p>open_basedir = </p><p>能够控制PHP脚本只能访问指定目录</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
-&lt;h3 id=&quot;魔术引号自动过滤&quot;&gt;&lt;a href=&quot;#魔术引号自动过滤&quot; class=&quot;headerlink&quot; title=&quot;魔术引号自动过滤&quot;&gt;&lt;/a&gt;魔术引号自动过滤&lt;/h3&gt;&lt;p&gt;magic_quotes_gpc= on (在PHP5
-      
+      &lt;h3 id=&quot;魔术引号自动过滤&quot;&gt;&lt;a href=&quot;#魔术引号自动过滤&quot; class=&quot;headerlink&quot; title=&quot;魔术引号自动过滤&quot;&gt;&lt;/a&gt;魔术引号自动过滤&lt;/h3&gt;
     
     </summary>
     
@@ -310,9 +305,9 @@
     
     
     
-      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
       <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
+    
+      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
