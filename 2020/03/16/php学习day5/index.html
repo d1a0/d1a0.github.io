@@ -15,38 +15,16 @@
 
 
 
-<meta name="description" content="签到圣堂刺客下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}">
-<meta name="keywords" content="ctf,writeup">
+<meta name="description" content="流程控制">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="write up">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;index.html">
+<meta property="og:title" content="php学习day5">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;16&#x2F;php%E5%AD%A6%E4%B9%A0day5&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="签到圣堂刺客下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}">
+<meta property="og:description" content="流程控制">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122192540517.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122193129505.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122193920451.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122194200468.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122204627566.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122194834546.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122204437442.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212200915.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212200925.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212201745.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212204354.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212195829.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212200020.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212200238.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212200503.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212200604.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212205442.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212205800.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212210008.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212210214.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;QQ%E6%88%AA%E5%9B%BE20191212211701.png">
-<meta property="og:updated_time" content="2020-01-31T17:52:01.482Z">
+<meta property="og:updated_time" content="2020-03-16T13:29:01.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;write-up&#x2F;20191122192540517.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -78,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>write up | lingxin16&#39;blog</title>
+<title>php学习day5 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -288,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-write-up" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-php学习day5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/05/write-up/" class="article-date">
-      <time datetime="2019-12-05T13:11:14.000Z" itemprop="datePublished">2019-12-05</time>
+      <a href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/" class="article-date">
+      <time datetime="2020-03-16T12:54:41.000Z" itemprop="datePublished">2020-03-16</time>
 </a>
 
 
@@ -307,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      write up
+      php学习day5
     </h1>
   
 
@@ -318,7 +296,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,58 +306,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h2><h2 id="圣堂刺客"><a href="#圣堂刺客" class="headerlink" title="圣堂刺客"></a>圣堂刺客</h2><p>下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}</p>
-<a id="more"></a>
+        <h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><a id="more"></a>
 
-<p><img src="/2019/12/05/write-up/20191122192540517.jpg" alt="20191122192540517"></p>
-<h2 id="奥利安娜的QQ号"><a href="#奥利安娜的QQ号" class="headerlink" title="奥利安娜的QQ号"></a>奥利安娜的QQ号</h2><p>直接百度!</p>
-<p><img src="/2019/12/05/write-up/20191122193129505.jpg" alt="20191122193129505"></p>
-<h2 id="多喝水"><a href="#多喝水" class="headerlink" title="多喝水"></a>多喝水</h2><p>图片下载下来 拖入文本 得到</p>
-<p><img src="/2019/12/05/write-up/20191122193920451.jpg" alt="20191122193920451"></p>
-<p>QUdDVEYlN0JwMWVhczNfZHIxbmtfbTByZV93YXQzciU3RA==<br>放进base64解码得AGCTF%7Bp1eas3_dr1nk_m0re_wat3r%7D<br>%7B和%7D换成{ }</p>
-<h2 id="帅帅帅"><a href="#帅帅帅" class="headerlink" title="帅帅帅"></a>帅帅帅</h2><p>下载html文件 打开没有发现flag 查看源代码</p>
-<p><img src="/2019/12/05/write-up/20191122194200468.jpg" alt="20191122194200468"></p>
-<h2 id="Easy-Misc"><a href="#Easy-Misc" class="headerlink" title="Easy_Misc"></a>Easy_Misc</h2><p>弱口令直接用字典爆破 得到密码password<br>解压出图片 后缀改为rar 解压得到视频，提取二维码补齐定位点，</p>
-<p><img src="/2019/12/05/write-up/20191122204627566.png" alt="20191122204627566"></p>
-<p>扫码得到flag：flag{e7d478cf6b915f50ab1277f78502a2c5}将里边的字符MD5解码得到hello_ctf</p>
-<h2 id="玩具车"><a href="#玩具车" class="headerlink" title="玩具车"></a>玩具车</h2><h2 id="可以直接拖入记事本得到flag"><a href="#可以直接拖入记事本得到flag" class="headerlink" title="可以直接拖入记事本得到flag"></a>可以直接拖入记事本得到flag</h2><p><img src="/2019/12/05/write-up/20191122194834546.jpg" alt="20191122194834546"></p>
-<h2 id="Easy-RE"><a href="#Easy-RE" class="headerlink" title="Easy_RE"></a>Easy_RE</h2><p>用ida打开 f5查看代码，r键转换字符，得到flag</p>
-<p><img src="/2019/12/05/write-up/20191122204437442.png" alt="20191122204437442"></p>
-<h2 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h2><p>既然是逆向 就先用ida打开 (需要注意一下ida和ida64的区别 这1个有的能查看C语言伪代码,这个题是ida)</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200915.png" alt="QQ截图20191212200915"></p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200925.png" alt="QQ截图20191212200925"></p>
-<p>在main函数中没有发现什么 但是下边的main_0中可以看到一些东西 </p>
-<p>大概意思就是前边一串东西加上40之后等于后边的一串 此时则输出ok</p>
-<p>接着看那一团byte什么的双击之后看到</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212201745.png" alt="QQ截图20191212201745"></p>
-<p>通过询问大佬得知是16进制数 那我们就需要把他转化成十进制 再运算之后输出ascill形式</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212204354.png" alt="QQ截图20191212204354"></p>
-<p>得到flag :AGCTF{Easy_Hex}</p>
-<h2 id="这是个gif"><a href="#这是个gif" class="headerlink" title="这是个gif"></a>这是个gif</h2><p>把gif文件下载下来 发现怎么都没有办法打开,排除是隐写,没有办法,放到winhex里看一下,并没有发现GIF文件标记(只因我没有看到gif这三个字母….)</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212195829.png" alt="QQ截图20191212195829"></p>
-<p>百度gif文件  发现GIF87a和GIF89a两个版本</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200020.png" alt="QQ截图20191212200020"></p>
-<p>正好这个文件在winhex中打开开头是89a  然后百度gif文件头</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200238.png" alt="QQ截图20191212200238"></p>
-<p>对比发现是文件头缺失 然后就在winhex中补齐</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200503.png" alt="QQ截图20191212200503"></p>
-<p>保存后发现是个gif文件 在ps中打开查看gif那一帧  得到flag</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200604.png" alt="QQ截图20191212200604"></p>
-<h2 id="re-xor"><a href="#re-xor" class="headerlink" title="re_xor"></a>re_xor</h2><p>这个是用ida64才能打开查看C语言伪代码的</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212205442.png" alt="QQ截图20191212205442"></p>
-<p>f5查看伪代码 </p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212205800.png" alt="QQ截图20191212205800"></p>
-<p>发现有个地方看不懂   ^这个符号 在C语言中表示什么呢….</p>
-<p>上网搜一下 C语言 ^</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212210008.png" alt="QQ截图20191212210008"></p>
-<p>emm..位异或  题目xor也表明了这个题跟异或有关</p>
-<p>搜一下异或 有一大堆看不太懂的东西  </p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212210214.png" alt="QQ截图20191212210214"></p>
-<p>这个大概就是当^前后相等时 表示0 不等是则是1  </p>
-<p>还是重新看源代码吧…</p>
-<p>写个脚本算一算 这里就直接用异或那个符号了 也省的理解那么多…</p>
-<p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212211701.png" alt="QQ截图20191212211701"></p>
-<p>得到flag AGCTF{Happy_x0r}</p>
+<p>流程控制：代码执行的方向</p>
+<h3 id="控制分类"><a href="#控制分类" class="headerlink" title="控制分类"></a>控制分类</h3><p>顺序结构：代码从上往下，顺序执行。（代码执行的最基本结构）</p>
+<p>分支结构：给定一个条件，同时有多种可执行代码(块)，然后根据条件执行某一段代码</p>
+<p>循环结构：在某个条件控制范围内，指定的代码(块)可以重复执行</p>
+<h4 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h4><p>顺序结构:最基本结构，所有代码默认都是从上往下依次执行</p>
+<h4 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h4><p>在PHP中，分支结构主要有两种: if 分支和switch分支</p>
+<h5 id="if分支"><a href="#if分支" class="headerlink" title="if分支"></a>if分支</h5><p>最简if：</p>
+<p>if(条件表达式){</p>
+<p>​    //满足条件所要执行的内容；顺序结构</p>
+<p>}</p>
+<p>基础if</p>
+<p>if(条件表达式){</p>
+<p>​    //满足条件所要执行的内容；</p>
+<p>}else{</p>
+<p>​    //不满足条件所要执行的代码段</p>
+<p>}</p>
+<p>复杂if结构</p>
+<p>if(条件表达式1){</p>
+<p>​    //满足表达式1的代码段；</p>
+<p>}elseif(条件表达式2){</p>
+<p>​    //不满足表达式1的代码段，但是满足表达式2的代码段；</p>
+<p>}    //可是使用多个elseif来判断</p>
+<p>else{</p>
+<p>​    //全部不满足要执行的代码</p>
+<p>}</p>
 
       
     </div>
@@ -388,13 +341,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/05/write-up/">write up</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/">php学习day5</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2019-12-05, 21:11:14</p>
-        <p><span>最后更新:</span>2020-02-01, 01:52:01</p>
+        <p><span>发布时间:</span>2020-03-16, 20:54:41</p>
+        <p><span>最后更新:</span>2020-03-16, 21:29:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/05/write-up/" title="write up">http://lingxin16.github.io/2019/12/05/write-up/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2019/12/05/write-up/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/" title="php学习day5">http://lingxin16.github.io/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -406,16 +359,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">
-                    墨者学院
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/12/05/ceshi/">
-                    ceshi
+                <a href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/">
+                    php学习day4
                 </a>
             </div>
         
@@ -427,7 +374,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#签到"><span class="toc-number">1.</span> <span class="toc-text">签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#圣堂刺客"><span class="toc-number">2.</span> <span class="toc-text">圣堂刺客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#奥利安娜的QQ号"><span class="toc-number">3.</span> <span class="toc-text">奥利安娜的QQ号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多喝水"><span class="toc-number">4.</span> <span class="toc-text">多喝水</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#帅帅帅"><span class="toc-number">5.</span> <span class="toc-text">帅帅帅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Easy-Misc"><span class="toc-number">6.</span> <span class="toc-text">Easy_Misc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#玩具车"><span class="toc-number">7.</span> <span class="toc-text">玩具车</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以直接拖入记事本得到flag"><span class="toc-number">8.</span> <span class="toc-text">可以直接拖入记事本得到flag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Easy-RE"><span class="toc-number">9.</span> <span class="toc-text">Easy_RE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RE"><span class="toc-number">10.</span> <span class="toc-text">RE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这是个gif"><span class="toc-number">11.</span> <span class="toc-text">这是个gif</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re-xor"><span class="toc-number">12.</span> <span class="toc-text">re_xor</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制"><span class="toc-number">1.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#控制分类"><span class="toc-number">1.1.</span> <span class="toc-text">控制分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#顺序结构"><span class="toc-number">1.1.1.</span> <span class="toc-text">顺序结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支结构"><span class="toc-number">1.1.2.</span> <span class="toc-text">分支结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#if分支"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">if分支</span></a></li></ol></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -463,7 +410,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"write up　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"php学习day5　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -483,15 +430,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/" title="上一篇: 墨者学院">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/12/05/ceshi/" title="下一篇: ceshi">
+            <a href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/" title="下一篇: php学习day4">
                 <i class="fa fa-angle-right"></i>
             </a>
         

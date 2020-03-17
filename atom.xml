@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-15T14:59:58.060Z</updated>
+  <updated>2020-03-16T13:29:01.120Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>php学习day5</title>
+    <link href="http://lingxin16.github.io/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/"/>
+    <id>http://lingxin16.github.io/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/</id>
+    <published>2020-03-16T12:54:41.000Z</published>
+    <updated>2020-03-16T13:29:01.120Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><a id="more"></a><p>流程控制：代码执行的方向</p><h3 id="控制分类"><a href="#控制分类" class="headerlink" title="控制分类"></a>控制分类</h3><p>顺序结构：代码从上往下，顺序执行。（代码执行的最基本结构）</p><p>分支结构：给定一个条件，同时有多种可执行代码(块)，然后根据条件执行某一段代码</p><p>循环结构：在某个条件控制范围内，指定的代码(块)可以重复执行</p><h4 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h4><p>顺序结构:最基本结构，所有代码默认都是从上往下依次执行</p><h4 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h4><p>在PHP中，分支结构主要有两种: if 分支和switch分支</p><h5 id="if分支"><a href="#if分支" class="headerlink" title="if分支"></a>if分支</h5><p>最简if：</p><p>if(条件表达式){</p><p>​    //满足条件所要执行的内容；顺序结构</p><p>}</p><p>基础if</p><p>if(条件表达式){</p><p>​    //满足条件所要执行的内容；</p><p>}else{</p><p>​    //不满足条件所要执行的代码段</p><p>}</p><p>复杂if结构</p><p>if(条件表达式1){</p><p>​    //满足表达式1的代码段；</p><p>}elseif(条件表达式2){</p><p>​    //不满足表达式1的代码段，但是满足表达式2的代码段；</p><p>}    //可是使用多个elseif来判断</p><p>else{</p><p>​    //全部不满足要执行的代码</p><p>}</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;流程控制&quot;&gt;&lt;a href=&quot;#流程控制&quot; class=&quot;headerlink&quot; title=&quot;流程控制&quot;&gt;&lt;/a&gt;流程控制&lt;/h2&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="php" scheme="http://lingxin16.github.io/tags/php/"/>
+    
+  </entry>
   
   <entry>
     <title>php学习day4</title>
@@ -85,17 +106,14 @@
     <link href="http://lingxin16.github.io/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/"/>
     <id>http://lingxin16.github.io/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/</id>
     <published>2020-03-14T07:32:37.000Z</published>
-    <updated>2020-03-14T08:14:35.572Z</updated>
+    <updated>2020-03-17T09:24:09.824Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h2><p>启动环境</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200314153525.jpg" alt="QQ截图20200314153525"></p><p>相关说明：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">当前大量开发人员使用git进行版本控制，对站点自动部署。如果配置不当,可能会将.git文件夹直接部署到线上环境。这就引起了git泄露漏洞。</span></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h2><p>启动环境</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200314153525.jpg" alt="QQ截图20200314153525"></p><a id="more"></a><p>在/.git/config中有内容，直接githack</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317164838.jpg" alt="QQ截图20200317164838"></p><p>在文件夹中并没有找到flag文件</p><p>使用<code>git log</code>查看记录</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317164910.jpg" alt="QQ截图20200317164910"></p><p>可以看到在第二条记录中能看到add flag</p><p>使用<code>git reset --hard 59218d2bc0dc24072e15f3bd2dc8a89692f90ac2</code>恢复记录</p><p>得到一个txt文件，打开得到flag</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317164924.jpg" alt="QQ截图20200317164924"></p><p>或者使用<code>git diff 59218d2bc0dc24072e15f3bd2dc8a89692f90ac2</code>查看当前记录和add flag的区别</p><p>得到flag</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317165038.jpg" alt="QQ截图20200317165038"></p><h2 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h2><p>启动环境</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317170252.jpg" alt="QQ截图20200317170252"></p><p>用githack处理得到</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317170456.jpg" alt="QQ截图20200317170456"></p><p>再查看日志找到查看add flag目录发现并没有flag</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317171711.jpg" alt="QQ截图20200317171711"></p><p>在.git/refs/stash文件中发现<code>5a1c50dc9be3bb089c2f9a1e737cea77f0e0c32f</code></p><p><code>git diff 5a1c50dc9be3bb089c2f9a1e737cea77f0e0c32f</code>得到flag</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317171907.jpg" alt="QQ截图20200317171907"></p><h2 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h2><p>同样用githack处理文件</p><p>在txt文件中发现flag</p><p><img src="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200317172256.jpg" alt="QQ截图20200317172256"></p><p>相关说明：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">当前大量开发人员使用git进行版本控制，对站点自动部署。如果配置不当,可能会将.git文件夹直接部署到线上环境。这就引起了git泄露漏洞。</span></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;Log&quot;&gt;&lt;a href=&quot;#Log&quot; class=&quot;headerlink&quot; title=&quot;Log&quot;&gt;&lt;/a&gt;Log&lt;/h2&gt;&lt;p&gt;启动环境&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%
-      
+      &lt;h2 id=&quot;Log&quot;&gt;&lt;a href=&quot;#Log&quot; class=&quot;headerlink&quot; title=&quot;Log&quot;&gt;&lt;/a&gt;Log&lt;/h2&gt;&lt;p&gt;启动环境&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/QQ%E6%88%AA%E5%9B%BE20200314153525.jpg&quot; alt=&quot;QQ截图20200314153525&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -464,29 +482,6 @@
       &lt;h1 id=&quot;内部文件上传系统漏洞分析溯源&quot;&gt;&lt;a href=&quot;#内部文件上传系统漏洞分析溯源&quot; class=&quot;headerlink&quot; title=&quot;内部文件上传系统漏洞分析溯源&quot;&gt;&lt;/a&gt;内部文件上传系统漏洞分析溯源&lt;/h1&gt;&lt;p&gt;上传asp一句话木马&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/QQ%E6%88%AA%E5%9B%BE20191202192741.png&quot; alt=&quot;QQ截图20191202192741&quot;&gt;&lt;/p&gt;
 &lt;p&gt;burp抓包修改文件上传路径  在.asp后缀的文件夹中 文件被默认为asp类型执行&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
-    
-      <category term="writeup" scheme="http://lingxin16.github.io/tags/writeup/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>write up</title>
-    <link href="http://lingxin16.github.io/2019/12/05/write-up/"/>
-    <id>http://lingxin16.github.io/2019/12/05/write-up/</id>
-    <published>2019-12-05T13:11:14.000Z</published>
-    <updated>2020-01-31T17:52:01.482Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h2><h2 id="圣堂刺客"><a href="#圣堂刺客" class="headerlink" title="圣堂刺客"></a>圣堂刺客</h2><p>下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}</p><a id="more"></a><p><img src="/2019/12/05/write-up/20191122192540517.jpg" alt="20191122192540517"></p><h2 id="奥利安娜的QQ号"><a href="#奥利安娜的QQ号" class="headerlink" title="奥利安娜的QQ号"></a>奥利安娜的QQ号</h2><p>直接百度!</p><p><img src="/2019/12/05/write-up/20191122193129505.jpg" alt="20191122193129505"></p><h2 id="多喝水"><a href="#多喝水" class="headerlink" title="多喝水"></a>多喝水</h2><p>图片下载下来 拖入文本 得到</p><p><img src="/2019/12/05/write-up/20191122193920451.jpg" alt="20191122193920451"></p><p>QUdDVEYlN0JwMWVhczNfZHIxbmtfbTByZV93YXQzciU3RA==<br>放进base64解码得AGCTF%7Bp1eas3_dr1nk_m0re_wat3r%7D<br>%7B和%7D换成{ }</p><h2 id="帅帅帅"><a href="#帅帅帅" class="headerlink" title="帅帅帅"></a>帅帅帅</h2><p>下载html文件 打开没有发现flag 查看源代码</p><p><img src="/2019/12/05/write-up/20191122194200468.jpg" alt="20191122194200468"></p><h2 id="Easy-Misc"><a href="#Easy-Misc" class="headerlink" title="Easy_Misc"></a>Easy_Misc</h2><p>弱口令直接用字典爆破 得到密码password<br>解压出图片 后缀改为rar 解压得到视频，提取二维码补齐定位点，</p><p><img src="/2019/12/05/write-up/20191122204627566.png" alt="20191122204627566"></p><p>扫码得到flag：flag{e7d478cf6b915f50ab1277f78502a2c5}将里边的字符MD5解码得到hello_ctf</p><h2 id="玩具车"><a href="#玩具车" class="headerlink" title="玩具车"></a>玩具车</h2><h2 id="可以直接拖入记事本得到flag"><a href="#可以直接拖入记事本得到flag" class="headerlink" title="可以直接拖入记事本得到flag"></a>可以直接拖入记事本得到flag</h2><p><img src="/2019/12/05/write-up/20191122194834546.jpg" alt="20191122194834546"></p><h2 id="Easy-RE"><a href="#Easy-RE" class="headerlink" title="Easy_RE"></a>Easy_RE</h2><p>用ida打开 f5查看代码，r键转换字符，得到flag</p><p><img src="/2019/12/05/write-up/20191122204437442.png" alt="20191122204437442"></p><h2 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h2><p>既然是逆向 就先用ida打开 (需要注意一下ida和ida64的区别 这1个有的能查看C语言伪代码,这个题是ida)</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200915.png" alt="QQ截图20191212200915"></p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200925.png" alt="QQ截图20191212200925"></p><p>在main函数中没有发现什么 但是下边的main_0中可以看到一些东西 </p><p>大概意思就是前边一串东西加上40之后等于后边的一串 此时则输出ok</p><p>接着看那一团byte什么的双击之后看到</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212201745.png" alt="QQ截图20191212201745"></p><p>通过询问大佬得知是16进制数 那我们就需要把他转化成十进制 再运算之后输出ascill形式</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212204354.png" alt="QQ截图20191212204354"></p><p>得到flag :AGCTF{Easy_Hex}</p><h2 id="这是个gif"><a href="#这是个gif" class="headerlink" title="这是个gif"></a>这是个gif</h2><p>把gif文件下载下来 发现怎么都没有办法打开,排除是隐写,没有办法,放到winhex里看一下,并没有发现GIF文件标记(只因我没有看到gif这三个字母….)</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212195829.png" alt="QQ截图20191212195829"></p><p>百度gif文件  发现GIF87a和GIF89a两个版本</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200020.png" alt="QQ截图20191212200020"></p><p>正好这个文件在winhex中打开开头是89a  然后百度gif文件头</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200238.png" alt="QQ截图20191212200238"></p><p>对比发现是文件头缺失 然后就在winhex中补齐</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200503.png" alt="QQ截图20191212200503"></p><p>保存后发现是个gif文件 在ps中打开查看gif那一帧  得到flag</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212200604.png" alt="QQ截图20191212200604"></p><h2 id="re-xor"><a href="#re-xor" class="headerlink" title="re_xor"></a>re_xor</h2><p>这个是用ida64才能打开查看C语言伪代码的</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212205442.png" alt="QQ截图20191212205442"></p><p>f5查看伪代码 </p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212205800.png" alt="QQ截图20191212205800"></p><p>发现有个地方看不懂   ^这个符号 在C语言中表示什么呢….</p><p>上网搜一下 C语言 ^</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212210008.png" alt="QQ截图20191212210008"></p><p>emm..位异或  题目xor也表明了这个题跟异或有关</p><p>搜一下异或 有一大堆看不太懂的东西  </p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212210214.png" alt="QQ截图20191212210214"></p><p>这个大概就是当^前后相等时 表示0 不等是则是1  </p><p>还是重新看源代码吧…</p><p>写个脚本算一算 这里就直接用异或那个符号了 也省的理解那么多…</p><p><img src="/2019/12/05/write-up/QQ%E6%88%AA%E5%9B%BE20191212211701.png" alt="QQ截图20191212211701"></p><p>得到flag AGCTF{Happy_x0r}</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;签到&quot;&gt;&lt;a href=&quot;#签到&quot; class=&quot;headerlink&quot; title=&quot;签到&quot;&gt;&lt;/a&gt;签到&lt;/h2&gt;&lt;h2 id=&quot;圣堂刺客&quot;&gt;&lt;a href=&quot;#圣堂刺客&quot; class=&quot;headerlink&quot; title=&quot;圣堂刺客&quot;&gt;&lt;/a&gt;圣堂刺客&lt;/h2&gt;&lt;p&gt;下载 拖入文本 找到flag ： AGCTF{MetaData_1s_Important}&lt;/p&gt;
     
     </summary>
     
