@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-18T14:32:12.818Z</updated>
+  <updated>2020-03-18T14:34:26.346Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -21,18 +21,14 @@
     <link href="http://lingxin16.github.io/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/"/>
     <id>http://lingxin16.github.io/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/</id>
     <published>2020-03-18T13:32:37.000Z</published>
-    <updated>2020-03-18T14:32:12.818Z</updated>
+    <updated>2020-03-18T14:34:26.346Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h2><p>echo</p><p>​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支</p><p>print_r、var_dump、debug_zval_dump</p><p>​    输出变量的数据值，特别是数组和对象数据，一半在查看接口的返回值或者不确定的变量可以使用这两个api，debug_zval_dump输出结果和var_dump类似，位移增加的值是refcount，记录一个变量被引用了多少次</p><p>debug_print_backtrace</p><p>​    可以查看输出的调用栈信息</p><p>exit()</p><p>​    停止程序，无法运行后面代码</p><h2 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h2><p>全局变量</p><p>​    全局变量就是在函数外面定义的变量。不能在函数中直接使用。因为它的作用域不<br>会到函数内部。所以在函数内部使用的时候常常看到类似global $a;</p><p>超全局变量</p><p>​    超全局变量作用域在所有脚本都有效。所以,在函数可直接使用。比如$_ GET，<br>$. SERVER都是超全局变量。除$<em>GET, $. _POST,$</em> SERVER, $_ COOKIE等之外的超全局<br>变量保存在$GLOBALS数组中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$GLOBALS</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$_REQUEST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$_GET</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$_ENV</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$_SESSION</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$_SERVE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">$_POST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">$_FILES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$_COOKIS</span></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h2><p>echo</p><p>​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支</p><a id="more"></a><p>print_r、var_dump、debug_zval_dump</p><p>​    输出变量的数据值，特别是数组和对象数据，一半在查看接口的返回值或者不确定的变量可以使用这两个api，debug_zval_dump输出结果和var_dump类似，位移增加的值是refcount，记录一个变量被引用了多少次</p><p>debug_print_backtrace</p><p>​    可以查看输出的调用栈信息</p><p>exit()</p><p>​    停止程序，无法运行后面代码</p><h2 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h2><p>全局变量</p><p>​    全局变量就是在函数外面定义的变量。不能在函数中直接使用。因为它的作用域不<br>会到函数内部。所以在函数内部使用的时候常常看到类似global $a;</p><p>超全局变量</p><p>​    超全局变量作用域在所有脚本都有效。所以,在函数可直接使用。比如$_ GET，<br>$. SERVER都是超全局变量。除$<em>GET, $. _POST,$</em> SERVER, $_ COOKIE等之外的超全局<br>变量保存在$GLOBALS数组中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$GLOBALS</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$_REQUEST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$_GET</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$_ENV</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$_SESSION</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$_SERVE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">$_POST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">$_FILES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$_COOKIS</span></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;代码调试&quot;&gt;&lt;a href=&quot;#代码调试&quot; class=&quot;headerlink&quot; title=&quot;代码调试&quot;&gt;&lt;/a&gt;代码调试&lt;/h2&gt;&lt;p&gt;echo&lt;/p&gt;
+      &lt;h2 id=&quot;代码调试&quot;&gt;&lt;a href=&quot;#代码调试&quot; class=&quot;headerlink&quot; title=&quot;代码调试&quot;&gt;&lt;/a&gt;代码调试&lt;/h2&gt;&lt;p&gt;echo&lt;/p&gt;
 &lt;p&gt;​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支&lt;/p&gt;
-&lt;p&gt;pri
-      
     
     </summary>
     
@@ -331,9 +327,9 @@
     
     
     
-      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
       <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
+    
+      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
@@ -357,9 +353,9 @@
     
       <category term="web" scheme="http://lingxin16.github.io/tags/web/"/>
     
-      <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
-    
       <category term="通配符" scheme="http://lingxin16.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
+    
+      <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
     
   </entry>
   
@@ -381,11 +377,11 @@
     
     
     
+      <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
+    
       <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
     
       <category term="git泄露" scheme="http://lingxin16.github.io/tags/git%E6%B3%84%E9%9C%B2/"/>
-    
-      <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
     
   </entry>
   
