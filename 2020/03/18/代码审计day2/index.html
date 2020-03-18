@@ -15,15 +15,15 @@
 
 
 
-<meta name="description" content="魔术引号自动过滤">
+<meta name="description" content="代码调试echo ​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支 print_r、var_dump、debug_zval_dump ​    输出变量的数据值，特别是数组和对象数据，一半在查看接口的返回值或者不确定的变量可以使用这两个api，debug_zval_dump输出结果和var_dump类似，位移增加的值是refcount，记录一个变量被引用了多少次 de">
 <meta name="keywords" content="代码审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码审计day1">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;17&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1&#x2F;index.html">
+<meta property="og:title" content="代码审计day2">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;18&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="魔术引号自动过滤">
+<meta property="og:description" content="代码调试echo ​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支 print_r、var_dump、debug_zval_dump ​    输出变量的数据值，特别是数组和对象数据，一半在查看接口的返回值或者不确定的变量可以使用这两个api，debug_zval_dump输出结果和var_dump类似，位移增加的值是refcount，记录一个变量被引用了多少次 de">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-17T15:36:14.221Z">
+<meta property="og:updated_time" content="2020-03-18T14:32:12.818Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>代码审计day1 | lingxin16&#39;blog</title>
+<title>代码审计day2 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -266,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-代码审计day1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-代码审计day2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/" class="article-date">
-      <time datetime="2020-03-17T13:48:33.000Z" itemprop="datePublished">2020-03-17</time>
+      <a href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/" class="article-date">
+      <time datetime="2020-03-18T13:32:37.000Z" itemprop="datePublished">2020-03-18</time>
 </a>
 
 
@@ -285,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      代码审计day1
+      代码审计day2
     </h1>
   
 
@@ -306,20 +306,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="魔术引号自动过滤"><a href="#魔术引号自动过滤" class="headerlink" title="魔术引号自动过滤"></a>魔术引号自动过滤</h3><a id="more"></a>
+        <h2 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h2><p>echo</p>
+<p>​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支</p>
+<p>print_r、var_dump、debug_zval_dump</p>
+<p>​    输出变量的数据值，特别是数组和对象数据，一半在查看接口的返回值或者不确定的变量可以使用这两个api，debug_zval_dump输出结果和var_dump类似，位移增加的值是refcount，记录一个变量被引用了多少次</p>
+<p>debug_print_backtrace</p>
+<p>​    可以查看输出的调用栈信息</p>
+<p>exit()</p>
+<p>​    停止程序，无法运行后面代码</p>
+<h2 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h2><p>全局变量</p>
+<p>​    全局变量就是在函数外面定义的变量。不能在函数中直接使用。因为它的作用域不<br>会到函数内部。所以在函数内部使用的时候常常看到类似global $a;</p>
+<p>超全局变量</p>
+<p>​    超全局变量作用域在所有脚本都有效。所以,在函数可直接使用。比如$_ GET，<br>$. SERVER都是超全局变量。除$<em>GET, $. _POST,$</em> SERVER, $_ COOKIE等之外的超全局<br>变量保存在$GLOBALS数组中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$GLOBALS</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$_REQUEST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$_GET</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$_ENV</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$_SESSION</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$_SERVE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">$_POST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">$_FILES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$_COOKIS</span></pre></td></tr></table></figure>
 
-<p>magic_quotes_gpc= on (在PHP5.4.0中被移除)</p>
-<p>如果是开启状态，那么将自动对用户提交的sql语句进行转义</p>
-<p>会把所有的单引号(“’’”)双引号(““””)反斜杠(”\“)和空字符(NULL)加上反斜杠进行转义</p>
-<p>可以使用addslashes来转义提交的请求，或者用stripslashes来删除转义</p>
-<h3 id="远程文件"><a href="#远程文件" class="headerlink" title="远程文件"></a>远程文件</h3><h4 id="是否允许包含远程文件"><a href="#是否允许包含远程文件" class="headerlink" title="是否允许包含远程文件"></a>是否允许包含远程文件</h4><p>allow_url_include= off</p>
-<h4 id="是否允许打开远程文件"><a href="#是否允许打开远程文件" class="headerlink" title="是否允许打开远程文件"></a>是否允许打开远程文件</h4><p>allow_url_open= on</p>
-<h3 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h3><h4 id="HTTP头部版本信息"><a href="#HTTP头部版本信息" class="headerlink" title="HTTP头部版本信息"></a>HTTP头部版本信息</h4><p>expose_php = off</p>
-<p>防止通过http头部泄露php的版本信息</p>
-<h4 id="文件上传临时目录"><a href="#文件上传临时目录" class="headerlink" title="文件上传临时目录"></a>文件上传临时目录</h4><p>upload_tmp_dir=</p>
-<p>上传文件临时保存的目录，如果不设置的话，则采用系统的临时目录</p>
-<h4 id="用户可访问目录"><a href="#用户可访问目录" class="headerlink" title="用户可访问目录"></a>用户可访问目录</h4><p>open_basedir = </p>
-<p>能够控制PHP脚本只能访问指定目录</p>
 
       
     </div>
@@ -328,13 +328,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/">代码审计day1</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/">代码审计day2</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2020-03-17, 21:48:33</p>
-        <p><span>最后更新:</span>2020-03-17, 23:36:14</p>
+        <p><span>发布时间:</span>2020-03-18, 21:32:37</p>
+        <p><span>最后更新:</span>2020-03-18, 22:32:12</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/" title="代码审计day1">http://lingxin16.github.io/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/" title="代码审计day2">http://lingxin16.github.io/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -346,16 +346,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/">
-                    代码审计day2
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/">
-                    php学习day5
+                <a href="/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/">
+                    代码审计day1
                 </a>
             </div>
         
@@ -367,7 +361,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#魔术引号自动过滤"><span class="toc-number">1.</span> <span class="toc-text">魔术引号自动过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程文件"><span class="toc-number">2.</span> <span class="toc-text">远程文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#是否允许包含远程文件"><span class="toc-number">2.1.</span> <span class="toc-text">是否允许包含远程文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#是否允许打开远程文件"><span class="toc-number">2.2.</span> <span class="toc-text">是否允许打开远程文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录权限"><span class="toc-number">3.</span> <span class="toc-text">目录权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP头部版本信息"><span class="toc-number">3.1.</span> <span class="toc-text">HTTP头部版本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件上传临时目录"><span class="toc-number">3.2.</span> <span class="toc-text">文件上传临时目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户可访问目录"><span class="toc-number">3.3.</span> <span class="toc-text">用户可访问目录</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码调试"><span class="toc-number">1.</span> <span class="toc-text">代码调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超全局变量"><span class="toc-number">2.</span> <span class="toc-text">超全局变量</span></a></li></ol>
         
     </div>
     <style>
@@ -403,7 +397,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"代码审计day1　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"代码审计day2　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -423,15 +417,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/" title="上一篇: 代码审计day2">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/" title="下一篇: php学习day5">
+            <a href="/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/" title="下一篇: 代码审计day1">
                 <i class="fa fa-angle-right"></i>
             </a>
         

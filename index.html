@@ -272,6 +272,79 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-代码审计day2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/" class="article-date">
+      <time datetime="2020-03-18T13:32:37.000Z" itemprop="datePublished">2020-03-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/">代码审计day2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h2><p>echo</p>
+<p>​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支</p>
+<p>print_r、var_dump、debug_zval_dump</p>
+<p>​    输出变量的数据值，特别是数组和对象数据，一半在查看接口的返回值或者不确定的变量可以使用这两个api，debug_zval_dump输出结果和var_dump类似，位移增加的值是refcount，记录一个变量被引用了多少次</p>
+<p>debug_print_backtrace</p>
+<p>​    可以查看输出的调用栈信息</p>
+<p>exit()</p>
+<p>​    停止程序，无法运行后面代码</p>
+<h2 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h2><p>全局变量</p>
+<p>​    全局变量就是在函数外面定义的变量。不能在函数中直接使用。因为它的作用域不<br>会到函数内部。所以在函数内部使用的时候常常看到类似global $a;</p>
+<p>超全局变量</p>
+<p>​    超全局变量作用域在所有脚本都有效。所以,在函数可直接使用。比如$_ GET，<br>$. SERVER都是超全局变量。除$<em>GET, $. _POST,$</em> SERVER, $_ COOKIE等之外的超全局<br>变量保存在$GLOBALS数组中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$GLOBALS</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$_REQUEST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$_GET</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$_ENV</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$_SESSION</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$_SERVE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">$_POST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">$_FILES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$_COOKIS</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-代码审计day1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -833,71 +906,6 @@
       
         <p class="article-more-link">
           <a href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-攻防世界-php_rce" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/" class="article-date">
-      <time datetime="2020-03-09T08:05:13.000Z" itemprop="datePublished">2020-03-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/">攻防世界-php_rce</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>第一次见thinkPHP，以前只有听过</p>
-<p><img src="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/QQ%E6%88%AA%E5%9B%BE20200309160713.jpg" alt="QQ截图20200309160713"></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ThinkPHP/" rel="tag">ThinkPHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/" rel="tag">攻防世界</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-17T15:36:14.221Z</updated>
+  <updated>2020-03-18T14:32:12.818Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码审计day2</title>
+    <link href="http://lingxin16.github.io/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/"/>
+    <id>http://lingxin16.github.io/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/</id>
+    <published>2020-03-18T13:32:37.000Z</published>
+    <updated>2020-03-18T14:32:12.818Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h2><p>echo</p><p>​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支</p><p>print_r、var_dump、debug_zval_dump</p><p>​    输出变量的数据值，特别是数组和对象数据，一半在查看接口的返回值或者不确定的变量可以使用这两个api，debug_zval_dump输出结果和var_dump类似，位移增加的值是refcount，记录一个变量被引用了多少次</p><p>debug_print_backtrace</p><p>​    可以查看输出的调用栈信息</p><p>exit()</p><p>​    停止程序，无法运行后面代码</p><h2 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h2><p>全局变量</p><p>​    全局变量就是在函数外面定义的变量。不能在函数中直接使用。因为它的作用域不<br>会到函数内部。所以在函数内部使用的时候常常看到类似global $a;</p><p>超全局变量</p><p>​    超全局变量作用域在所有脚本都有效。所以,在函数可直接使用。比如$_ GET，<br>$. SERVER都是超全局变量。除$<em>GET, $. _POST,$</em> SERVER, $_ COOKIE等之外的超全局<br>变量保存在$GLOBALS数组中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$GLOBALS</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$_REQUEST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$_GET</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$_ENV</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$_SESSION</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$_SERVE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">$_POST</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">$_FILES</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$_COOKIS</span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;代码调试&quot;&gt;&lt;a href=&quot;#代码调试&quot; class=&quot;headerlink&quot; title=&quot;代码调试&quot;&gt;&lt;/a&gt;代码调试&lt;/h2&gt;&lt;p&gt;echo&lt;/p&gt;
+&lt;p&gt;​    最简单的输出数据调试方法，一般用来输出变量值或者不确定执行到哪个分支&lt;/p&gt;
+&lt;p&gt;pri
+      
+    
+    </summary>
+    
+    
+    
+      <category term="代码审计" scheme="http://lingxin16.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>代码审计day1</title>
@@ -305,9 +331,9 @@
     
     
     
-      <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
-    
       <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
     
   </entry>
   
@@ -463,29 +489,6 @@
       <category term="linux" scheme="http://lingxin16.github.io/tags/linux/"/>
     
       <category term="管道符" scheme="http://lingxin16.github.io/tags/%E7%AE%A1%E9%81%93%E7%AC%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>burp爆破</title>
-    <link href="http://lingxin16.github.io/2019/12/19/burp%E7%88%86%E7%A0%B4/"/>
-    <id>http://lingxin16.github.io/2019/12/19/burp%E7%88%86%E7%A0%B4/</id>
-    <published>2019-12-19T15:49:45.000Z</published>
-    <updated>2019-12-20T09:04:39.991Z</updated>
-    
-    <content type="html"><![CDATA[<p>用burpsuit对网页上的一些用户名密码之类的爆破</p><p>这里就用墨者学院文件包含那道题的那个登录页面吧…</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235640.png" alt="QQ截图20191219235640"></p> <a id="more"></a><p>设置代理 先用burp抓取</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235847.png" alt="QQ截图20191219235847"></p><p>黑色圈住的就是用户名和密码的函数(应该是叫函数吧…..)  红色圈住的就是之前自己输入的账号和密码</p><p>能看到是明文密码 然后send to intruder</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000053.png" alt="QQ截图20191220000053"></p><p>这里他实现标记了要爆破的位置 不是我们要爆破的位置 我们先用上边的clear把标记清除</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000358.png" alt="QQ截图20191220000358"></p><p>然后选中要爆破的地址 这里都是admin前边那个是我输入的账号后边的是密码  然后点击add分别添加</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220002421.png" alt="QQ截图20191220000524"></p><p>在attack type那里选择cluster bomb</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220000929.png" alt="QQ截图20191220000929"></p><p>转到payloads那边</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220001013.png" alt="QQ截图20191220001013"></p><p>看到payload set 右边下拉发现有1,2分别是我们刚刚添加的两个地址</p><p>下边方框右边的add是手动添加账号密码 有字典的话点load载入字典</p><p>添加完成后选择intruder→start attack</p><p><img src="/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191220001248.png" alt="QQ截图20191220001248"></p><p>然后找到length里边那个长度不一样的就是我们要的账号密码</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;用burpsuit对网页上的一些用户名密码之类的爆破&lt;/p&gt;
-&lt;p&gt;这里就用墨者学院文件包含那道题的那个登录页面吧…&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2019/12/19/burp%E7%88%86%E7%A0%B4/QQ%E6%88%AA%E5%9B%BE20191219235640.png&quot; alt=&quot;QQ截图20191219235640&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
     
   </entry>
   
