@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-19T15:27:33.561Z</updated>
+  <updated>2020-03-19T15:35:26.213Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="http://lingxin16.github.io/2020/03/19/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day3/"/>
     <id>http://lingxin16.github.io/2020/03/19/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day3/</id>
     <published>2020-03-19T14:38:28.000Z</published>
-    <updated>2020-03-19T15:27:33.561Z</updated>
+    <updated>2020-03-19T15:35:26.213Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="代码审计Sql注入漏洞"><a href="#代码审计Sql注入漏洞" class="headerlink" title="代码审计Sql注入漏洞"></a>代码审计Sql注入漏洞</h2><p>注入类型：数字型、字符型，这两种都包括以下几种注入</p><p>post注入、cookie注入、宽字节注入、二次注入、盲注、base64注入、探索注入</p><p>数字型：当输入的参数为整型时，则可认为是数字型注入</p><blockquote><p>$result = “select * from admin where id=$id”;</p></blockquote><p>不需要单引号来闭合</p><p>字符型：当输入的参数为字符串时，称之为字符型注入</p><blockquote><p>$result = “select * from admin where id=’$id’ ”;</p></blockquote><p>需要单引号来闭合</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="代码审计Sql注入漏洞"><a href="#代码审计Sql注入漏洞" class="headerlink" title="代码审计Sql注入漏洞"></a>代码审计Sql注入漏洞</h2><a id="more"></a><p>注入类型：数字型、字符型，这两种都包括以下几种注入</p><p>post注入、cookie注入、宽字节注入、二次注入、盲注、base64注入、探索注入</p><p>数字型：当输入的参数为整型时，则可认为是数字型注入</p><blockquote><p>$result = “select * from admin where id=$id”;</p></blockquote><p>不需要单引号来闭合</p><p>字符型：当输入的参数为字符串时，称之为字符型注入</p><blockquote><p>$result = “select * from admin where id=’$id’ ”;</p></blockquote><p>需要单引号来闭合</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;代码审计Sql注入漏洞&quot;&gt;&lt;a href=&quot;#代码审计Sql注入漏洞&quot; class=&quot;headerlink&quot; title=&quot;代码审计Sql注入漏洞&quot;&gt;&lt;/a&gt;代码审计Sql注入漏洞&lt;/h2&gt;&lt;p&gt;注入类型：数字型、字符型，这两种都包括以下几种注入&lt;/p&gt;
-&lt;p&gt;p
-      
+      &lt;h2 id=&quot;代码审计Sql注入漏洞&quot;&gt;&lt;a href=&quot;#代码审计Sql注入漏洞&quot; class=&quot;headerlink&quot; title=&quot;代码审计Sql注入漏洞&quot;&gt;&lt;/a&gt;代码审计Sql注入漏洞&lt;/h2&gt;
     
     </summary>
     
@@ -352,9 +348,9 @@
     
     
     
-      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
       <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
+    
+      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
