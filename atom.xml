@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-18T14:34:26.346Z</updated>
+  <updated>2020-03-19T15:27:33.561Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码审计day3</title>
+    <link href="http://lingxin16.github.io/2020/03/19/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day3/"/>
+    <id>http://lingxin16.github.io/2020/03/19/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day3/</id>
+    <published>2020-03-19T14:38:28.000Z</published>
+    <updated>2020-03-19T15:27:33.561Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="代码审计Sql注入漏洞"><a href="#代码审计Sql注入漏洞" class="headerlink" title="代码审计Sql注入漏洞"></a>代码审计Sql注入漏洞</h2><p>注入类型：数字型、字符型，这两种都包括以下几种注入</p><p>post注入、cookie注入、宽字节注入、二次注入、盲注、base64注入、探索注入</p><p>数字型：当输入的参数为整型时，则可认为是数字型注入</p><blockquote><p>$result = “select * from admin where id=$id”;</p></blockquote><p>不需要单引号来闭合</p><p>字符型：当输入的参数为字符串时，称之为字符型注入</p><blockquote><p>$result = “select * from admin where id=’$id’ ”;</p></blockquote><p>需要单引号来闭合</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;代码审计Sql注入漏洞&quot;&gt;&lt;a href=&quot;#代码审计Sql注入漏洞&quot; class=&quot;headerlink&quot; title=&quot;代码审计Sql注入漏洞&quot;&gt;&lt;/a&gt;代码审计Sql注入漏洞&lt;/h2&gt;&lt;p&gt;注入类型：数字型、字符型，这两种都包括以下几种注入&lt;/p&gt;
+&lt;p&gt;p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="代码审计" scheme="http://lingxin16.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>代码审计day2</title>
@@ -353,9 +378,9 @@
     
       <category term="web" scheme="http://lingxin16.github.io/tags/web/"/>
     
-      <category term="通配符" scheme="http://lingxin16.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
-    
       <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
+    
+      <category term="通配符" scheme="http://lingxin16.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
     
   </entry>
   
@@ -457,34 +482,6 @@
       <category term="hexo" scheme="http://lingxin16.github.io/tags/hexo/"/>
     
       <category term="单页" scheme="http://lingxin16.github.io/tags/%E5%8D%95%E9%A1%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>管道符漏洞</title>
-    <link href="http://lingxin16.github.io/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/"/>
-    <id>http://lingxin16.github.io/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/</id>
-    <published>2019-12-31T17:01:18.000Z</published>
-    <updated>2019-12-31T17:24:15.165Z</updated>
-    
-    <content type="html"><![CDATA[<p>在ping的地址后利用管道符|，||，&amp;，&amp;&amp;进行命令执行</p><p>例如127.0.0.1&amp;&amp;ls</p><p>利用<code>127.0.0.1&amp;&amp;echo &#39;一句话&#39; &gt;1.php</code>       将自己的马写到1.php中</p><p>&amp;&amp;后跟命令</p><p>比如重命名文件命令 <code>127.0.0.1&amp;&amp;mv 1.txt 1.php</code>将1.txt重命名为1.php</p><p><img src="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/QQ%E5%9B%BE%E7%89%8720200101010852.png" alt="QQ图片20200101010852"></p><p>冲鸭，2020第一天！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在ping的地址后利用管道符|，||，&amp;amp;，&amp;amp;&amp;amp;进行命令执行&lt;/p&gt;
-&lt;p&gt;例如127.0.0.1&amp;amp;&amp;amp;ls&lt;/p&gt;
-&lt;p&gt;利用&lt;code&gt;127.0.0.1&amp;amp;&amp;amp;echo &amp;#39;一句话&amp;#39; &amp;gt;1.php&lt;/
-      
-    
-    </summary>
-    
-    
-    
-      <category term="linux" scheme="http://lingxin16.github.io/tags/linux/"/>
-    
-      <category term="管道符" scheme="http://lingxin16.github.io/tags/%E7%AE%A1%E9%81%93%E7%AC%A6/"/>
     
   </entry>
   
