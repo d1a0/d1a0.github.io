@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-19T15:35:26.213Z</updated>
+  <updated>2020-03-20T15:29:18.120Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码审计day4</title>
+    <link href="http://lingxin16.github.io/2020/03/20/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day4/"/>
+    <id>http://lingxin16.github.io/2020/03/20/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day4/</id>
+    <published>2020-03-20T14:22:05.000Z</published>
+    <updated>2020-03-20T15:29:18.120Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h2><a id="more"></a><p>因为%df的关系, \的编码%5c被吃掉了,也就失去了转义的效果,直接被带入到mysql中,然后mysql在解读时无视了%a0%5c形成的新字节，那么单引号便重新发挥了效果</p><h3 id="原理"><a href="#原理" class="headerlink" title="原理:"></a>原理:</h3><p>%df%27===&gt; (addslashes)====&gt; %df%5c%27====&gt;(GBK)====&gt;運’<br>用户输入===&gt;过滤函数===&gt;代码层的$sql==&gt; mysql处理请求= =&gt;mysql中的sql<br>默认编码character set_ client== &gt;根据character. set connection转码== &gt;更新数据库时转化成字段<br>所对应的编码</p><h3 id="修复方案"><a href="#修复方案" class="headerlink" title="修复方案:"></a>修复方案:</h3><p>(1)使用mysql_set_charset(GBK)指定字符集<br>(2)使用mysql _real_escape_string进行转义</p><h2 id="二次注入"><a href="#二次注入" class="headerlink" title="二次注入"></a>二次注入</h2><p>注入点因为经过过滤处理无法触发sql注入漏洞,比如addslashes函数,将单引号等字符转义变成,但是存进数据库后，数据又被还原，在这种情况下。如果发现一个新的注入同时引用了被插入的数据库数据，就可以实现闭合新发现的注入漏洞引发二次注入(先将注入语句插入到数据库中，然后再触发语句)</p><p>一阶注入:<br>1.一阶SQL注 入发生在一个HTTP请求和响应中 ,对系统的攻击是立即执行的<br>2.攻击者在http请求中提交非法输入<br>3.应用程序处理非法输入。使用非法输入构造SQL语句<br>4.在攻击过程中向攻击者返回结果<br>二阶注入:<br>1.攻击者在http请求中提交恶意输入<br>2.恶意输入保存在数据库中<br>3.攻击者提交第二次http请求<br>4.为处理第二次http请求,程序在检索存储在数据库中的恶意输入，构造SQL语句<br>5.如果攻击成功,在第二次请求响应中返回结果</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;宽字节注入&quot;&gt;&lt;a href=&quot;#宽字节注入&quot; class=&quot;headerlink&quot; title=&quot;宽字节注入&quot;&gt;&lt;/a&gt;宽字节注入&lt;/h2&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="代码审计" scheme="http://lingxin16.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>代码审计day3</title>
@@ -348,9 +369,9 @@
     
     
     
-      <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
-    
       <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
     
   </entry>
   
@@ -454,30 +475,6 @@
       <category term="buuctf" scheme="http://lingxin16.github.io/tags/buuctf/"/>
     
       <category term="堆叠注入" scheme="http://lingxin16.github.io/tags/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>创建单页</title>
-    <link href="http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/"/>
-    <id>http://lingxin16.github.io/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/</id>
-    <published>2020-01-02T10:03:53.000Z</published>
-    <updated>2020-01-31T17:27:51.474Z</updated>
-    
-    <content type="html"><![CDATA[<p>先用<code>hexo new page ceshi</code>建立一个ceshi的单页</p><p>通过在文件头中加入<code>layout:false</code>跳过主题渲染</p><a id="more"></a><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/QQ%E6%88%AA%E5%9B%BE20200102180630.png" alt="QQ截图20200102180630"></p><p>然后将html代码插入到</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span></pre></td></tr></table></figure><p>和</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;% endraw %&#125;</span></pre></td></tr></table></figure><p>中，就可以了。</p><p><img src="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/%E6%86%A8%E6%86%A8%E8%84%B8%E7%BA%A2.jpg" alt="憨憨脸红"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;先用&lt;code&gt;hexo new page ceshi&lt;/code&gt;建立一个ceshi的单页&lt;/p&gt;
-&lt;p&gt;通过在文件头中加入&lt;code&gt;layout:false&lt;/code&gt;跳过主题渲染&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="hexo" scheme="http://lingxin16.github.io/tags/hexo/"/>
-    
-      <category term="单页" scheme="http://lingxin16.github.io/tags/%E5%8D%95%E9%A1%B5/"/>
     
   </entry>
   
