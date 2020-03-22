@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-22T14:18:28.751Z</updated>
+  <updated>2020-03-22T14:19:42.208Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -21,16 +21,13 @@
     <link href="http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/"/>
     <id>http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/</id>
     <published>2020-03-22T13:40:26.000Z</published>
-    <updated>2020-03-22T14:18:28.751Z</updated>
+    <updated>2020-03-22T14:19:42.208Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><p>命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的数据（表单、cookie、HTTP头等）传递给系统shell时，命令注入攻击是可能的。在这种攻击中，攻击者提供的操作系统命令通常以易受攻击的应用程序的特权执行。命令注入攻击可能很大程度上是由于输入验证不足。</p><h3 id="命令执行和代码执行的区别"><a href="#命令执行和代码执行的区别" class="headerlink" title="命令执行和代码执行的区别"></a>命令执行和代码执行的区别</h3><p>代码执行：执行的效果完全受限于语言本身</p><p>命令执行：执行的效果不受限于语言语法本身，不受命令本身限制</p><h3 id="命令执行类型："><a href="#命令执行类型：" class="headerlink" title="命令执行类型："></a>命令执行类型：</h3><blockquote><p>1.代码层过滤不严</p><p>2.系统漏洞</p><p>3.第三方组件存在代码执行漏洞</p></blockquote><p>常见函数：</p><p>system函数<br>passthru函数<br>Exec函数<br>Shell_exec函数<br>“</p><p>1.system函数</p><p>string system( string $command[,int &amp;$return_var] )</p><p>$command 要执行的命令</p><p>$return_var 如果提供此参数，则外部命令执行后的返回状态将会被设置到此变量中</p><p>2.passthru函数</p><p>string passthru ( string $command [, int &amp;$return_var] )</p><p>$command 要执行的命令</p><p>$return_var 如果提供此参数，Unix命令的返回状态会被记录到此参数</p><p>3.Exec函数</p><p>string exec ( string $command [,  array &amp;$output [, int &amp;$return var ]] )</p><p>$command 要执行的命令</p><p>$output 如果提供此参数，会有命令执行的输出填充此数组</p><p>$return_ var如果同时提供$output和$return_var参数，命令执行后的返回状态会被写入到此变量</p><p>4.Shell_exec函数</p><p>string shell_exec ( string $cmd )</p><p>$cmd 要执行的命令</p><p>反引号(`)则调用此函数</p><p>5.过滤函数</p><p>Escapeshellcmd() 过滤整条命令</p><p>Escapeshellarg() 过滤整个参数</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><a id="more"></a><p>命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的数据（表单、cookie、HTTP头等）传递给系统shell时，命令注入攻击是可能的。在这种攻击中，攻击者提供的操作系统命令通常以易受攻击的应用程序的特权执行。命令注入攻击可能很大程度上是由于输入验证不足。</p><h3 id="命令执行和代码执行的区别"><a href="#命令执行和代码执行的区别" class="headerlink" title="命令执行和代码执行的区别"></a>命令执行和代码执行的区别</h3><p>代码执行：执行的效果完全受限于语言本身</p><p>命令执行：执行的效果不受限于语言语法本身，不受命令本身限制</p><h3 id="命令执行类型："><a href="#命令执行类型：" class="headerlink" title="命令执行类型："></a>命令执行类型：</h3><blockquote><p>1.代码层过滤不严</p><p>2.系统漏洞</p><p>3.第三方组件存在代码执行漏洞</p></blockquote><p>常见函数：</p><p>system函数<br>passthru函数<br>Exec函数<br>Shell_exec函数<br>“</p><p>1.system函数</p><p>string system( string $command[,int &amp;$return_var] )</p><p>$command 要执行的命令</p><p>$return_var 如果提供此参数，则外部命令执行后的返回状态将会被设置到此变量中</p><p>2.passthru函数</p><p>string passthru ( string $command [, int &amp;$return_var] )</p><p>$command 要执行的命令</p><p>$return_var 如果提供此参数，Unix命令的返回状态会被记录到此参数</p><p>3.Exec函数</p><p>string exec ( string $command [,  array &amp;$output [, int &amp;$return var ]] )</p><p>$command 要执行的命令</p><p>$output 如果提供此参数，会有命令执行的输出填充此数组</p><p>$return_ var如果同时提供$output和$return_var参数，命令执行后的返回状态会被写入到此变量</p><p>4.Shell_exec函数</p><p>string shell_exec ( string $cmd )</p><p>$cmd 要执行的命令</p><p>反引号(`)则调用此函数</p><p>5.过滤函数</p><p>Escapeshellcmd() 过滤整条命令</p><p>Escapeshellarg() 过滤整个参数</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;命令执行漏洞&quot;&gt;&lt;a href=&quot;#命令执行漏洞&quot; class=&quot;headerlink&quot; title=&quot;命令执行漏洞&quot;&gt;&lt;/a&gt;命令执行漏洞&lt;/h2&gt;&lt;p&gt;命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的
-      
+      &lt;h2 id=&quot;命令执行漏洞&quot;&gt;&lt;a href=&quot;#命令执行漏洞&quot; class=&quot;headerlink&quot; title=&quot;命令执行漏洞&quot;&gt;&lt;/a&gt;命令执行漏洞&lt;/h2&gt;
     
     </summary>
     
@@ -414,9 +411,9 @@
     
     
     
-      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
       <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
+    
+      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
