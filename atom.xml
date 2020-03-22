@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-21T15:58:00.820Z</updated>
+  <updated>2020-03-22T14:18:28.751Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码审计day6</title>
+    <link href="http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/"/>
+    <id>http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/</id>
+    <published>2020-03-22T13:40:26.000Z</published>
+    <updated>2020-03-22T14:18:28.751Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><p>命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的数据（表单、cookie、HTTP头等）传递给系统shell时，命令注入攻击是可能的。在这种攻击中，攻击者提供的操作系统命令通常以易受攻击的应用程序的特权执行。命令注入攻击可能很大程度上是由于输入验证不足。</p><h3 id="命令执行和代码执行的区别"><a href="#命令执行和代码执行的区别" class="headerlink" title="命令执行和代码执行的区别"></a>命令执行和代码执行的区别</h3><p>代码执行：执行的效果完全受限于语言本身</p><p>命令执行：执行的效果不受限于语言语法本身，不受命令本身限制</p><h3 id="命令执行类型："><a href="#命令执行类型：" class="headerlink" title="命令执行类型："></a>命令执行类型：</h3><blockquote><p>1.代码层过滤不严</p><p>2.系统漏洞</p><p>3.第三方组件存在代码执行漏洞</p></blockquote><p>常见函数：</p><p>system函数<br>passthru函数<br>Exec函数<br>Shell_exec函数<br>“</p><p>1.system函数</p><p>string system( string $command[,int &amp;$return_var] )</p><p>$command 要执行的命令</p><p>$return_var 如果提供此参数，则外部命令执行后的返回状态将会被设置到此变量中</p><p>2.passthru函数</p><p>string passthru ( string $command [, int &amp;$return_var] )</p><p>$command 要执行的命令</p><p>$return_var 如果提供此参数，Unix命令的返回状态会被记录到此参数</p><p>3.Exec函数</p><p>string exec ( string $command [,  array &amp;$output [, int &amp;$return var ]] )</p><p>$command 要执行的命令</p><p>$output 如果提供此参数，会有命令执行的输出填充此数组</p><p>$return_ var如果同时提供$output和$return_var参数，命令执行后的返回状态会被写入到此变量</p><p>4.Shell_exec函数</p><p>string shell_exec ( string $cmd )</p><p>$cmd 要执行的命令</p><p>反引号(`)则调用此函数</p><p>5.过滤函数</p><p>Escapeshellcmd() 过滤整条命令</p><p>Escapeshellarg() 过滤整个参数</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;命令执行漏洞&quot;&gt;&lt;a href=&quot;#命令执行漏洞&quot; class=&quot;headerlink&quot; title=&quot;命令执行漏洞&quot;&gt;&lt;/a&gt;命令执行漏洞&lt;/h2&gt;&lt;p&gt;命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的
+      
+    
+    </summary>
+    
+    
+    
+      <category term="代码审计" scheme="http://lingxin16.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>代码审计day5</title>
@@ -445,29 +469,6 @@
       <category term="git泄露" scheme="http://lingxin16.github.io/tags/git%E6%B3%84%E9%9C%B2/"/>
     
       <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>护网杯2018-easy_tornado</title>
-    <link href="http://lingxin16.github.io/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/"/>
-    <id>http://lingxin16.github.io/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/</id>
-    <published>2020-01-29T08:01:10.000Z</published>
-    <updated>2020-01-31T17:52:38.113Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先看题<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160301.png" alt="QQ截图20200129160301"></p><a id="more"></a><p>里边的内容分别是</p><p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160448.png" alt="QQ截图20200129160448">)<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160441.png" alt="QQ截图20200129160441">)<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160434.png" alt="QQ截图20200129160434"></p><p>我们可以直接得出flag所在的文件夹是/fllllllllllllag</p><p>分析这三个的url</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525</a></p></blockquote><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039</a></p></blockquote><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d</a></p></blockquote><p>我们可以得出这样的结论，flag所在文件的url应该是<a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=</a><strong><strong><strong>**</strong></strong></strong></p><p>至于这个<strong><strong><strong>**</strong></strong></strong>应该就是md5(cookie_secret+md5(filename))</p><p>filename我们已经知道是fllllllllllllag，那么我们接下来只需要找到cookie_secret</p><p>利用burp抓包我们并没有找到cookie，只能上百度了……（那咋办嘛）</p><p>通过百度得知在error页面存在SSTI模板注入（又是一个看不懂的东西……）</p><p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/%E6%86%A8%E6%86%A8%E8%90%BD%E6%B3%AA.jpg" alt="憨憨落泪"></p><p>附上关于SSTI模板注入的博客：<a href="https://blog.csdn.net/zz_Caleb/article/details/96480967" target="_blank" rel="noopener">SSTI完全学习</a></p><p>注入方式大概就是error?msg=0</p><p>……？？？？？？至于注入啥玩意儿，大佬说的是用handler.settings对象(这又是啥玩意儿，咱也不知道，咱也不敢问)</p><p>那么传递error?msg=</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=</a></p></blockquote><p>得到这个回显</p><p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129162705.png" alt="QQ截图20200129162705"></p><p>‘cookie_secret’: ‘66015e24-a274-4abf-bd65-6776ae208dc4’}</p><p>接下来构造</p><blockquote><p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1</a></p></blockquote><p>访问得到</p><p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129163253.png" alt="QQ截图20200129163253"></p><p>我太难了….<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/1.jpg" alt="1"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先看题&lt;img src=&quot;/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160301.png&quot; alt=&quot;QQ截图20200129160301&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
-    
-      <category term="模板注入" scheme="http://lingxin16.github.io/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"/>
     
   </entry>
   

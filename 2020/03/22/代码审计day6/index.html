@@ -15,32 +15,16 @@
 
 
 
-<meta name="description" content="web1-Cosmos 的博客打开网站">
-<meta name="keywords" content="ctf,git泄露,burpsuit">
+<meta name="description" content="命令执行漏洞命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的数据（表单、cookie、HTTP头等）传递给系统shell时，命令注入攻击是可能的。在这种攻击中，攻击者提供的操作系统命令通常以易受攻击的应用程序的特权执行。命令注入攻击可能很大程度上是由于输入验证不足。 命令执行和代码执行的区别代码执行：执行的效果完全受限于语言本身 命令执行">
+<meta name="keywords" content="代码审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hgame-Week1-web">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;index.html">
+<meta property="og:title" content="代码审计day6">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;22&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="web1-Cosmos 的博客打开网站">
+<meta property="og:description" content="命令执行漏洞命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的数据（表单、cookie、HTTP头等）传递给系统shell时，命令注入攻击是可能的。在这种攻击中，攻击者提供的操作系统命令通常以易受攻击的应用程序的特权执行。命令注入攻击可能很大程度上是由于输入验证不足。 命令执行和代码执行的区别代码执行：执行的效果完全受限于语言本身 命令执行">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201004038.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201004006.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201004657.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201004847.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201005415.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201005327.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201005544.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201005552.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201005935.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201010056.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201010301.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201010542.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201010909.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201011655.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201011949.png">
-<meta property="og:updated_time" content="2020-01-31T17:50:18.804Z">
+<meta property="og:updated_time" content="2020-03-22T14:18:28.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;02&#x2F;01&#x2F;Hgame-Week1-web&#x2F;QQ%E6%88%AA%E5%9B%BE20200201004038.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -72,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hgame-Week1-web | lingxin16&#39;blog</title>
+<title>代码审计day6 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -282,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Hgame-Week1-web" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-代码审计day6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/02/01/Hgame-Week1-web/" class="article-date">
-      <time datetime="2020-01-31T16:35:15.000Z" itemprop="datePublished">2020-02-01</time>
+      <a href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/" class="article-date">
+      <time datetime="2020-03-22T13:40:26.000Z" itemprop="datePublished">2020-03-22</time>
 </a>
 
 
@@ -301,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hgame-Week1-web
+      代码审计day6
     </h1>
   
 
@@ -312,7 +296,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/burpsuit/" rel="tag">burpsuit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git%E6%B3%84%E9%9C%B2/" rel="tag">git泄露</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,49 +306,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="web1-Cosmos-的博客"><a href="#web1-Cosmos-的博客" class="headerlink" title="web1-Cosmos 的博客"></a>web1-Cosmos 的博客</h2><p>打开网站</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004038.png" alt="QQ截图20200201004038"></p>
-<a id="more"></a>
-
-<p>发现提及到博客、github、版本管理工具，可以联想到git泄露（hexo博客能是白搭建的吗！！！）</p>
-<p>构造url(/.git/config)</p>
-<blockquote>
-<p><a href="http://cosmos.hgame.n3ko.co/.git/config" target="_blank" rel="noopener">http://cosmos.hgame.n3ko.co/.git/config</a></p>
+        <h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><p>命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的数据（表单、cookie、HTTP头等）传递给系统shell时，命令注入攻击是可能的。在这种攻击中，攻击者提供的操作系统命令通常以易受攻击的应用程序的特权执行。命令注入攻击可能很大程度上是由于输入验证不足。</p>
+<h3 id="命令执行和代码执行的区别"><a href="#命令执行和代码执行的区别" class="headerlink" title="命令执行和代码执行的区别"></a>命令执行和代码执行的区别</h3><p>代码执行：执行的效果完全受限于语言本身</p>
+<p>命令执行：执行的效果不受限于语言语法本身，不受命令本身限制</p>
+<h3 id="命令执行类型："><a href="#命令执行类型：" class="headerlink" title="命令执行类型："></a>命令执行类型：</h3><blockquote>
+<p>1.代码层过滤不严</p>
+<p>2.系统漏洞</p>
+<p>3.第三方组件存在代码执行漏洞</p>
 </blockquote>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004006.png" alt="QQ截图20200201004006"></p>
-<p>发现目标仓库</p>
-<blockquote>
-<p><a href="https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc" target="_blank" rel="noopener">https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc</a></p>
-</blockquote>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004657.png" alt="QQ截图20200201004657"></p>
-<p>根据提示解码</p>
-<h2 id="web2-接头霸王"><a href="#web2-接头霸王" class="headerlink" title="web2-接头霸王"></a>web2-接头霸王</h2><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004847.png" alt="QQ截图20200201004847">根据提示利用burpsuit修改HTTP请求头 如图</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005415.png" alt="QQ截图20200201005415"></p>
-<p>得到flag</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005327.png" alt="QQ截图20200201005327"></p>
-<h2 id="web3-Code-World"><a href="#web3-Code-World" class="headerlink" title="web3-Code World"></a>web3-Code World</h2><p>打开之后发现报错403 Forbidden</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005544.png" alt="QQ截图20200201005544"></p>
-<p>查看源代码发现</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005552.png" alt="QQ截图20200201005552"></p>
-<p>很显然是被人刻意改动了，然后跳转到了/new.php</p>
-<p>我们用burpsuit抓包发现其实报错是405 Not Allowed</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005935.png" alt="QQ截图20200201005935"></p>
-<p>百度一下405 Not Allowed这个报错</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010056.png" alt="QQ截图20200201010056"></p>
-<p>就是两种请求方式之间出错  然后我们修改请求方式即可正常打开</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010301.png" alt="QQ截图20200201010301"></p>
-<p>根据提示利用url传参?a=4+6</p>
-<p>这里+需要url编码%2b    即?a=4%2b6</p>
-<p>然后利用POST请求得到flag</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010542.png" alt="QQ截图20200201010542"></p>
-<h2 id="web4-🐔尼泰玫"><a href="#web4-🐔尼泰玫" class="headerlink" title="web4-🐔尼泰玫"></a>web4-🐔尼泰玫</h2><p>打开是个小游戏  cxk打篮球(手动滑稽)</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010909.png" alt="QQ截图20200201010909"></p>
-<p>提示我们需要30000分才能拿到flag</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011655.png" alt="QQ截图20200201011655"></p>
-<p>然后我们在网络状态中发现了submit这个文件</p>
-<p>查看之后发现是把分数数据发送给后台然后判断，我们直接抓包编辑重发</p>
-<p>得到flag</p>
-<p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011949.png" alt="QQ截图20200201011949"></p>
+<p>常见函数：</p>
+<p>system函数<br>passthru函数<br>Exec函数<br>Shell_exec函数<br>“</p>
+<p>1.system函数</p>
+<p>string system( string $command[,int &amp;$return_var] )</p>
+<p>$command 要执行的命令</p>
+<p>$return_var 如果提供此参数，则外部命令执行后的返回状态将会被设置到此变量中</p>
+<p>2.passthru函数</p>
+<p>string passthru ( string $command [, int &amp;$return_var] )</p>
+<p>$command 要执行的命令</p>
+<p>$return_var 如果提供此参数，Unix命令的返回状态会被记录到此参数</p>
+<p>3.Exec函数</p>
+<p>string exec ( string $command [,  array &amp;$output [, int &amp;$return var ]] )</p>
+<p>$command 要执行的命令</p>
+<p>$output 如果提供此参数，会有命令执行的输出填充此数组</p>
+<p>$return_ var如果同时提供$output和$return_var参数，命令执行后的返回状态会被写入到此变量</p>
+<p>4.Shell_exec函数</p>
+<p>string shell_exec ( string $cmd )</p>
+<p>$cmd 要执行的命令</p>
+<p>反引号(`)则调用此函数</p>
+<p>5.过滤函数</p>
+<p>Escapeshellcmd() 过滤整条命令</p>
+<p>Escapeshellarg() 过滤整个参数</p>
 
       
     </div>
@@ -373,13 +344,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/02/01/Hgame-Week1-web/">Hgame-Week1-web</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/">代码审计day6</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2020-02-01, 00:35:15</p>
-        <p><span>最后更新:</span>2020-02-01, 01:50:18</p>
+        <p><span>发布时间:</span>2020-03-22, 21:40:26</p>
+        <p><span>最后更新:</span>2020-03-22, 22:18:28</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/02/01/Hgame-Week1-web/" title="Hgame-Week1-web">http://lingxin16.github.io/2020/02/01/Hgame-Week1-web/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/02/01/Hgame-Week1-web/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/" title="代码审计day6">http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -391,16 +362,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/">
-                    ctfshow红包题-web
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/">
-                    护网杯2018-easy_tornado
+                <a href="/2020/03/21/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day5/">
+                    代码审计day5
                 </a>
             </div>
         
@@ -412,7 +377,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web1-Cosmos-的博客"><span class="toc-number">1.</span> <span class="toc-text">web1-Cosmos 的博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web2-接头霸王"><span class="toc-number">2.</span> <span class="toc-text">web2-接头霸王</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web3-Code-World"><span class="toc-number">3.</span> <span class="toc-text">web3-Code World</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web4-🐔尼泰玫"><span class="toc-number">4.</span> <span class="toc-text">web4-🐔尼泰玫</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行漏洞"><span class="toc-number">1.</span> <span class="toc-text">命令执行漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令执行和代码执行的区别"><span class="toc-number">1.1.</span> <span class="toc-text">命令执行和代码执行的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令执行类型："><span class="toc-number">1.2.</span> <span class="toc-text">命令执行类型：</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -448,7 +413,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hgame-Week1-web　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"代码审计day6　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -468,15 +433,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/" title="上一篇: ctfshow红包题-web">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/" title="下一篇: 护网杯2018-easy_tornado">
+            <a href="/2020/03/21/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day5/" title="下一篇: 代码审计day5">
                 <i class="fa fa-angle-right"></i>
             </a>
         
