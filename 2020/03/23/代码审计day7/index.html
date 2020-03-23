@@ -15,15 +15,15 @@
 
 
 
-<meta name="description" content="命令执行漏洞">
+<meta name="description" content="XSS漏洞">
 <meta name="keywords" content="代码审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码审计day6">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;22&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6&#x2F;index.html">
+<meta property="og:title" content="代码审计day7">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;23&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="命令执行漏洞">
+<meta property="og:description" content="XSS漏洞">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-22T14:19:42.208Z">
+<meta property="og:updated_time" content="2020-03-23T14:08:59.772Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>代码审计day6 | lingxin16&#39;blog</title>
+<title>代码审计day7 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -266,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-代码审计day6" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-代码审计day7" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/" class="article-date">
-      <time datetime="2020-03-22T13:40:26.000Z" itemprop="datePublished">2020-03-22</time>
+      <a href="/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/" class="article-date">
+      <time datetime="2020-03-23T13:23:41.000Z" itemprop="datePublished">2020-03-23</time>
 </a>
 
 
@@ -285,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      代码审计day6
+      代码审计day7
     </h1>
   
 
@@ -306,39 +306,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><a id="more"></a>
+        <h2 id="XSS漏洞"><a href="#XSS漏洞" class="headerlink" title="XSS漏洞"></a>XSS漏洞</h2><a id="more"></a>
 
-<p>命令注入是一种攻击，目标是通过易受攻击的应用程序在主机操作系统上执行任意命令。当应用程序将不安全的用户提供的数据（表单、cookie、HTTP头等）传递给系统shell时，命令注入攻击是可能的。在这种攻击中，攻击者提供的操作系统命令通常以易受攻击的应用程序的特权执行。命令注入攻击可能很大程度上是由于输入验证不足。</p>
-<h3 id="命令执行和代码执行的区别"><a href="#命令执行和代码执行的区别" class="headerlink" title="命令执行和代码执行的区别"></a>命令执行和代码执行的区别</h3><p>代码执行：执行的效果完全受限于语言本身</p>
-<p>命令执行：执行的效果不受限于语言语法本身，不受命令本身限制</p>
-<h3 id="命令执行类型："><a href="#命令执行类型：" class="headerlink" title="命令执行类型："></a>命令执行类型：</h3><blockquote>
-<p>1.代码层过滤不严</p>
-<p>2.系统漏洞</p>
-<p>3.第三方组件存在代码执行漏洞</p>
-</blockquote>
-<p>常见函数：</p>
-<p>system函数<br>passthru函数<br>Exec函数<br>Shell_exec函数<br>“</p>
-<p>1.system函数</p>
-<p>string system( string $command[,int &amp;$return_var] )</p>
-<p>$command 要执行的命令</p>
-<p>$return_var 如果提供此参数，则外部命令执行后的返回状态将会被设置到此变量中</p>
-<p>2.passthru函数</p>
-<p>string passthru ( string $command [, int &amp;$return_var] )</p>
-<p>$command 要执行的命令</p>
-<p>$return_var 如果提供此参数，Unix命令的返回状态会被记录到此参数</p>
-<p>3.Exec函数</p>
-<p>string exec ( string $command [,  array &amp;$output [, int &amp;$return var ]] )</p>
-<p>$command 要执行的命令</p>
-<p>$output 如果提供此参数，会有命令执行的输出填充此数组</p>
-<p>$return_ var如果同时提供$output和$return_var参数，命令执行后的返回状态会被写入到此变量</p>
-<p>4.Shell_exec函数</p>
-<p>string shell_exec ( string $cmd )</p>
-<p>$cmd 要执行的命令</p>
-<p>反引号(`)则调用此函数</p>
-<p>5.过滤函数</p>
-<p>Escapeshellcmd() 过滤整条命令</p>
-<p>Escapeshellarg() 过滤整个参数</p>
-
+<p>跨站脚本攻击( Cross Site Scripting )是指攻击者利用网站程序对用户输入过滤不足,输入可以显示在页面上对其他用户造成影响的HTML代码,从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。为了与层叠样式表( Cascading Style Sheets )的缩写CSS区分开,跨站脚本攻击通常简写为XSS。</p>
+<h3 id="常见场景"><a href="#常见场景" class="headerlink" title="常见场景"></a>常见场景</h3><p>搜索内容</p>
+<p>发表文章</p>
+<p>评论回复</p>
+<p>资料设置</p>
+<p>留言</p>
+<h3 id="常见类型"><a href="#常见类型" class="headerlink" title="常见类型"></a>常见类型</h3><p>反射型</p>
+<p>存储型</p>
+<p>DOM型</p>
+<h3 id="反射型XSS"><a href="#反射型XSS" class="headerlink" title="反射型XSS"></a>反射型XSS</h3><p>​    非持久型,也叫反射型XSS。通过GET和POST方法,向服务器端输入数据。用户输入的数据通常被放置在URL的query string中,或者是form数据中。如果服务器端对输入的数据不进行过滤,验证或编码,就直接将用户输入的信息直接呈现给客户，则可能会造成反射型XSS。</p>
+<p>​    反射型XSS是比较普遍的XSS ,其危害程度通常被认为较小。但是某些反射型XSS造成的后果会很严重,如在输入框的name中输入<meta http-equiv="refresh" content="5"> ,服务器不加处理,将name的值直接送到浏览器，则浏览器会每5秒自动刷新一次。严重者会导致服务器崩溃。</p>
+<p>常见场景:<br>●将前端获取的内容,直接输出到浏览器页面<br>●将前端获取的内容,直接输出到HTML标签<br>●将前端获取的内容，直接输出到<script>标签</p>
+<h3 id="存储型XSS"><a href="#存储型XSS" class="headerlink" title="存储型XSS"></a>存储型XSS</h3><p>​    持久型,也叫存储型XSS,通常是因为服务器端将用户输入的恶意脚本没有通过验证就直接存储在数据库,并且每次通过调用数据库的方式,将数据呈现在浏览器上。则该XSS跨站脚本攻击将一直存在。若其他用户访问该页面,则恶意脚本就会被触发,用于盗取其他用户的私人信息。</p>
+<h3 id="DOM型XSS"><a href="#DOM型XSS" class="headerlink" title="DOM型XSS"></a>DOM型XSS</h3><p>​    DOM ,全称Document Object Model ,是一个平台和语言都中立的接口,可以使程序和脚本能够动态访问和更新文档的内容、结构以及样式。<br>DOM型XSS其实是一种特殊类型的XSS ,它是基于DOM文档对象模型的一种漏洞。</p>
+</script></p>
       
     </div>
     
@@ -346,13 +330,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/">代码审计day6</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/">代码审计day7</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2020-03-22, 21:40:26</p>
-        <p><span>最后更新:</span>2020-03-22, 22:19:42</p>
+        <p><span>发布时间:</span>2020-03-23, 21:23:41</p>
+        <p><span>最后更新:</span>2020-03-23, 22:08:59</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/" title="代码审计day6">http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/" title="代码审计day7">http://lingxin16.github.io/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -364,16 +348,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/">
-                    代码审计day7
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/03/21/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day5/">
-                    代码审计day5
+                <a href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/">
+                    代码审计day6
                 </a>
             </div>
         
@@ -385,7 +363,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行漏洞"><span class="toc-number">1.</span> <span class="toc-text">命令执行漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令执行和代码执行的区别"><span class="toc-number">1.1.</span> <span class="toc-text">命令执行和代码执行的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令执行类型："><span class="toc-number">1.2.</span> <span class="toc-text">命令执行类型：</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS漏洞"><span class="toc-number">1.</span> <span class="toc-text">XSS漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见场景"><span class="toc-number">1.1.</span> <span class="toc-text">常见场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见类型"><span class="toc-number">1.2.</span> <span class="toc-text">常见类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射型XSS"><span class="toc-number">1.3.</span> <span class="toc-text">反射型XSS</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -421,7 +399,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"代码审计day6　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"代码审计day7　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,15 +419,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/" title="上一篇: 代码审计day7">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/03/21/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day5/" title="下一篇: 代码审计day5">
+            <a href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/" title="下一篇: 代码审计day6">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-22T14:19:42.208Z</updated>
+  <updated>2020-03-23T14:08:59.772Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码审计day7</title>
+    <link href="http://lingxin16.github.io/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/"/>
+    <id>http://lingxin16.github.io/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/</id>
+    <published>2020-03-23T13:23:41.000Z</published>
+    <updated>2020-03-23T14:08:59.772Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="XSS漏洞"><a href="#XSS漏洞" class="headerlink" title="XSS漏洞"></a>XSS漏洞</h2><a id="more"></a><p>跨站脚本攻击( Cross Site Scripting )是指攻击者利用网站程序对用户输入过滤不足,输入可以显示在页面上对其他用户造成影响的HTML代码,从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。为了与层叠样式表( Cascading Style Sheets )的缩写CSS区分开,跨站脚本攻击通常简写为XSS。</p><h3 id="常见场景"><a href="#常见场景" class="headerlink" title="常见场景"></a>常见场景</h3><p>搜索内容</p><p>发表文章</p><p>评论回复</p><p>资料设置</p><p>留言</p><h3 id="常见类型"><a href="#常见类型" class="headerlink" title="常见类型"></a>常见类型</h3><p>反射型</p><p>存储型</p><p>DOM型</p><h3 id="反射型XSS"><a href="#反射型XSS" class="headerlink" title="反射型XSS"></a>反射型XSS</h3><p>​    非持久型,也叫反射型XSS。通过GET和POST方法,向服务器端输入数据。用户输入的数据通常被放置在URL的query string中,或者是form数据中。如果服务器端对输入的数据不进行过滤,验证或编码,就直接将用户输入的信息直接呈现给客户，则可能会造成反射型XSS。</p><p>​    反射型XSS是比较普遍的XSS ,其危害程度通常被认为较小。但是某些反射型XSS造成的后果会很严重,如在输入框的name中输入<meta http-equiv="refresh" content="5"> ,服务器不加处理,将name的值直接送到浏览器，则浏览器会每5秒自动刷新一次。严重者会导致服务器崩溃。</p><p>常见场景:<br>●将前端获取的内容,直接输出到浏览器页面<br>●将前端获取的内容,直接输出到HTML标签<br>●将前端获取的内容，直接输出到<script>标签</p><h3 id="存储型XSS"><a href="#存储型XSS" class="headerlink" title="存储型XSS"></a>存储型XSS</h3><p>​    持久型,也叫存储型XSS,通常是因为服务器端将用户输入的恶意脚本没有通过验证就直接存储在数据库,并且每次通过调用数据库的方式,将数据呈现在浏览器上。则该XSS跨站脚本攻击将一直存在。若其他用户访问该页面,则恶意脚本就会被触发,用于盗取其他用户的私人信息。</p><h3 id="DOM型XSS"><a href="#DOM型XSS" class="headerlink" title="DOM型XSS"></a>DOM型XSS</h3><p>​    DOM ,全称Document Object Model ,是一个平台和语言都中立的接口,可以使程序和脚本能够动态访问和更新文档的内容、结构以及样式。<br>DOM型XSS其实是一种特殊类型的XSS ,它是基于DOM文档对象模型的一种漏洞。</p></script></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;XSS漏洞&quot;&gt;&lt;a href=&quot;#XSS漏洞&quot; class=&quot;headerlink&quot; title=&quot;XSS漏洞&quot;&gt;&lt;/a&gt;XSS漏洞&lt;/h2&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="代码审计" scheme="http://lingxin16.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>代码审计day6</title>
@@ -440,32 +461,6 @@
       <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
     
       <category term="通配符" scheme="http://lingxin16.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hgame-Week1-web</title>
-    <link href="http://lingxin16.github.io/2020/02/01/Hgame-Week1-web/"/>
-    <id>http://lingxin16.github.io/2020/02/01/Hgame-Week1-web/</id>
-    <published>2020-01-31T16:35:15.000Z</published>
-    <updated>2020-01-31T17:50:18.804Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="web1-Cosmos-的博客"><a href="#web1-Cosmos-的博客" class="headerlink" title="web1-Cosmos 的博客"></a>web1-Cosmos 的博客</h2><p>打开网站</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004038.png" alt="QQ截图20200201004038"></p><a id="more"></a><p>发现提及到博客、github、版本管理工具，可以联想到git泄露（hexo博客能是白搭建的吗！！！）</p><p>构造url(/.git/config)</p><blockquote><p><a href="http://cosmos.hgame.n3ko.co/.git/config" target="_blank" rel="noopener">http://cosmos.hgame.n3ko.co/.git/config</a></p></blockquote><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004006.png" alt="QQ截图20200201004006"></p><p>发现目标仓库</p><blockquote><p><a href="https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc" target="_blank" rel="noopener">https://github.com/FeYcYodhrPDJSru/8LTUKCL83VLhXbc</a></p></blockquote><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004657.png" alt="QQ截图20200201004657"></p><p>根据提示解码</p><h2 id="web2-接头霸王"><a href="#web2-接头霸王" class="headerlink" title="web2-接头霸王"></a>web2-接头霸王</h2><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004847.png" alt="QQ截图20200201004847">根据提示利用burpsuit修改HTTP请求头 如图</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005415.png" alt="QQ截图20200201005415"></p><p>得到flag</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005327.png" alt="QQ截图20200201005327"></p><h2 id="web3-Code-World"><a href="#web3-Code-World" class="headerlink" title="web3-Code World"></a>web3-Code World</h2><p>打开之后发现报错403 Forbidden</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005544.png" alt="QQ截图20200201005544"></p><p>查看源代码发现</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005552.png" alt="QQ截图20200201005552"></p><p>很显然是被人刻意改动了，然后跳转到了/new.php</p><p>我们用burpsuit抓包发现其实报错是405 Not Allowed</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201005935.png" alt="QQ截图20200201005935"></p><p>百度一下405 Not Allowed这个报错</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010056.png" alt="QQ截图20200201010056"></p><p>就是两种请求方式之间出错  然后我们修改请求方式即可正常打开</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010301.png" alt="QQ截图20200201010301"></p><p>根据提示利用url传参?a=4+6</p><p>这里+需要url编码%2b    即?a=4%2b6</p><p>然后利用POST请求得到flag</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010542.png" alt="QQ截图20200201010542"></p><h2 id="web4-🐔尼泰玫"><a href="#web4-🐔尼泰玫" class="headerlink" title="web4-🐔尼泰玫"></a>web4-🐔尼泰玫</h2><p>打开是个小游戏  cxk打篮球(手动滑稽)</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201010909.png" alt="QQ截图20200201010909"></p><p>提示我们需要30000分才能拿到flag</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011655.png" alt="QQ截图20200201011655"></p><p>然后我们在网络状态中发现了submit这个文件</p><p>查看之后发现是把分数数据发送给后台然后判断，我们直接抓包编辑重发</p><p>得到flag</p><p><img src="/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201011949.png" alt="QQ截图20200201011949"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;web1-Cosmos-的博客&quot;&gt;&lt;a href=&quot;#web1-Cosmos-的博客&quot; class=&quot;headerlink&quot; title=&quot;web1-Cosmos 的博客&quot;&gt;&lt;/a&gt;web1-Cosmos 的博客&lt;/h2&gt;&lt;p&gt;打开网站&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2020/02/01/Hgame-Week1-web/QQ%E6%88%AA%E5%9B%BE20200201004038.png&quot; alt=&quot;QQ截图20200201004038&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="burpsuit" scheme="http://lingxin16.github.io/tags/burpsuit/"/>
-    
-      <category term="ctf" scheme="http://lingxin16.github.io/tags/ctf/"/>
-    
-      <category term="git泄露" scheme="http://lingxin16.github.io/tags/git%E6%B3%84%E9%9C%B2/"/>
     
   </entry>
   
