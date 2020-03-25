@@ -15,18 +15,19 @@
 
 
 
-<meta name="description" content="浮点类型">
-<meta name="keywords" content="php">
+<meta name="description" content="文件上传绕过服务端： 1.黑白名单过滤 2.修改MIME类型 3.截断上传攻击 4..htaccess文件攻击 5.目录验证 目录穿越目录穿越(Directory Traversal)攻击是黑客能够在Web应用程序所在的根目录以外的文件夹上,任意地存取被限制的文件夹、执行命令或查找数据。目录穿越攻击,也有人称为Path Traversal攻击。 绕过进行URL编码 进行16位Unicode编码 进">
+<meta name="keywords" content="代码审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php学习day3">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;14&#x2F;php%E5%AD%A6%E4%B9%A0day3&#x2F;index.html">
+<meta property="og:title" content="代码审计day9">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="浮点类型">
+<meta property="og:description" content="文件上传绕过服务端： 1.黑白名单过滤 2.修改MIME类型 3.截断上传攻击 4..htaccess文件攻击 5.目录验证 目录穿越目录穿越(Directory Traversal)攻击是黑客能够在Web应用程序所在的根目录以外的文件夹上,任意地存取被限制的文件夹、执行命令或查找数据。目录穿越攻击,也有人称为Path Traversal攻击。 绕过进行URL编码 进行16位Unicode编码 进">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;14&#x2F;php%E5%AD%A6%E4%B9%A0day3&#x2F;QQ%E6%88%AA%E5%9B%BE20200314222620.jpg">
-<meta property="og:updated_time" content="2020-03-14T16:19:59.216Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;QQ%E6%88%AA%E5%9B%BE20200325223345.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;QQ%E6%88%AA%E5%9B%BE20200325224125.jpg">
+<meta property="og:updated_time" content="2020-03-25T14:52:29.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;14&#x2F;php%E5%AD%A6%E4%B9%A0day3&#x2F;QQ%E6%88%AA%E5%9B%BE20200314222620.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;QQ%E6%88%AA%E5%9B%BE20200325223345.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>php学习day3 | lingxin16&#39;blog</title>
+<title>代码审计day9 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -268,11 +269,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-php学习day3" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-代码审计day9" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/" class="article-date">
-      <time datetime="2020-03-14T14:13:25.000Z" itemprop="datePublished">2020-03-14</time>
+      <a href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/" class="article-date">
+      <time datetime="2020-03-25T13:49:57.000Z" itemprop="datePublished">2020-03-25</time>
 </a>
 
 
@@ -287,7 +288,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      php学习day3
+      代码审计day9
     </h1>
   
 
@@ -298,7 +299,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -308,45 +309,26 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h2><a id="more"></a>
-
-<p>浮点型：小数类型以及超过整型所能存储范围的整数</p>
-<p>浮点型定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$f&#x3D;1.23;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$f&#x3D;1.23e10;      &#x2F;&#x2F;科学计数法，其中e表示低10   1.23×10^10</span></pre></td></tr></table></figure>
-
-<p>浮点数不够精确</p>
-<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><p>两个值：true和false  通常用于判断</p>
-<p>在进行某些数据判断的时候，需要特别注意类型转换</p>
-<p>Empty()：判断数据的值是否为“空”，而不是NULL，如果为空返回true，不为空返回false</p>
-<p>lsset()：判断数据存储的变量本身是否存在，存在变量返回true，不存在返回false</p>
-<p><img src="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/QQ%E6%88%AA%E5%9B%BE20200314222620.jpg" alt="QQ截图20200314222620"></p>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符：operator，是一种将数据进行运算的特殊符号，在php中一共有十种运算符之多</p>
-<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p>赋值运算：符号是“=”，表示将右边的结果(可以是变量、数据、常量和其他运算出来的结果)，保存到内存的某个位置，然后将位置的内存地址赋值给左侧的变量(常量)</p>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>+：执行数据累加<br>-：数据相减<br>*：两个数相乘<br>/：两个数相除<br>%：取余运算，两个数(整数)相除保留余数</p>
-<p>在进行除法运算或取余运算时后边的数不能为零</p>
-<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>比较运算：比较两个数据的大小，或者两个内容是否相同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&gt;：左边大于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&gt;&#x3D;：左边大于等于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;：左边小于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&lt;&#x3D;：左边小于等于右边，返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;：左边与右边的相同（大小相同），返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">!&#x3D;：左边与右边的不同（大小不相同），返回true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;&#x3D;：全等于 左边与右边的相同（大小以及数据的类型都要相同）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">!&#x3D;&#x3D;：不全等于 左边与右边的不相同（大小或数据的类型不同）</span></pre></td></tr></table></figure>
-
-<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">逻辑运算：针对不同的结果进行匹配</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&amp;&amp;：逻辑与  左边的条件与右边的条件同时成立（两边结果都为true）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">||：逻辑或 左边的条件嚯右边的条件只要有一个满足即可</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">！：逻辑非 对已有条件进行取反</span></pre></td></tr></table></figure>
-
-<p>逻辑与和逻辑或又称为短路运算：如果第-一个表达式结果已经满足条件了，那么就不会运行逻辑运算符后面的表达式  在书写代码的时候，尽量将出现概率最高的(能够直接判断出结果)的表达式放到第一位</p>
-<h3 id="连接运算符"><a href="#连接运算符" class="headerlink" title="连接运算符"></a>连接运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">连接运算:是PHP中将多个字符串拼接的一种符号</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">.：将两个字符串连接到一起</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">.&#x3D;：复合运算，将左边的内容与右边的内容连接起来，然后重新赋值给左边变量</span></pre></td></tr></table></figure>
-
-<h3 id="错误抑制符"><a href="#错误抑制符" class="headerlink" title="错误抑制符"></a>错误抑制符</h3><p>在PHP中有一些错误可以提前预知，但是这些错误可能无法避免，但是又不希望报错给用户看，可以使用错误抑制符处理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">@：在可能出错的表达式前面使用@符号即可</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">@(可能出错的代码);</span></pre></td></tr></table></figure>
-
-<h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><p>三目运算:有三个表达式参与的运算(简单的的分支结构缩写)。</p>
-<p>语法格式:</p>
-<p>表达式1 ? 表达式2 :  表达式3;（如果表达式1成立，那么执行表达式2，否则执行表达式3）</p>
-<h3 id="自操作运算符"><a href="#自操作运算符" class="headerlink" title="自操作运算符"></a>自操作运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">++</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">--</span></pre></td></tr></table></figure>
-
-<p>后置自操作运算符$a++</p>
-<p>前置自操作运算符++$a</p>
-<p>b=$a++   先赋值再运算</p>
-<p>b=++$a   先运算再赋值</p>
-<p>衍生符号：类似自操作</p>
-<p>+=：左边的结果与右边的结果相加，然后赋值给左边<br>-=：左边的减去右边的结果，然后赋值给左边<br>*=：乘法操作<br>/=：除法操作<br>%=：模操作</p>
-<p>注意：右边是一个整体！</p>
+        <h2 id="文件上传绕过"><a href="#文件上传绕过" class="headerlink" title="文件上传绕过"></a>文件上传绕过</h2><p>服务端：</p>
+<p>1.黑白名单过滤</p>
+<p>2.修改MIME类型</p>
+<p>3.截断上传攻击</p>
+<p>4..htaccess文件攻击</p>
+<p>5.目录验证</p>
+<h2 id="目录穿越"><a href="#目录穿越" class="headerlink" title="目录穿越"></a>目录穿越</h2><p>目录穿越(Directory Traversal)攻击是黑客能够在Web应用程序所在的根目录以外的文件夹上,任意地存取被限制的文件夹、执行命令或查找数据。目录穿越攻击,也有人称为Path Traversal攻击。</p>
+<h3 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h3><p>进行URL编码</p>
+<p>进行16位Unicode编码</p>
+<p>进行双倍URL编码</p>
+<p>进行超长UTF-8 Unicode编码</p>
+<h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2><p>文件包含漏洞的产生原因是在通过引入文件时,引用的文件名用户可控，由于传入的文件名没有经过合理的校验，或者校验被绕过，从而操作了预想之外的文件，就可能导致意外的文件泄露甚至恶意的代码注入。当被包含的文件在服务器本地时,就形成的本地文件包含漏洞,被包涵的文件在第三方服务是,就形成了远程文件包含漏洞。</p>
+<p>模块加载、cache调用,传入的参数拼接包含路径</p>
+<p>include()<br>使用此函数,只有代码执行到此函数时才将文件包含进来,发生错误时只警告并继续执行。</p>
+<p>inclue_once0<br>功能和前者一样,区别在于当重复调用同- -文件时,程序只调用一次。</p>
+<p>require()<br>使用此函数,只要程序执行,立即调用此函数包含文件,发生错误时,会输出错误信息并<br>立即终止程序。</p>
+<p>require_once()<br>功能和前者一样，区别在于当重复调用同一文件时，程序只调用一次。 </p>
+<h3 id="远程包含利用方式"><a href="#远程包含利用方式" class="headerlink" title="远程包含利用方式"></a>远程包含利用方式</h3><p><img src="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/QQ%E6%88%AA%E5%9B%BE20200325223345.jpg" alt="QQ截图20200325223345"></p>
+<h2 id="任意文件读取及删除"><a href="#任意文件读取及删除" class="headerlink" title="任意文件读取及删除"></a>任意文件读取及删除</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><p><img src="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/QQ%E6%88%AA%E5%9B%BE20200325224125.jpg" alt="QQ截图20200325224125"></p>
+<h3 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h3><p>unlike()</p>
 
       
     </div>
@@ -355,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/">php学习day3</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/">代码审计day9</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2020-03-14, 22:13:25</p>
-        <p><span>最后更新:</span>2020-03-15, 00:19:59</p>
+        <p><span>发布时间:</span>2020-03-25, 21:49:57</p>
+        <p><span>最后更新:</span>2020-03-25, 22:52:29</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/" title="php学习day3">http://lingxin16.github.io/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/" title="代码审计day9">http://lingxin16.github.io/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -373,16 +355,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/">
-                    Python安装双版本
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/">
-                    ctfhub-信息泄露-Git泄露
+                <a href="/2020/03/24/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day8/">
+                    代码审计day8
                 </a>
             </div>
         
@@ -394,7 +370,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浮点类型"><span class="toc-number">1.</span> <span class="toc-text">浮点类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布尔类型"><span class="toc-number">2.</span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符"><span class="toc-number">3.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-number">3.1.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">3.2.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较运算符"><span class="toc-number">3.3.</span> <span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">3.4.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接运算符"><span class="toc-number">3.5.</span> <span class="toc-text">连接运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误抑制符"><span class="toc-number">3.6.</span> <span class="toc-text">错误抑制符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三目运算符"><span class="toc-number">3.7.</span> <span class="toc-text">三目运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自操作运算符"><span class="toc-number">3.8.</span> <span class="toc-text">自操作运算符</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件上传绕过"><span class="toc-number">1.</span> <span class="toc-text">文件上传绕过</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录穿越"><span class="toc-number">2.</span> <span class="toc-text">目录穿越</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绕过"><span class="toc-number">2.1.</span> <span class="toc-text">绕过</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件包含"><span class="toc-number">3.</span> <span class="toc-text">文件包含</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#远程包含利用方式"><span class="toc-number">3.1.</span> <span class="toc-text">远程包含利用方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任意文件读取及删除"><span class="toc-number">4.</span> <span class="toc-text">任意文件读取及删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件读取"><span class="toc-number">4.1.</span> <span class="toc-text">文件读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件删除"><span class="toc-number">4.2.</span> <span class="toc-text">文件删除</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -430,7 +406,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"php学习day3　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"代码审计day9　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -450,15 +426,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/" title="上一篇: Python安装双版本">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/" title="下一篇: ctfhub-信息泄露-Git泄露">
+            <a href="/2020/03/24/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day8/" title="下一篇: 代码审计day8">
                 <i class="fa fa-angle-right"></i>
             </a>
         

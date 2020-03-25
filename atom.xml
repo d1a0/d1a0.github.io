@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lingxin16.github.io/"/>
-  <updated>2020-03-24T14:41:56.479Z</updated>
+  <updated>2020-03-25T14:52:29.633Z</updated>
   <id>http://lingxin16.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码审计day9</title>
+    <link href="http://lingxin16.github.io/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/"/>
+    <id>http://lingxin16.github.io/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/</id>
+    <published>2020-03-25T13:49:57.000Z</published>
+    <updated>2020-03-25T14:52:29.633Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="文件上传绕过"><a href="#文件上传绕过" class="headerlink" title="文件上传绕过"></a>文件上传绕过</h2><p>服务端：</p><p>1.黑白名单过滤</p><p>2.修改MIME类型</p><p>3.截断上传攻击</p><p>4..htaccess文件攻击</p><p>5.目录验证</p><h2 id="目录穿越"><a href="#目录穿越" class="headerlink" title="目录穿越"></a>目录穿越</h2><p>目录穿越(Directory Traversal)攻击是黑客能够在Web应用程序所在的根目录以外的文件夹上,任意地存取被限制的文件夹、执行命令或查找数据。目录穿越攻击,也有人称为Path Traversal攻击。</p><h3 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h3><p>进行URL编码</p><p>进行16位Unicode编码</p><p>进行双倍URL编码</p><p>进行超长UTF-8 Unicode编码</p><h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2><p>文件包含漏洞的产生原因是在通过引入文件时,引用的文件名用户可控，由于传入的文件名没有经过合理的校验，或者校验被绕过，从而操作了预想之外的文件，就可能导致意外的文件泄露甚至恶意的代码注入。当被包含的文件在服务器本地时,就形成的本地文件包含漏洞,被包涵的文件在第三方服务是,就形成了远程文件包含漏洞。</p><p>模块加载、cache调用,传入的参数拼接包含路径</p><p>include()<br>使用此函数,只有代码执行到此函数时才将文件包含进来,发生错误时只警告并继续执行。</p><p>inclue_once0<br>功能和前者一样,区别在于当重复调用同- -文件时,程序只调用一次。</p><p>require()<br>使用此函数,只要程序执行,立即调用此函数包含文件,发生错误时,会输出错误信息并<br>立即终止程序。</p><p>require_once()<br>功能和前者一样，区别在于当重复调用同一文件时，程序只调用一次。 </p><h3 id="远程包含利用方式"><a href="#远程包含利用方式" class="headerlink" title="远程包含利用方式"></a>远程包含利用方式</h3><p><img src="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/QQ%E6%88%AA%E5%9B%BE20200325223345.jpg" alt="QQ截图20200325223345"></p><h2 id="任意文件读取及删除"><a href="#任意文件读取及删除" class="headerlink" title="任意文件读取及删除"></a>任意文件读取及删除</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><p><img src="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/QQ%E6%88%AA%E5%9B%BE20200325224125.jpg" alt="QQ截图20200325224125"></p><h3 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h3><p>unlike()</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;文件上传绕过&quot;&gt;&lt;a href=&quot;#文件上传绕过&quot; class=&quot;headerlink&quot; title=&quot;文件上传绕过&quot;&gt;&lt;/a&gt;文件上传绕过&lt;/h2&gt;&lt;p&gt;服务端：&lt;/p&gt;
+&lt;p&gt;1.黑白名单过滤&lt;/p&gt;
+&lt;p&gt;2.修改MIME类型&lt;/p&gt;
+&lt;p&gt;3.截断上传攻击
+      
+    
+    </summary>
+    
+    
+    
+      <category term="代码审计" scheme="http://lingxin16.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>代码审计day8</title>
@@ -433,29 +460,6 @@
     
     
       <category term="misc" scheme="http://lingxin16.github.io/tags/misc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ctfshow游戏题</title>
-    <link href="http://lingxin16.github.io/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/"/>
-    <id>http://lingxin16.github.io/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/</id>
-    <published>2020-03-03T07:53:31.000Z</published>
-    <updated>2020-03-03T08:46:07.605Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="misc22"><a href="#misc22" class="headerlink" title="misc22"></a>misc22</h2><p>下载下来的压缩包，里边备注的有游戏地址，并且表明了这是个存档</p><a id="more"></a><p><img src="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/QQ%E6%88%AA%E5%9B%BE20200303160523.jpg" alt="QQ截图20200303160523"></p><p>载入存档之后删除围墙 发现右下角地图的flag</p><p><img src="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/QQ%E6%88%AA%E5%9B%BE20200303160250.jpg" alt="QQ截图20200303160250"></p><p>有一说一这游戏真好玩  附上游戏地址<a href="https://yorg.io/" target="_blank" rel="noopener">https://yorg.io/</a></p><h2 id="超级玛丽"><a href="#超级玛丽" class="headerlink" title="超级玛丽"></a>超级玛丽</h2><p>下载下来是nes文件，然后我们需要下载模拟器工具才能打开。我这里下载的是VirtuaNES</p><p>利用模拟器自带的金手指，搜索一些金手指代码，通关后公主会告诉你flag</p><p>这里我用的金手指代码：</p><p>0704-01-00 超能力(00水中大跳,01空中游泳)</p><p>075F-01-00 选大关(00-??,??由作品决定)</p><h2 id="魂斗罗-游戏flag-终结篇"><a href="#魂斗罗-游戏flag-终结篇" class="headerlink" title="魂斗罗  游戏flag 终结篇"></a>魂斗罗  游戏flag 终结篇</h2><p>和超级玛丽差不多，不过这里的flag是藏在最后一关的地图里，需要多观察。</p><p>不过其实这个flag也可以猜出来，嘿嘿</p><p>附上金手指代码：</p><p>0032-01-20（1P生命无限）</p><p>00B0-01-FF（1P无敌）</p><h2 id="植物大战僵尸"><a href="#植物大战僵尸" class="headerlink" title="植物大战僵尸"></a>植物大战僵尸</h2><p>出题人表示flag在通关后的mv里，这要是通关可要花点时间了，但是我们有两种办法可以读取</p><p>1.直接从网上复制别人的存档，修改本地存档，然后在制作人员那里可以观看mv</p><p>2.直接解pak包，在pak包里寻找flag</p><p>最终的flag是mv的背景音乐</p><p>不过我实在是听不出来正确的flag</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;misc22&quot;&gt;&lt;a href=&quot;#misc22&quot; class=&quot;headerlink&quot; title=&quot;misc22&quot;&gt;&lt;/a&gt;misc22&lt;/h2&gt;&lt;p&gt;下载下来的压缩包，里边备注的有游戏地址，并且表明了这是个存档&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="ctfshow" scheme="http://lingxin16.github.io/tags/ctfshow/"/>
-    
-      <category term="游戏" scheme="http://lingxin16.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   

@@ -14,20 +14,19 @@
 <meta name="author" content="奝" />
 
 
+    
+    
 
-<meta name="description" content="数据类型判断">
-<meta name="keywords" content="php">
-<meta property="og:type" content="article">
-<meta property="og:title" content="php学习day2">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;13&#x2F;php%E5%AD%A6%E4%B9%A0day2&#x2F;index.html">
+
+<meta name="description" content="myctf">
+<meta name="keywords" content="ctf">
+<meta property="og:type" content="website">
+<meta property="og:title" content="lingxin16&#39;blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;page&#x2F;4&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="数据类型判断">
+<meta property="og:description" content="myctf">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;13&#x2F;php%E5%AD%A6%E4%B9%A0day2&#x2F;QQ%E6%88%AA%E5%9B%BE20200313221130.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;13&#x2F;php%E5%AD%A6%E4%B9%A0day2&#x2F;QQ%E6%88%AA%E5%9B%BE20200313221726.jpg">
-<meta property="og:updated_time" content="2020-03-13T14:22:39.777Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;13&#x2F;php%E5%AD%A6%E4%B9%A0day2&#x2F;QQ%E6%88%AA%E5%9B%BE20200313221130.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,11 +54,13 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
+    <style> .article { opacity: 0;} </style>
+
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>php学习day2 | lingxin16&#39;blog</title>
+<title>lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -68,8 +69,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: false,
-        isPost: true,
+        isHome: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -269,11 +270,13 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-php学习day2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
+  
+    <article id="post-ceshi" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/" class="article-date">
-      <time datetime="2020-03-13T13:34:25.000Z" itemprop="datePublished">2020-03-13</time>
+      <a href="/2019/12/05/ceshi/" class="article-date">
+      <time datetime="2019-12-05T12:49:34.000Z" itemprop="datePublished">2019-12-05</time>
 </a>
 
 
@@ -287,140 +290,37 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      php学习day2
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/05/ceshi/">ceshi</a>
     </h1>
   
 
       </header>
       
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
     
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="数据类型判断"><a href="#数据类型判断" class="headerlink" title="数据类型判断"></a>数据类型判断</h2><a id="more"></a>
+        <p><img src="/2019/12/05/ceshi/tu.png" alt="tu"></p>
+<p>手动插入图片测试</p>
+<p><img src="/2019/12/05/ceshi/preview.jpg" alt="preview">Typora拖入测试</p>
 
-<p>通过一组类型判断函数，来判断变量，最终返回这个变量所保存数据的数据类型(相同为true,否则为false)：是一组以is_开头后面跟类型名字的函数</p>
-<p>is_×××(变量名)</p>
-<p>Bool(布尔)类型不能用echo来查看，可以使用var_dump来查看</p>
-<p>Var_dump(变量1,变量2…)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Var_dump(is_int($a));</span></pre></td></tr></table></figure>
-
-<p>Gettype(变量名)：获取类型 得到的是该类型对应的字符串</p>
-<p>Settype(变量名,类型)：设定数据类型，与强制转换不同</p>
-<p>1.强制转换(类型)变量名，是对数据复制的内容进行处理（不会处理实际存储的内容）</p>
-<p>2.Settype会直接改变数据本身</p>
-<h2 id="整数类型进制"><a href="#整数类型进制" class="headerlink" title="整数类型进制"></a>整数类型进制</h2><h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><p>在PHP中提供了四种整型的定义方式：十进制定义、二进制定义、八进制定义、十六进制定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$a&#x3D;120;        &#x2F;&#x2F;10进制</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$a&#x3D;0b110;      &#x2F;&#x2F;2进制</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$a&#x3D;0120;       &#x2F;&#x2F;8进制</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$a&#x3D;0×120;      &#x2F;&#x2F;16进制</span></pre></td></tr></table></figure>
-
-<p>默认的PHP输出数值都会自动转换成10进制</p>
-<h3 id="整数类型进制转换"><a href="#整数类型进制转换" class="headerlink" title="整数类型进制转换"></a>整数类型进制转换</h3><p><img src="/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/QQ%E6%88%AA%E5%9B%BE20200313221130.jpg" alt="QQ截图20200313221130"></p>
-<p><img src="/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/QQ%E6%88%AA%E5%9B%BE20200313221726.jpg" alt="QQ截图20200313221726"></p>
-<p>Decbin():     十进制转二进制</p>
-<p>Decoct():     十进制转八进制</p>
-<p>Dechex():     十进制转十六进制</p>
-<p>Bindec():      二进制转十进制</p>
-<p>……以此类推</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">var_dump(decbin(107));</span></pre></td></tr></table></figure>
       
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
     </div>
     
   </div>
   
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/">php学习day2</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2020-03-13, 21:34:25</p>
-        <p><span>最后更新:</span>2020-03-13, 22:22:39</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/" title="php学习day2">http://lingxin16.github.io/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/">
-                    ctfhub-信息泄露-Git泄露
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/03/12/php%E5%AD%A6%E4%B9%A0day1/">
-                    php学习day1
-                </a>
-            </div>
-        
-    </nav>
-
-  
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型判断"><span class="toc-number">1.</span> <span class="toc-text">数据类型判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整数类型进制"><span class="toc-number">2.</span> <span class="toc-text">整数类型进制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整数类型"><span class="toc-number">2.1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整数类型进制转换"><span class="toc-number">2.2.</span> <span class="toc-text">整数类型进制转换</span></a></li></ol></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"php学习day2　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
 
 
 
@@ -428,35 +328,13 @@
 
 
 
-    
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/" title="上一篇: ctfhub-信息泄露-Git泄露">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2020/03/12/php%E5%AD%A6%E4%B9%A0day1/" title="下一篇: php学习day1">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/">代码审计day9</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/24/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day8/">代码审计day8</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/23/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day7/">代码审计day7</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/22/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day6/">代码审计day6</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/21/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day5/">代码审计day5</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/20/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day4/">代码审计day4</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/19/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day3/">代码审计day3</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/18/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day2/">代码审计day2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/">代码审计day1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/">php学习day5</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/">php学习day4</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/Python%E5%AE%89%E8%A3%85%E5%8F%8C%E7%89%88%E6%9C%AC/">Python安装双版本</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/php%E5%AD%A6%E4%B9%A0day3/">php学习day3</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2-Git%E6%B3%84%E9%9C%B2/">ctfhub-信息泄露-Git泄露</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/php%E5%AD%A6%E4%B9%A0day2/">php学习day2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/12/php%E5%AD%A6%E4%B9%A0day1/">php学习day1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/10/ctfhub-%E4%BF%A1%E6%81%AF%E6%B3%84%E6%B3%84%E9%9C%B2-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/">ctfhub-信息泄泄露_备份文件下载</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-php_rce/">攻防世界-php_rce</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/08/ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9B/">ctfshow-萌新赛</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/2020%E5%B9%B4%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%AC%E7%9B%8A%E8%B5%9B-%E5%A5%97%E5%A8%83/">2020年新春战疫—网络安全公益赛-套娃</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/ctfshow%E6%B8%B8%E6%88%8F%E9%A2%98/">ctfshow游戏题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/15/ctfshow%E7%BA%A2%E5%8C%85%E9%A2%98-web/">ctfshow红包题-web</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/01/Hgame-Week1-web/">Hgame-Week1-web</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/">护网杯2018-easy_tornado</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/">强网杯-随便注</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/02/%E5%88%9B%E5%BB%BA%E5%8D%95%E9%A1%B5/">创建单页</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/01/%E7%AE%A1%E9%81%93%E7%AC%A6%E6%BC%8F%E6%B4%9E/">管道符漏洞</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/burp%E7%88%86%E7%A0%B4/">burp爆破</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/06/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2/">墨者学院</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/write-up/">write up</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/ceshi/">ceshi</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">

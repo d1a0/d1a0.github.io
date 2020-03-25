@@ -272,6 +272,85 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-代码审计day9" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/" class="article-date">
+      <time datetime="2020-03-25T13:49:57.000Z" itemprop="datePublished">2020-03-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/">代码审计day9</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="文件上传绕过"><a href="#文件上传绕过" class="headerlink" title="文件上传绕过"></a>文件上传绕过</h2><p>服务端：</p>
+<p>1.黑白名单过滤</p>
+<p>2.修改MIME类型</p>
+<p>3.截断上传攻击</p>
+<p>4..htaccess文件攻击</p>
+<p>5.目录验证</p>
+<h2 id="目录穿越"><a href="#目录穿越" class="headerlink" title="目录穿越"></a>目录穿越</h2><p>目录穿越(Directory Traversal)攻击是黑客能够在Web应用程序所在的根目录以外的文件夹上,任意地存取被限制的文件夹、执行命令或查找数据。目录穿越攻击,也有人称为Path Traversal攻击。</p>
+<h3 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h3><p>进行URL编码</p>
+<p>进行16位Unicode编码</p>
+<p>进行双倍URL编码</p>
+<p>进行超长UTF-8 Unicode编码</p>
+<h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2><p>文件包含漏洞的产生原因是在通过引入文件时,引用的文件名用户可控，由于传入的文件名没有经过合理的校验，或者校验被绕过，从而操作了预想之外的文件，就可能导致意外的文件泄露甚至恶意的代码注入。当被包含的文件在服务器本地时,就形成的本地文件包含漏洞,被包涵的文件在第三方服务是,就形成了远程文件包含漏洞。</p>
+<p>模块加载、cache调用,传入的参数拼接包含路径</p>
+<p>include()<br>使用此函数,只有代码执行到此函数时才将文件包含进来,发生错误时只警告并继续执行。</p>
+<p>inclue_once0<br>功能和前者一样,区别在于当重复调用同- -文件时,程序只调用一次。</p>
+<p>require()<br>使用此函数,只要程序执行,立即调用此函数包含文件,发生错误时,会输出错误信息并<br>立即终止程序。</p>
+<p>require_once()<br>功能和前者一样，区别在于当重复调用同一文件时，程序只调用一次。 </p>
+<h3 id="远程包含利用方式"><a href="#远程包含利用方式" class="headerlink" title="远程包含利用方式"></a>远程包含利用方式</h3><p><img src="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/QQ%E6%88%AA%E5%9B%BE20200325223345.jpg" alt="QQ截图20200325223345"></p>
+<h2 id="任意文件读取及删除"><a href="#任意文件读取及删除" class="headerlink" title="任意文件读取及删除"></a>任意文件读取及删除</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><p><img src="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/QQ%E6%88%AA%E5%9B%BE20200325224125.jpg" alt="QQ截图20200325224125"></p>
+<h3 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h3><p>unlike()</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-代码审计day8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -849,73 +928,9 @@
 
 
   
-    <article id="post-php学习day4" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/" class="article-date">
-      <time datetime="2020-03-15T13:52:40.000Z" itemprop="datePublished">2020-03-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/">php学习day4</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="计算机码"><a href="#计算机码" class="headerlink" title="计算机码"></a>计算机码</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/15/php%E5%AD%A6%E4%B9%A0day4/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 </div>
