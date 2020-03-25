@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="文件上传绕过服务端： 1.黑白名单过滤 2.修改MIME类型 3.截断上传攻击 4..htaccess文件攻击 5.目录验证 目录穿越目录穿越(Directory Traversal)攻击是黑客能够在Web应用程序所在的根目录以外的文件夹上,任意地存取被限制的文件夹、执行命令或查找数据。目录穿越攻击,也有人称为Path Traversal攻击。 绕过进行URL编码 进行16位Unicode编码 进">
+<meta name="description" content="文件上传绕过">
 <meta name="keywords" content="代码审计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码审计day9">
 <meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="文件上传绕过服务端： 1.黑白名单过滤 2.修改MIME类型 3.截断上传攻击 4..htaccess文件攻击 5.目录验证 目录穿越目录穿越(Directory Traversal)攻击是黑客能够在Web应用程序所在的根目录以外的文件夹上,任意地存取被限制的文件夹、执行命令或查找数据。目录穿越攻击,也有人称为Path Traversal攻击。 绕过进行URL编码 进行16位Unicode编码 进">
+<meta property="og:description" content="文件上传绕过">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;QQ%E6%88%AA%E5%9B%BE20200325223345.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;QQ%E6%88%AA%E5%9B%BE20200325224125.jpg">
-<meta property="og:updated_time" content="2020-03-25T14:52:29.633Z">
+<meta property="og:updated_time" content="2020-03-25T14:53:53.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;25&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9&#x2F;QQ%E6%88%AA%E5%9B%BE20200325223345.jpg">
 
@@ -309,7 +309,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="文件上传绕过"><a href="#文件上传绕过" class="headerlink" title="文件上传绕过"></a>文件上传绕过</h2><p>服务端：</p>
+        <h2 id="文件上传绕过"><a href="#文件上传绕过" class="headerlink" title="文件上传绕过"></a>文件上传绕过</h2><a id="more"></a>
+
+<p>服务端：</p>
 <p>1.黑白名单过滤</p>
 <p>2.修改MIME类型</p>
 <p>3.截断上传攻击</p>
@@ -340,7 +342,7 @@
         <p><span>本文标题:</span><a href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/">代码审计day9</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
         <p><span>发布时间:</span>2020-03-25, 21:49:57</p>
-        <p><span>最后更新:</span>2020-03-25, 22:52:29</p>
+        <p><span>最后更新:</span>2020-03-25, 22:53:53</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/" title="代码审计day9">http://lingxin16.github.io/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/</a>
             <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
