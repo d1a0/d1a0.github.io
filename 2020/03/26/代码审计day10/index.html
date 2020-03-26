@@ -15,15 +15,15 @@
 
 
 
-<meta name="description" content="变量覆盖变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值 extract()变量覆盖1int extract ( $array , extract_rules,prefix )2$array 关联的数组，受第二个和第三个参数的影响3extract_rules 对待非法&amp;#x2F; 数字和冲突的键名的方法将根据取出标记4prefix 仅在第二个参数特殊时需要，添加前缀 危险函">
+<meta name="description" content="变量覆盖">
 <meta name="keywords" content="代码审计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码审计day10">
 <meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;26&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="变量覆盖变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值 extract()变量覆盖1int extract ( $array , extract_rules,prefix )2$array 关联的数组，受第二个和第三个参数的影响3extract_rules 对待非法&amp;#x2F; 数字和冲突的键名的方法将根据取出标记4prefix 仅在第二个参数特殊时需要，添加前缀 危险函">
+<meta property="og:description" content="变量覆盖">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-26T14:42:02.817Z">
+<meta property="og:updated_time" content="2020-03-26T14:54:54.259Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -306,9 +306,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <a id="more"></a>
+        <h2 id="变量覆盖"><a href="#变量覆盖" class="headerlink" title="变量覆盖"></a>变量覆盖</h2><a id="more"></a>
 
-<h2 id="变量覆盖"><a href="#变量覆盖" class="headerlink" title="变量覆盖"></a>变量覆盖</h2><p>变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值</p>
+<p>变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值</p>
 <h2 id="extract-变量覆盖"><a href="#extract-变量覆盖" class="headerlink" title="extract()变量覆盖"></a>extract()变量覆盖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">int extract ( $array , extract_rules,prefix )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$array 关联的数组，受第二个和第三个参数的影响</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">extract_rules 对待非法&#x2F; 数字和冲突的键名的方法将根据取出标记</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">prefix 仅在第二个参数特殊时需要，添加前缀</span></pre></td></tr></table></figure>
 <h3 id="危险函数"><a href="#危险函数" class="headerlink" title="危险函数"></a>危险函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">EXTR_OVERWRITE-默认。如果有冲突，则覆盖已有的变量。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">EXTR_SKIP- 如果有冲突，不覆盖已有的变量。( 忽略数组中同名的元素)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_SAME .如果有冲突，在变量名前加上前缀prefix。自PHP4.0.5起，这也包括了对数字索引的处理</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_ALL- 给所有变量名加上前缀prefx (第三个参数)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_INVALID -仅在非法或数字变量名前加上前缎prefix。本标记是PHP4.0.5新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">EXTR_IF_EXISTS- 仅在当前符号表中已有同名变量时，覆盖它们的值。其它的都不处理。可以用在已经定义了一组合法的变量，然后要从一个数组例如$_REQUEST中提取值覆盖这些变量的场合。本标记是PHP4.2.0新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_IF_EXISTS-仅在当前符号表中已有同名变量时，建立附加了前缀的变量名，其它的都不处理。本标记是PHP4.2.0新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">EXTR_REFS-将变量作为引用提取。这有力地表明了导入的变量仍然引用了var_array 参数的值。可以单独使用这个标志或者在extract_type中用OR与其它任何标志结合使用。本标记是PHP4.3.0新加的。</span></pre></td></tr></table></figure>
 
@@ -327,7 +327,7 @@
         <p><span>本文标题:</span><a href="/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/">代码审计day10</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
         <p><span>发布时间:</span>2020-03-26, 21:36:59</p>
-        <p><span>最后更新:</span>2020-03-26, 22:42:02</p>
+        <p><span>最后更新:</span>2020-03-26, 22:54:54</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/" title="代码审计day10">http://lingxin16.github.io/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/</a>
             <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
