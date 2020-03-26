@@ -272,6 +272,75 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-代码审计day10" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/" class="article-date">
+      <time datetime="2020-03-26T13:36:59.000Z" itemprop="datePublished">2020-03-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/">代码审计day10</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <a id="more"></a>
+
+<h2 id="变量覆盖"><a href="#变量覆盖" class="headerlink" title="变量覆盖"></a>变量覆盖</h2><p>变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值</p>
+<h2 id="extract-变量覆盖"><a href="#extract-变量覆盖" class="headerlink" title="extract()变量覆盖"></a>extract()变量覆盖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">int extract ( $array , extract_rules,prefix )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$array 关联的数组，受第二个和第三个参数的影响</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">extract_rules 对待非法&#x2F; 数字和冲突的键名的方法将根据取出标记</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">prefix 仅在第二个参数特殊时需要，添加前缀</span></pre></td></tr></table></figure>
+<h3 id="危险函数"><a href="#危险函数" class="headerlink" title="危险函数"></a>危险函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">EXTR_OVERWRITE-默认。如果有冲突，则覆盖已有的变量。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">EXTR_SKIP- 如果有冲突，不覆盖已有的变量。( 忽略数组中同名的元素)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_SAME .如果有冲突，在变量名前加上前缀prefix。自PHP4.0.5起，这也包括了对数字索引的处理</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_ALL- 给所有变量名加上前缀prefx (第三个参数)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_INVALID -仅在非法或数字变量名前加上前缎prefix。本标记是PHP4.0.5新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">EXTR_IF_EXISTS- 仅在当前符号表中已有同名变量时，覆盖它们的值。其它的都不处理。可以用在已经定义了一组合法的变量，然后要从一个数组例如$_REQUEST中提取值覆盖这些变量的场合。本标记是PHP4.2.0新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_IF_EXISTS-仅在当前符号表中已有同名变量时，建立附加了前缀的变量名，其它的都不处理。本标记是PHP4.2.0新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">EXTR_REFS-将变量作为引用提取。这有力地表明了导入的变量仍然引用了var_array 参数的值。可以单独使用这个标志或者在extract_type中用OR与其它任何标志结合使用。本标记是PHP4.3.0新加的。</span></pre></td></tr></table></figure>
+
+<h2 id="parse-str-变量覆盖"><a href="#parse-str-变量覆盖" class="headerlink" title="parse_str()变量覆盖"></a>parse_str()变量覆盖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">void parse_str ( string $encoded_string [, array &amp;$result] )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$encoded_string 输入的字符串</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&amp;$result 变量将会以数组元素的形式存入到这个数组，作为替代</span></pre></td></tr></table></figure>
+
+<h2 id="import-request-variables"><a href="#import-request-variables" class="headerlink" title="import_request_variables()"></a>import_request_variables()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">bool import_request_variables ( string $type [, string $prefix ] )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$type 指定需要导入的变量。可以用字母‘G&#39;、‘P&#39;和 ‘C‘分别表示GET、POST和Cookie</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$prefix 变量名前缀</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-代码审计day9" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -831,70 +900,6 @@
       
         <p class="article-more-link">
           <a href="/2020/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day1/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-php学习day5" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/" class="article-date">
-      <time datetime="2020-03-16T12:54:41.000Z" itemprop="datePublished">2020-03-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/">php学习day5</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/16/php%E5%AD%A6%E4%B9%A0day5/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

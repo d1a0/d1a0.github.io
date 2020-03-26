@@ -15,25 +15,16 @@
 
 
 
-<meta name="description" content="首先看题">
-<meta name="keywords" content="ctf,模板注入">
+<meta name="description" content="变量覆盖变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值 extract()变量覆盖1int extract ( $array , extract_rules,prefix )2$array 关联的数组，受第二个和第三个参数的影响3extract_rules 对待非法&amp;#x2F; 数字和冲突的键名的方法将根据取出标记4prefix 仅在第二个参数特殊时需要，添加前缀 危险函">
+<meta name="keywords" content="代码审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="护网杯2018-easy_tornado">
-<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;index.html">
+<meta property="og:title" content="代码审计day10">
+<meta property="og:url" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;03&#x2F;26&#x2F;%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10&#x2F;index.html">
 <meta property="og:site_name" content="lingxin16&#39;blog">
-<meta property="og:description" content="首先看题">
+<meta property="og:description" content="变量覆盖变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值 extract()变量覆盖1int extract ( $array , extract_rules,prefix )2$array 关联的数组，受第二个和第三个参数的影响3extract_rules 对待非法&amp;#x2F; 数字和冲突的键名的方法将根据取出标记4prefix 仅在第二个参数特殊时需要，添加前缀 危险函">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;QQ%E6%88%AA%E5%9B%BE20200129160301.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;QQ%E6%88%AA%E5%9B%BE20200129160448.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;QQ%E6%88%AA%E5%9B%BE20200129160441.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;QQ%E6%88%AA%E5%9B%BE20200129160434.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;%E6%86%A8%E6%86%A8%E8%90%BD%E6%B3%AA.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;QQ%E6%88%AA%E5%9B%BE20200129162705.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;QQ%E6%88%AA%E5%9B%BE20200129163253.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;1.jpg">
-<meta property="og:updated_time" content="2020-01-31T17:52:38.113Z">
+<meta property="og:updated_time" content="2020-03-26T14:42:02.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;lingxin16.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado&#x2F;QQ%E6%88%AA%E5%9B%BE20200129160301.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -65,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>护网杯2018-easy_tornado | lingxin16&#39;blog</title>
+<title>代码审计day10 | lingxin16&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-护网杯2018-easy_tornado" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-代码审计day10" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/" class="article-date">
-      <time datetime="2020-01-29T08:01:10.000Z" itemprop="datePublished">2020-01-29</time>
+      <a href="/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/" class="article-date">
+      <time datetime="2020-03-26T13:36:59.000Z" itemprop="datePublished">2020-03-26</time>
 </a>
 
 
@@ -294,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      护网杯2018-easy_tornado
+      代码审计day10
     </h1>
   
 
@@ -305,7 +296,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/" rel="tag">模板注入</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,45 +306,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>首先看题<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160301.png" alt="QQ截图20200129160301"></p>
-<a id="more"></a>
+        <a id="more"></a>
 
-<p>里边的内容分别是</p>
-<p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160448.png" alt="QQ截图20200129160448">)<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160441.png" alt="QQ截图20200129160441">)<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129160434.png" alt="QQ截图20200129160434"></p>
-<p>我们可以直接得出flag所在的文件夹是/fllllllllllllag</p>
-<p>分析这三个的url</p>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/flag.txt&amp;filehash=3af0858a46186b7d343f7dd9419e1525</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/welcome.txt&amp;filehash=f9793be52dec6c36581bb8429f8c1039</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/hints.txt&amp;filehash=e9155f0f3d25f1ad639771ca93cb5e5d</a></p>
-</blockquote>
-<p>我们可以得出这样的结论，flag所在文件的url应该是<a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=</a><strong><strong><strong>**</strong></strong></strong></p>
-<p>至于这个<strong><strong><strong>**</strong></strong></strong>应该就是md5(cookie_secret+md5(filename))</p>
-<p>filename我们已经知道是fllllllllllllag，那么我们接下来只需要找到cookie_secret</p>
-<p>利用burp抓包我们并没有找到cookie，只能上百度了……（那咋办嘛）</p>
-<p>通过百度得知在error页面存在SSTI模板注入（又是一个看不懂的东西……）</p>
-<p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/%E6%86%A8%E6%86%A8%E8%90%BD%E6%B3%AA.jpg" alt="憨憨落泪"></p>
-<p>附上关于SSTI模板注入的博客：<a href="https://blog.csdn.net/zz_Caleb/article/details/96480967" target="_blank" rel="noopener">SSTI完全学习</a></p>
-<p>注入方式大概就是error?msg=0</p>
-<p>……？？？？？？至于注入啥玩意儿，大佬说的是用handler.settings对象(这又是啥玩意儿，咱也不知道，咱也不敢问)</p>
-<p>那么传递error?msg=</p>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/error?msg=</a></p>
-</blockquote>
-<p>得到这个回显</p>
-<p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129162705.png" alt="QQ截图20200129162705"></p>
-<p>‘cookie_secret’: ‘66015e24-a274-4abf-bd65-6776ae208dc4’}</p>
-<p>接下来构造</p>
-<blockquote>
-<p><a href="http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1" target="_blank" rel="noopener">http://de0ee060-7c62-4c47-9155-96c35ec001fe.node3.buuoj.cn/file?filename=/fllllllllllllag&amp;filehash=ee31ce84bedac7c8242d99b3047d4ad1</a></p>
-</blockquote>
-<p>访问得到</p>
-<p><img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/QQ%E6%88%AA%E5%9B%BE20200129163253.png" alt="QQ截图20200129163253"></p>
-<p>我太难了….<img src="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/1.jpg" alt="1"></p>
+<h2 id="变量覆盖"><a href="#变量覆盖" class="headerlink" title="变量覆盖"></a>变量覆盖</h2><p>变量覆盖是指变量未被初始化，我们可以自定义参数值替换程序原有的变量值</p>
+<h2 id="extract-变量覆盖"><a href="#extract-变量覆盖" class="headerlink" title="extract()变量覆盖"></a>extract()变量覆盖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">int extract ( $array , extract_rules,prefix )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$array 关联的数组，受第二个和第三个参数的影响</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">extract_rules 对待非法&#x2F; 数字和冲突的键名的方法将根据取出标记</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">prefix 仅在第二个参数特殊时需要，添加前缀</span></pre></td></tr></table></figure>
+<h3 id="危险函数"><a href="#危险函数" class="headerlink" title="危险函数"></a>危险函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">EXTR_OVERWRITE-默认。如果有冲突，则覆盖已有的变量。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">EXTR_SKIP- 如果有冲突，不覆盖已有的变量。( 忽略数组中同名的元素)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_SAME .如果有冲突，在变量名前加上前缀prefix。自PHP4.0.5起，这也包括了对数字索引的处理</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_ALL- 给所有变量名加上前缀prefx (第三个参数)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_INVALID -仅在非法或数字变量名前加上前缎prefix。本标记是PHP4.0.5新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">EXTR_IF_EXISTS- 仅在当前符号表中已有同名变量时，覆盖它们的值。其它的都不处理。可以用在已经定义了一组合法的变量，然后要从一个数组例如$_REQUEST中提取值覆盖这些变量的场合。本标记是PHP4.2.0新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">EXTR_PREFIX_IF_EXISTS-仅在当前符号表中已有同名变量时，建立附加了前缀的变量名，其它的都不处理。本标记是PHP4.2.0新加的。</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">EXTR_REFS-将变量作为引用提取。这有力地表明了导入的变量仍然引用了var_array 参数的值。可以单独使用这个标志或者在extract_type中用OR与其它任何标志结合使用。本标记是PHP4.3.0新加的。</span></pre></td></tr></table></figure>
+
+<h2 id="parse-str-变量覆盖"><a href="#parse-str-变量覆盖" class="headerlink" title="parse_str()变量覆盖"></a>parse_str()变量覆盖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">void parse_str ( string $encoded_string [, array &amp;$result] )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$encoded_string 输入的字符串</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&amp;$result 变量将会以数组元素的形式存入到这个数组，作为替代</span></pre></td></tr></table></figure>
+
+<h2 id="import-request-variables"><a href="#import-request-variables" class="headerlink" title="import_request_variables()"></a>import_request_variables()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">bool import_request_variables ( string $type [, string $prefix ] )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$type 指定需要导入的变量。可以用字母‘G&#39;、‘P&#39;和 ‘C‘分别表示GET、POST和Cookie</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$prefix 变量名前缀</span></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -362,13 +324,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/">护网杯2018-easy_tornado</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/">代码审计day10</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">奝</a></p>
-        <p><span>发布时间:</span>2020-01-29, 16:01:10</p>
-        <p><span>最后更新:</span>2020-02-01, 01:52:38</p>
+        <p><span>发布时间:</span>2020-03-26, 21:36:59</p>
+        <p><span>最后更新:</span>2020-03-26, 22:42:02</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/" title="护网杯2018-easy_tornado">http://lingxin16.github.io/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/01/29/%E6%8A%A4%E7%BD%91%E6%9D%AF2018-easy_tornado/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/" title="代码审计day10">http://lingxin16.github.io/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lingxin16.github.io/2020/03/26/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day10/　　作者: 奝" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -380,16 +342,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/02/01/Hgame-Week1-web/">
-                    Hgame-Week1-web
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/">
-                    强网杯-随便注
+                <a href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/">
+                    代码审计day9
                 </a>
             </div>
         
@@ -401,7 +357,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量覆盖"><span class="toc-number">1.</span> <span class="toc-text">变量覆盖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#extract-变量覆盖"><span class="toc-number">2.</span> <span class="toc-text">extract()变量覆盖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#危险函数"><span class="toc-number">2.1.</span> <span class="toc-text">危险函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parse-str-变量覆盖"><span class="toc-number">3.</span> <span class="toc-text">parse_str()变量覆盖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import-request-variables"><span class="toc-number">4.</span> <span class="toc-text">import_request_variables()</span></a></li></ol>
         
     </div>
     <style>
@@ -437,7 +393,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"护网杯2018-easy_tornado　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"代码审计day10　| lingxin16'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -457,15 +413,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/02/01/Hgame-Week1-web/" title="上一篇: Hgame-Week1-web">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/01/12/%E5%BC%BA%E7%BD%91%E6%9D%AF-%E9%9A%8F%E4%BE%BF%E6%B3%A8/" title="下一篇: 强网杯-随便注">
+            <a href="/2020/03/25/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1day9/" title="下一篇: 代码审计day9">
                 <i class="fa fa-angle-right"></i>
             </a>
         
