@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'pixeled';
+  src: url('./pixeled.ttf');
+}
+
+:root {
+  --text: #2d3441;
+  --dark-text: silver;
+  --bg: #fff;
+  --dark-bg: #2d2d2d;
+}
+
+html {
+  font-family: 'pixeled';
+}
+
+body {
+  height: 100vh;
+  padding: 0 1em;
+  margin: 0;
+  color: var(--text);
+  background-color: var(--bg);
+  transition: all .2s;
+}
+
+.dark body {
+  color: var(--dark-text);
+  background-color: var(--dark-bg);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
